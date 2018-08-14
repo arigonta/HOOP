@@ -8,10 +8,35 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
+    
+    @IBOutlet weak var nameTxt: UITextField!
+    @IBOutlet weak var dobTxt: UITextField!
+    
+    let picker = UIDatePicker()
+    
+    func datePicker(){
+        picker.datePickerMode = .date
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let pick = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateDone))
+        toolbar.setItems([pick], animated: false)
+        
+        dobTxt.inputAccessoryView = toolbar
+        dobTxt.inputView = picker
+    }
+    @objc func dateDone(){
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .long
+        dateFormat.timeStyle = .none
+        dobTxt.text = dateFormat.string(from: picker.date)
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
