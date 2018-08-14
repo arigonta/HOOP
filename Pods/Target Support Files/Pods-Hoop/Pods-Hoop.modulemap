@@ -1,0 +1,6 @@
+framework module Pods_Hoop {
+  umbrella header "Pods-Hoop-umbrella.h"
+
+  export *
+  module * { export * }
+}

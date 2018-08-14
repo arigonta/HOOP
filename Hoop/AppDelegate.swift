@@ -13,10 +13,23 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var userData = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var firstVC = storyboard.instantiateViewController(withIdentifier: "DemoBoard")
+        
+        if userData.bool(forKey: "demoCompleted") {
+            firstVC = storyboard.instantiateViewController(withIdentifier: "ProfileBoard")
+        }
+        
+        window?.rootViewController = firstVC
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
