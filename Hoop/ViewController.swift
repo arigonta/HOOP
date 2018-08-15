@@ -13,6 +13,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var dobTxt: UITextField!
     
+    //Variable
+    var userData = UserDefaults.standard
+    
+    //action
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        userData.set(true, forKey: "ProfileCompleted")
+        userData.synchronize()
+    }
+    
+    
+    
     let picker = UIDatePicker()
     
     func datePicker(){
