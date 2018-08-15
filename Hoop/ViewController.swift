@@ -24,7 +24,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let char = CharacterSet.letters
+        let setChar = CharacterSet(charactersIn: string)
+        
+        return char.isSuperset(of: setChar)
+    }
     
     let picker = UIDatePicker()
     
@@ -53,6 +59,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.nameTxt.delegate = self
         datePicker()
         // Do any additional setup after loading the view, typically from a nib.
     }

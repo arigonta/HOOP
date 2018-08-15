@@ -90,7 +90,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgJ-lf-xZh">
                                 <rect key="frame" x="164" y="326" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G62-11-fFY"/>
                                     <segue destination="p55-aA-eHG" kind="show" identifier="profileToStart" id="IAe-xE-ook"/>
@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="94" y="159"/>
         </scene>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="2JE-da-Gne">
             <objects>
-                <viewController storyboardIdentifier="StartView" id="p55-aA-eHG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StartView" id="p55-aA-eHG" customClass="StartViewController" customModule="Hoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dj3-bx-hXs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

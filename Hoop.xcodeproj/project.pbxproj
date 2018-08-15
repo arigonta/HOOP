@@ -16,6 +16,7 @@
 		CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA8902102122C55200260C20 /* Hoop.xcdatamodeld */; };
 		CA8902142122C55300260C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8902132122C55300260C20 /* Assets.xcassets */; };
 		CA8902172122C55300260C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8902152122C55300260C20 /* LaunchScreen.storyboard */; };
+		CA89021F21240FFB00260C20 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA89021E21240FFB00260C20 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CA8902132122C55300260C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8902162122C55300260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8902182122C55300260C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA89021E21240FFB00260C20 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				CA89020B2122C55200260C20 /* ViewController.swift */,
 				3FB694EB212313B3004218E3 /* DemoScreen.swift */,
 				CA89020D2122C55200260C20 /* Main.storyboard */,
+				CA89021E21240FFB00260C20 /* StartViewController.swift */,
 				CA8902132122C55300260C20 /* Assets.xcassets */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
 				CA8902182122C55300260C20 /* Info.plist */,
@@ -214,6 +217,7 @@
 				CA89020C2122C55200260C20 /* ViewController.swift in Sources */,
 				CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */,
 				CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */,
+				CA89021F21240FFB00260C20 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
