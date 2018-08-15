@@ -18,8 +18,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //action
     @IBAction func saveBtnPressed(_ sender: Any) {
+        if nameTxt.text != "" && dobTxt.text != ""{
         userData.set(true, forKey: "ProfileCompleted")
         userData.synchronize()
+        }
     }
     
     
@@ -42,6 +44,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         dateFormat.timeStyle = .none
         dobTxt.text = dateFormat.string(from: picker.date)
         self.view.endEditing(true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        nameTxt.resignFirstResponder()
+        dobTxt.resignFirstResponder()
     }
     
     override func viewDidLoad() {
