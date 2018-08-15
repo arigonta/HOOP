@@ -93,9 +93,16 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="saveBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G62-11-fFY"/>
-                                    <segue destination="p55-aA-eHG" kind="show" id="IAe-xE-ook"/>
+                                    <segue destination="p55-aA-eHG" kind="show" identifier="profileToStart" id="IAe-xE-ook"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBP-LY-El8">
+                                <rect key="frame" x="166" y="612" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -117,6 +124,7 @@
                     <connections>
                         <outlet property="dobTxt" destination="Ppo-4y-mHU" id="yAt-tw-t6r"/>
                         <outlet property="nameTxt" destination="Lgk-hZ-ONT" id="GA0-4r-dWN"/>
+                        <outlet property="statusLabel" destination="BBP-LY-El8" id="paf-um-QbI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
