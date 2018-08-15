@@ -18,11 +18,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //action
     @IBAction func saveBtnPressed(_ sender: Any) {
-        if nameTxt.text != "" && dobTxt.text != ""{
         userData.set(true, forKey: "ProfileCompleted")
         userData.synchronize()
+        if nameTxt.text != "" && dobTxt.text != ""{
+            performSegue(withIdentifier: "profileToStart", sender: self)
         }
     }
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -68,7 +70,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
