@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
-    var test:Int = 0
-    var test1:Int = 0
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var dobTxt: UITextField!
     
