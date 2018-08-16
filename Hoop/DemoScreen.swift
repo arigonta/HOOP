@@ -8,6 +8,7 @@
 
 import UIKit
 import paper_onboarding
+import CoreData
 
 class DemoScreen: UIViewController {
     //view onboarding outlet
@@ -21,8 +22,12 @@ class DemoScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         onboardingOutlet.dataSource = self
         onboardingOutlet.delegate = self
+        
+           
+        
     }
     
     //Action

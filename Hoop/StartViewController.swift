@@ -7,11 +7,44 @@
 //
 
 import UIKit
+import CoreData
 
 class StartViewController: UIViewController {
 
     override func viewDidLoad() {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let context = appDelegate.persistentContainer.viewContext
+        
         super.viewDidLoad()
+        // baca core data
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let  result = try context.fetch(request)
+            if result.count > 0
+            {
+                for result in result as! [NSManagedObject]
+                {
+                    if let name = result.value(forKey: "dob") as? String
+                    {
+                        print(name)
+                    }
+                    if let age = result.value(forKey: "name") as? String
+                    {
+                        print(age)
+                    }
+                    //                            context.delete(result)
+                }
+                //                        try context.save()
+            }
+        } catch  {
+            print("Gagal ngambil data!")
+        }
+        // baca core data
 
         // Do any additional setup after loading the view.
     }

@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var firstVC = storyboard.instantiateViewController(withIdentifier: "DemoBoard")
         
         if userData.bool(forKey: "demoCompleted") {
-            firstVC = storyboard.instantiateViewController(withIdentifier: "DemoBoard")
-//            firstVC = storyboard.instantiateViewController(withIdentifier: "StartView")
+//            firstVC = storyboard.instantiateViewController(withIdentifier: "DemoBoard")
+            firstVC = storyboard.instantiateViewController(withIdentifier: "StartView")
         }
         
         window?.rootViewController = firstVC
