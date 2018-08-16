@@ -151,7 +151,23 @@
             </objects>
             <point key="canvasLocation" x="897" y="159"/>
         </scene>
-        <!--Item 2-->
+        <!--History-->
+        <scene sceneID="BTj-Ey-WcF">
+            <objects>
+                <viewController id="7Iw-4v-RMG" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="myW-Eg-tAC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XWd-R9-qGJ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="History" id="tSo-a9-SMB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvj-Ml-Wi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1721" y="1006"/>
+        </scene>
+        <!--Home-->
         <scene sceneID="pgj-b4-g3L">
             <objects>
                 <viewController id="svJ-vT-dai" sceneMemberID="viewController">
@@ -161,13 +177,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tgm-lo-njh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="p8L-G4-7Y4"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="p8L-G4-7Y4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hof-Gm-Roq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2985" y="278"/>
         </scene>
-        <!--Item 1-->
+        <!--Activity Recomendation-->
         <scene sceneID="FSO-ge-q2A">
             <objects>
                 <viewController id="8kP-ND-YtE" sceneMemberID="viewController">
@@ -177,7 +193,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Yi-n2-uf7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="FQD-WF-HV8"/>
+                    <tabBarItem key="tabBarItem" title="Activity Recomendation" id="FQD-WF-HV8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDY-1F-AbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -195,6 +211,7 @@
                     <connections>
                         <segue destination="8kP-ND-YtE" kind="relationship" relationship="viewControllers" id="w1k-P2-AB5"/>
                         <segue destination="svJ-vT-dai" kind="relationship" relationship="viewControllers" id="hGM-IH-ubZ"/>
+                        <segue destination="7Iw-4v-RMG" kind="relationship" relationship="viewControllers" id="LoY-pO-TkL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cov-3T-z8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
