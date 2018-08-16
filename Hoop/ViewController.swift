@@ -51,9 +51,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
                     newUser.setValue(nameTxt.text, forKey: "name")
                     newUser.setValue(dates, forKey: "dob")
-                    
-                    showAlert(title: "Success", message: "Saved", action: "OK")
-                    print("Saved")
                     try context.save()
                     performSegue(withIdentifier: "profileToStart", sender: self)
                     userData.set(true, forKey: "ProfileCompleted")
