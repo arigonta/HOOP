@@ -151,7 +151,7 @@
             </objects>
             <point key="canvasLocation" x="897" y="159"/>
         </scene>
-        <!--History-->
+        <!--View Controller-->
         <scene sceneID="BTj-Ey-WcF">
             <objects>
                 <viewController id="7Iw-4v-RMG" sceneMemberID="viewController">
@@ -161,13 +161,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="XWd-R9-qGJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" id="tSo-a9-SMB"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="tSo-a9-SMB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvj-Ml-Wi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1721" y="1006"/>
         </scene>
-        <!--Home-->
+        <!--View Controller-->
         <scene sceneID="pgj-b4-g3L">
             <objects>
                 <viewController id="svJ-vT-dai" sceneMemberID="viewController">
@@ -177,13 +177,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tgm-lo-njh"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="p8L-G4-7Y4"/>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="p8L-G4-7Y4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hof-Gm-Roq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2985" y="278"/>
         </scene>
-        <!--Activity Recomendation-->
+        <!--View Controller-->
         <scene sceneID="FSO-ge-q2A">
             <objects>
                 <viewController id="8kP-ND-YtE" sceneMemberID="viewController">
@@ -193,7 +193,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Yi-n2-uf7"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Activity Recomendation" id="FQD-WF-HV8"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="FQD-WF-HV8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDY-1F-AbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
