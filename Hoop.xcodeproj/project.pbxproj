@@ -20,6 +20,9 @@
 		469EA0E2212AAC4A005C9DDE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469EA0E1212AAC4A005C9DDE /* HealthKit.framework */; };
 		469EA0E5212AB08E005C9DDE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469EA0E4212AB08E005C9DDE /* HealthKit.framework */; };
 		96736865FD831AE217095FC9 /* Pods_Hoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */; };
+		CA312460212ACB6700EE37AD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA31245F212ACB6700EE37AD /* HomeViewController.swift */; };
+		CA312462212ACB9800EE37AD /* ActivityRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */; };
+		CA312464212ACBCD00EE37AD /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA312463212ACBCD00EE37AD /* HistoryViewController.swift */; };
 		CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8902092122C55200260C20 /* AppDelegate.swift */; };
 		CA89020C2122C55200260C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA89020B2122C55200260C20 /* ViewController.swift */; };
 		CA89020F2122C55200260C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA89020D2122C55200260C20 /* Main.storyboard */; };
@@ -92,6 +95,9 @@
 		469EA0E4212AB08E005C9DDE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		50DC19A94622F8D498D98473 /* Pods-Hoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.release.xcconfig"; sourceTree = "<group>"; };
 		AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA31245F212ACB6700EE37AD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecViewController.swift; sourceTree = "<group>"; };
+		CA312463212ACBCD00EE37AD /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		CA8902062122C55100260C20 /* Hoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8902092122C55200260C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA89020B2122C55200260C20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +194,9 @@
 				CA89020B2122C55200260C20 /* ViewController.swift */,
 				3FB694EB212313B3004218E3 /* DemoScreen.swift */,
 				CA89020D2122C55200260C20 /* Main.storyboard */,
+				CA312463212ACBCD00EE37AD /* HistoryViewController.swift */,
+				CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */,
+				CA31245F212ACB6700EE37AD /* HomeViewController.swift */,
 				CA89021E21240FFB00260C20 /* StartViewController.swift */,
 				CA8902132122C55300260C20 /* Assets.xcassets */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
@@ -400,11 +409,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA312462212ACB9800EE37AD /* ActivityRecViewController.swift in Sources */,
 				3FB694EC212313B3004218E3 /* DemoScreen.swift in Sources */,
 				3F51DFAE212319B5002593C1 /* OnboardingViewClass.swift in Sources */,
 				CA89020C2122C55200260C20 /* ViewController.swift in Sources */,
 				CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */,
 				CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */,
+				CA312464212ACBCD00EE37AD /* HistoryViewController.swift in Sources */,
+				CA312460212ACB6700EE37AD /* HomeViewController.swift in Sources */,
 				CA89021F21240FFB00260C20 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
