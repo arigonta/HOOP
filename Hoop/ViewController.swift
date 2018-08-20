@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import HealthKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -110,5 +111,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func authorizeHealthKit() {
+        if HKHealthStore.isHealthDataAvailable() {
+            let infoToRead = Set([
+                HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!,
+                HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+                HKSampleType.quantityType(forIdentifier: .heartRate)!
+                ])
+            let infoToWrite = Set([
+                HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                HKObjectType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+                HKObjectType.quantityType(forIdentifier: .heartRate)!,
+                HKObjectType.workoutType()
+                ])
+            
+            
+            
+            healthStore.requestAuthorization(toShare: infoToWrite,
+                                             read: infoToRead,
+                                             completion: { (success, error) in
+                                                self.delegate?.workout(manager: self,
+                                                                       didAuthorizeAccess: success,
+                                                                       error: error)
+                                                
+            })
+        }
 }
 
