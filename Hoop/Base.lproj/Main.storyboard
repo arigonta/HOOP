@@ -38,7 +38,6 @@
                                 </state>
                                 <connections>
                                     <action selector="doneBtnPressed:" destination="DbT-Yw-3LZ" eventType="touchUpInside" id="f5W-oZ-Ch7"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="7uH-0D-yRU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,6 +55,7 @@
                     <connections>
                         <outlet property="doneOutlet" destination="lhs-5m-WbI" id="TT2-S3-uAc"/>
                         <outlet property="onboardingOutlet" destination="N2L-bc-Xfc" id="bPi-9d-iv4"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="tutorialToProfile" id="Ib7-5f-7t3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cVC-wJ-8Nw" userLabel="First Responder" sceneMemberID="firstResponder"/>
