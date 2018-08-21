@@ -9,6 +9,7 @@
 import UIKit
 import paper_onboarding
 import CoreData
+import HealthKit
 
 class DemoScreen: UIViewController {
     //view onboarding outlet
@@ -18,6 +19,7 @@ class DemoScreen: UIViewController {
     
     //Variable
     var userData = UserDefaults.standard
+    let healthKitStore:HKHealthStore = HKHealthStore()
     
     
     override func viewDidLoad() {
@@ -34,6 +36,8 @@ class DemoScreen: UIViewController {
     @IBAction func doneBtnPressed(_ sender: Any) {
         userData.set(true, forKey: "demoCompleted")
         userData.synchronize()
+        authorizeHealthKit()
+        performSegue(withIdentifier: "tutorialToProfile", sender: self)
     }
     
 
@@ -107,5 +111,33 @@ extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
     }
     func onboardingConfigurationItem(_: OnboardingContentViewItem, index _: Int) {
         
+    }
+    func showAlert(title: String, message: String, action: String) {
+        let alertController = UIAlertController(title: title, message:
+            message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: action, style: UIAlertActionStyle.default,handler: nil))
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func authorizeHealthKit() {
+        if HKHealthStore.isHealthDataAvailable() {
+            let infoToRead = Set([
+                HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!,
+                HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+                HKSampleType.quantityType(forIdentifier: .heartRate)!
+                ])
+            let infoToWrite = Set([
+                HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+                HKSampleType.quantityType(forIdentifier: .heartRate)!
+                ])
+            
+            healthKitStore.requestAuthorization(toShare: infoToWrite, read: infoToRead) { (success, error) -> Void in
+                print("Authorization Complete")
+                
+            }
+        } else {
+            showAlert(title: "Sorry", message: "You have to set your data on Health App", action: "Dismiss")
+        }
     }
 }
