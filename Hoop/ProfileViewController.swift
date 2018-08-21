@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import HealthKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ProfileViewController: UIViewController, UITextFieldDelegate {
 
     var users:[User] = []
     @IBOutlet weak var nameTxt: UITextField!

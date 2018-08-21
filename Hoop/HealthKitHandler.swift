@@ -9,6 +9,8 @@
 import UIKit
 import HealthKit
 
+let healthKitStore:HKHealthStore = HKHealthStore()
+
 public class Alert {
     class func ShowAlert(title: String, message: String, in vc: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
@@ -17,27 +19,24 @@ public class Alert {
     }
 }
 
-func authorizeHealthKit() {
-    
-    let healthKitStore:HKHealthStore = HKHealthStore()
-
-    if HKHealthStore.isHealthDataAvailable() {
-        let infoToRead = Set([
-            HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!,
-            HKSampleType.characteristicType(forIdentifier: .biologicalSex)!,
-            HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
-            HKSampleType.quantityType(forIdentifier: .heartRate)!
-            ])
-        let infoToWrite = Set([
-            HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
-            HKSampleType.quantityType(forIdentifier: .heartRate)!
-            ])
-        
-        healthKitStore.requestAuthorization(toShare: infoToWrite, read: infoToRead) { (success, error) -> Void in
-            print("Authorization Complete")
-            
+public func authorizeHealthKit() {
+            if HKHealthStore.isHealthDataAvailable() {
+                let infoToRead = Set([
+                    HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!,
+                    HKSampleType.characteristicType(forIdentifier: .biologicalSex)!,
+                    HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+                    HKSampleType.quantityType(forIdentifier: .heartRate)!
+                    ])
+                let infoToWrite = Set([
+                    HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
+                    HKSampleType.quantityType(forIdentifier: .heartRate)!
+                    ])
+                
+                healthKitStore.requestAuthorization(toShare: infoToWrite, read: infoToRead) { (success, error) -> Void in
+                    print("Authorization Complete")
+                
+            }
         }
-    } else {
-        Alert.ShowAlert(title: "Sorry", message: "Your device do not support HealthKit", in: ProfileViewController)
-    }
 }
+
+

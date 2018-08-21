@@ -24,7 +24,7 @@ class DemoScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        authorizeHealthKit()
         onboardingOutlet.dataSource = self
         onboardingOutlet.delegate = self
         
