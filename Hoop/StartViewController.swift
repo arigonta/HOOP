@@ -11,6 +11,9 @@ import CoreData
 
 class StartViewController: UIViewController {
 
+    @IBAction func startBtn(_ sender: Any) {
+        performSegue(withIdentifier: "startToHome", sender: self)
+    }
     override func viewDidLoad() {
 
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
