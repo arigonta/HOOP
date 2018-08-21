@@ -29,7 +29,22 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
         cell.activityLbl.text = act[indexPath.row].text
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath){
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.5933555961, green: 0.7535129189, blue: 0.7118578553, alpha: 1)
+            cell.contentView.layer.cornerRadius = 10
+        }
+        performSegue(withIdentifier: "detailActivity", sender: self)
+    }
+    
+    @IBAction func unwindToActivityRec(_ sender: UIStoryboardSegue) {
+        let sourceViewController = sender.source
+        // Use data from the view controller which initiated the unwind segue
+    }
     
     @IBOutlet weak var activityTableView: UITableView!
     
@@ -39,6 +54,9 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
         act.append(activity(text: "Jogging"))
         act.append(activity(text: "Meditate"))
         act.append(activity(text: "Running"))
+        
+        activityTableView.estimatedRowHeight = 200
+        activityTableView.rowHeight = UITableViewAutomaticDimension
     }
 
     override func didReceiveMemoryWarning() {
