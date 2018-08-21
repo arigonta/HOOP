@@ -19,17 +19,12 @@ class DemoScreen: UIViewController {
     
     //Variable
     var userData = UserDefaults.standard
-    let healthKitStore:HKHealthStore = HKHealthStore()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        authorizeHealthKit()
         onboardingOutlet.dataSource = self
         onboardingOutlet.delegate = self
-        
-           
-        
     }
     
     //Action
