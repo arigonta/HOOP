@@ -120,25 +120,4 @@ extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func authorizeHealthKit() {
-        if HKHealthStore.isHealthDataAvailable() {
-            let infoToRead = Set([
-                HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!,
-                HKSampleType.characteristicType(forIdentifier: .biologicalSex)!,
-                HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
-                HKSampleType.quantityType(forIdentifier: .heartRate)!
-                ])
-            let infoToWrite = Set([
-                HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
-                HKSampleType.quantityType(forIdentifier: .heartRate)!
-                ])
-            
-            healthKitStore.requestAuthorization(toShare: infoToWrite, read: infoToRead) { (success, error) -> Void in
-                print("Authorization Complete")
-                
-            }
-        } else {
-            showAlert(title: "Sorry", message: "Your device did not support HealthKit", action: "Dismiss")
-        }
-    }
 }
