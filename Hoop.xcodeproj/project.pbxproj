@@ -27,7 +27,7 @@
 		CA312462212ACB9800EE37AD /* ActivityRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */; };
 		CA312464212ACBCD00EE37AD /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA312463212ACBCD00EE37AD /* HistoryViewController.swift */; };
 		CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8902092122C55200260C20 /* AppDelegate.swift */; };
-		CA89020C2122C55200260C20 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA89020B2122C55200260C20 /* ViewController.swift */; };
+		CA89020C2122C55200260C20 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA89020B2122C55200260C20 /* ProfileViewController.swift */; };
 		CA89020F2122C55200260C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA89020D2122C55200260C20 /* Main.storyboard */; };
 		CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA8902102122C55200260C20 /* Hoop.xcdatamodeld */; };
 		CA8902142122C55300260C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8902132122C55300260C20 /* Assets.xcassets */; };
@@ -106,7 +106,7 @@
 		CA312463212ACBCD00EE37AD /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		CA8902062122C55100260C20 /* Hoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8902092122C55200260C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA89020B2122C55200260C20 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CA89020B2122C55200260C20 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CA89020E2122C55200260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA8902112122C55200260C20 /* Hoop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hoop.xcdatamodel; sourceTree = "<group>"; };
 		CA8902132122C55300260C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 			children = (
 				469EA0E3212AB08E005C9DDE /* Hoop.entitlements */,
 				CA8902092122C55200260C20 /* AppDelegate.swift */,
-				CA89020B2122C55200260C20 /* ViewController.swift */,
+				CA89020B2122C55200260C20 /* ProfileViewController.swift */,
 				3FB694EB212313B3004218E3 /* DemoScreen.swift */,
 				CA89020D2122C55200260C20 /* Main.storyboard */,
 				CA312463212ACBCD00EE37AD /* HistoryViewController.swift */,
@@ -423,7 +423,7 @@
 				3FB2FAFF212BFE5E00B8B526 /* ActivityRecTableViewCell.swift in Sources */,
 				3FB2FAFD212BFAF800B8B526 /* ActivityRecomendationViewController.swift in Sources */,
 				3F51DFAE212319B5002593C1 /* OnboardingViewClass.swift in Sources */,
-				CA89020C2122C55200260C20 /* ViewController.swift in Sources */,
+				CA89020C2122C55200260C20 /* ProfileViewController.swift in Sources */,
 				CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */,
 				CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */,
 				CA312464212ACBCD00EE37AD /* HistoryViewController.swift in Sources */,

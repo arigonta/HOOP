@@ -9,6 +9,13 @@
 import UIKit
 import HealthKit
 
+public class Alert {
+    class func ShowAlert(title: String, message: String, in vc: UIViewController) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+        vc.present(alert, animated: true, completion: nil)
+    }
+}
 
 func authorizeHealthKit() {
     
@@ -31,9 +38,6 @@ func authorizeHealthKit() {
             
         }
     } else {
-        let alertController = UIAlertController(title: "Sorry", message: "Your device is not supported", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-        
-        appDelegate.window?.rootViewController?.present(alert, animated: true, completion: nil)
+        Alert.ShowAlert(title: "Sorry", message: "Your device do not support HealthKit", in: ProfileViewController)
     }
 }
