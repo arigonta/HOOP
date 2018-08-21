@@ -19,7 +19,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let alertController = UIAlertController(title: title, message:
             message, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: action, style: UIAlertActionStyle.default,handler: nil))
-        
         self.present(alertController, animated: true, completion: nil)
     }
     
