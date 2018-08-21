@@ -8,20 +8,35 @@
 
 import UIKit
 
+struct activity
+{
+    let text: String
+//    let gambar: uiimage
+}
+
 class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    var act: [activity] = []
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return act.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = activityTableView.dequeueReusableCell(withIdentifier: "activityTableViewCell", for: indexPath) as! ActivityRecTableViewCell
+        
+        cell.activityLbl.text = act[indexPath.row].text
+        return cell
     }
     
     @IBOutlet weak var activityTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        act.append(activity(text: "Breathing"))
+        act.append(activity(text: "Jogging"))
+        act.append(activity(text: "Meditate"))
+        act.append(activity(text: "Running"))
     }
 
     override func didReceiveMemoryWarning() {

@@ -191,7 +191,6 @@
 		CA8902082122C55100260C20 /* Hoop */ = {
 			isa = PBXGroup;
 			children = (
-				469EA0E3212AB08E005C9DDE /* Hoop.entitlements */,
 				CA8902092122C55200260C20 /* AppDelegate.swift */,
 				CA89020B2122C55200260C20 /* ViewController.swift */,
 				3FB694EB212313B3004218E3 /* DemoScreen.swift */,
@@ -199,6 +198,7 @@
 				CA312463212ACBCD00EE37AD /* HistoryViewController.swift */,
 				CA31245F212ACB6700EE37AD /* HomeViewController.swift */,
 				CA89021E21240FFB00260C20 /* StartViewController.swift */,
+				469EA0E3212AB08E005C9DDE /* Hoop.entitlements */,
 				CA8902132122C55300260C20 /* Assets.xcassets */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
 				CA8902182122C55300260C20 /* Info.plist */,
