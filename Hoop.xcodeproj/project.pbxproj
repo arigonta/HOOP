@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F51DFAE212319B5002593C1 /* OnboardingViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */; };
+		3FB2FAFD212BFAF800B8B526 /* ActivityRecomendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2FAFC212BFAF800B8B526 /* ActivityRecomendationViewController.swift */; };
 		3FB694EC212313B3004218E3 /* DemoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB694EB212313B3004218E3 /* DemoScreen.swift */; };
 		469EA0BE212AABDD005C9DDE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0BC212AABDD005C9DDE /* Interface.storyboard */; };
 		469EA0C0212AABDF005C9DDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0BF212AABDF005C9DDE /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 /* Begin PBXFileReference section */
 		1A0FFBFABF72D9F9FB6FD1DC /* Pods-Hoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.debug.xcconfig"; sourceTree = "<group>"; };
 		3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewClass.swift; sourceTree = "<group>"; };
+		3FB2FAFC212BFAF800B8B526 /* ActivityRecomendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecomendationViewController.swift; sourceTree = "<group>"; };
 		3FB694EB212313B3004218E3 /* DemoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoScreen.swift; sourceTree = "<group>"; };
 		469EA0BA212AABDD005C9DDE /* HOOP-WatchKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HOOP-WatchKitApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		469EA0BD212AABDD005C9DDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				CA8902182122C55300260C20 /* Info.plist */,
 				CA8902102122C55200260C20 /* Hoop.xcdatamodeld */,
 				3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */,
+				3FB2FAFC212BFAF800B8B526 /* ActivityRecomendationViewController.swift */,
 			);
 			path = Hoop;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 			files = (
 				CA312462212ACB9800EE37AD /* ActivityRecViewController.swift in Sources */,
 				3FB694EC212313B3004218E3 /* DemoScreen.swift in Sources */,
+				3FB2FAFD212BFAF800B8B526 /* ActivityRecomendationViewController.swift in Sources */,
 				3F51DFAE212319B5002593C1 /* OnboardingViewClass.swift in Sources */,
 				CA89020C2122C55200260C20 /* ViewController.swift in Sources */,
 				CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */,
