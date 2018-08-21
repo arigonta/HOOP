@@ -124,6 +124,7 @@ extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
         if HKHealthStore.isHealthDataAvailable() {
             let infoToRead = Set([
                 HKSampleType.characteristicType(forIdentifier: .dateOfBirth)!,
+                HKSampleType.characteristicType(forIdentifier: .biologicalSex)!,
                 HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
                 HKSampleType.quantityType(forIdentifier: .heartRate)!
                 ])
