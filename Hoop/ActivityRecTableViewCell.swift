@@ -10,6 +10,7 @@ import UIKit
 
 class ActivityRecTableViewCell: UITableViewCell {
     @IBOutlet weak var activityLbl: UILabel!
+    
     @IBOutlet weak var activityImg: UIImageView!
     
     override func awakeFromNib() {

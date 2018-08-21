@@ -163,11 +163,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ActivityWhite" translatesAutoresizingMaskIntoConstraints="NO" id="p1G-Lb-yiV">
-                                <rect key="frame" x="16" y="718" width="159" height="60"/>
+                                <rect key="frame" x="0.0" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HistoryBlack" translatesAutoresizingMaskIntoConstraints="NO" id="7Jo-o3-TCL">
-                                <rect key="frame" x="200" y="718" width="159" height="60"/>
+                                <rect key="frame" x="200" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Love" translatesAutoresizingMaskIntoConstraints="NO" id="Oqy-A2-k8e">
@@ -193,11 +193,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ActivityWhite" translatesAutoresizingMaskIntoConstraints="NO" id="MCH-nt-LaA">
-                                <rect key="frame" x="16" y="718" width="159" height="60"/>
+                                <rect key="frame" x="0.0" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HistoryWhite" translatesAutoresizingMaskIntoConstraints="NO" id="dGI-db-QJr">
-                                <rect key="frame" x="200" y="718" width="159" height="60"/>
+                                <rect key="frame" x="200" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Love" translatesAutoresizingMaskIntoConstraints="NO" id="VZI-5Z-RMu">
@@ -222,30 +222,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ActivityWhite" translatesAutoresizingMaskIntoConstraints="NO" id="R1X-x1-o3Z">
-                                <rect key="frame" x="16" y="718" width="159" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ActivityBlack" translatesAutoresizingMaskIntoConstraints="NO" id="R1X-x1-o3Z">
+                                <rect key="frame" x="0.0" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HistoryWhite" translatesAutoresizingMaskIntoConstraints="NO" id="jUU-k8-kgr">
-                                <rect key="frame" x="200" y="718" width="159" height="60"/>
+                                <rect key="frame" x="200" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Love" translatesAutoresizingMaskIntoConstraints="NO" id="rLJ-jV-f4e">
                                 <rect key="frame" x="155" y="675" width="65" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Pe-hL-ERB">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityTableViewCell" id="b7n-Fe-jcd" customClass="ActivityRecTableViewCell" customModule="Hoop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b7n-Fe-jcd" id="eef-w5-x54">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-s9-3TU">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fp8-eZ-1oO">
+                                                            <rect key="frame" x="23" y="11" width="42" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uIp-6V-NLC">
+                                                            <rect key="frame" x="332" y="7" width="30" height="28"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DQU-s9-3TU" firstAttribute="leading" secondItem="eef-w5-x54" secondAttribute="leading" id="OJ0-8N-R53"/>
+                                                <constraint firstAttribute="trailing" secondItem="DQU-s9-3TU" secondAttribute="trailing" id="s9N-Sq-fjP"/>
+                                                <constraint firstItem="DQU-s9-3TU" firstAttribute="top" secondItem="eef-w5-x54" secondAttribute="top" id="xvh-MP-D8O"/>
+                                                <constraint firstAttribute="bottom" secondItem="DQU-s9-3TU" secondAttribute="bottom" id="zdb-Uf-JJn"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityImg" destination="uIp-6V-NLC" id="UeA-vr-F5F"/>
+                                            <outlet property="activityLbl" destination="fp8-eZ-1oO" id="Afj-Ve-naK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Yi-n2-uf7"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="featured" id="FQD-WF-HV8"/>
+                    <connections>
+                        <outlet property="activityTableView" destination="3Pe-hL-ERB" id="0hy-bU-eeC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDY-1F-AbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="-536"/>
+            <point key="canvasLocation" x="1784.8" y="-536.45320197044339"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ActivityBlack" width="338" height="150"/>
         <image name="ActivityWhite" width="338" height="150"/>
         <image name="HistoryBlack" width="338" height="152"/>
         <image name="HistoryWhite" width="338" height="152"/>
