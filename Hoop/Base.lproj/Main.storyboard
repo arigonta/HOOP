@@ -163,11 +163,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ActivityWhite" translatesAutoresizingMaskIntoConstraints="NO" id="p1G-Lb-yiV">
-                                <rect key="frame" x="16" y="718" width="159" height="60"/>
+                                <rect key="frame" x="0.0" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HistoryBlack" translatesAutoresizingMaskIntoConstraints="NO" id="7Jo-o3-TCL">
-                                <rect key="frame" x="200" y="718" width="159" height="60"/>
+                                <rect key="frame" x="200" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Love" translatesAutoresizingMaskIntoConstraints="NO" id="Oqy-A2-k8e">
@@ -193,11 +193,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ActivityWhite" translatesAutoresizingMaskIntoConstraints="NO" id="MCH-nt-LaA">
-                                <rect key="frame" x="16" y="718" width="159" height="60"/>
+                                <rect key="frame" x="0.0" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HistoryWhite" translatesAutoresizingMaskIntoConstraints="NO" id="dGI-db-QJr">
-                                <rect key="frame" x="200" y="718" width="159" height="60"/>
+                                <rect key="frame" x="200" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Love" translatesAutoresizingMaskIntoConstraints="NO" id="VZI-5Z-RMu">
@@ -222,12 +222,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ActivityWhite" translatesAutoresizingMaskIntoConstraints="NO" id="R1X-x1-o3Z">
-                                <rect key="frame" x="16" y="718" width="159" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ActivityBlack" translatesAutoresizingMaskIntoConstraints="NO" id="R1X-x1-o3Z">
+                                <rect key="frame" x="0.0" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HistoryWhite" translatesAutoresizingMaskIntoConstraints="NO" id="jUU-k8-kgr">
-                                <rect key="frame" x="200" y="718" width="159" height="60"/>
+                                <rect key="frame" x="200" y="718" width="175" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Love" translatesAutoresizingMaskIntoConstraints="NO" id="rLJ-jV-f4e">
@@ -293,6 +293,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ActivityBlack" width="338" height="150"/>
         <image name="ActivityWhite" width="338" height="150"/>
         <image name="HistoryBlack" width="338" height="152"/>
         <image name="HistoryWhite" width="338" height="152"/>
