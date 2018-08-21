@@ -138,7 +138,7 @@ extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
                 
             }
         } else {
-            showAlert(title: "Sorry", message: "You have to set your data on Health App", action: "Dismiss")
+            showAlert(title: "Sorry", message: "Your device did not support HealthKit", action: "Dismiss")
         }
     }
 }
