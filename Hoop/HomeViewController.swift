@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var hrvLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         do {
             let userAgeAndSex = try ProfileDataStore.getAgeAndSex()
             ageLabel.text = "\(userAgeAndSex.age)"

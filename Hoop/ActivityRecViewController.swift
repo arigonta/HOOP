@@ -8,15 +8,11 @@
 
 import UIKit
 
-struct activity
-{
-    let text: String
-//    let gambar: uiimage
-}
+
 
 class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
-    
+    var selectedIndex: Int?
     var act: [activity] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +34,7 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
             cell.contentView.backgroundColor = #colorLiteral(red: 0.5933555961, green: 0.7535129189, blue: 0.7118578553, alpha: 1)
             cell.contentView.layer.cornerRadius = 10
         }
+        selectedIndex = indexPath.row
         performSegue(withIdentifier: "detailActivity", sender: self)
     }
     
@@ -47,6 +44,16 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     @IBOutlet weak var activityTableView: UITableView!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? DetailActivityViewController{
+//            let selectedActivityCell = sender as? ActivityRecTableViewCell
+//            let indexPath = activityTableView.indexPath(for: selectedActivityCell!)
+//            let selectedActivity = act[(indexPath?.row)!]
+            destination.activities = act[selectedIndex!].text
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

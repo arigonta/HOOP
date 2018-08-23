@@ -9,8 +9,6 @@
 import UIKit
 import HealthKit
 
-let healthKitStore:HKHealthStore = HKHealthStore()
-
 class HealthKitSetupAssistant {
     
     private enum HealthkitSetupError: Error {
@@ -21,12 +19,6 @@ class HealthKitSetupAssistant {
     class func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Swift.Void) {
         guard HKHealthStore.isHealthDataAvailable() else {
             completion(false, HealthkitSetupError.notAvailableOnDevice)
-            return
-        }
-        guard   let dateOfBirth = HKObjectType.characteristicType(forIdentifier: .dateOfBirth),
-            let biologicalSex = HKObjectType.characteristicType(forIdentifier: .biologicalSex) else {
-                
-            completion(false, HealthkitSetupError.dataTypeNotAvailable)
             return
         }
         let infoToRead = Set([
@@ -46,7 +38,11 @@ class HealthKitSetupAssistant {
     }
 }
 
-
+struct activity
+{
+    let text: String
+    //    let gambar: uiimage
+}
 
 class ProfileDataStore {
     
