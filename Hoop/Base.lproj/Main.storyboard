@@ -133,9 +133,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvU-mE-buR">
-                                <rect key="frame" x="138" y="357" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvU-mE-buR">
+                                <rect key="frame" x="137.66666666666666" y="361" width="100" height="100"/>
                                 <state key="normal" title="Start" backgroundImage="active">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -145,6 +144,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerX" secondItem="ny3-Ep-Otc" secondAttribute="centerX" id="caf-hq-ZZR"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerY" secondItem="ny3-Ep-Otc" secondAttribute="centerY" id="ovL-TQ-Xfr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ny3-Ep-Otc"/>
                     </view>
                     <connections>
@@ -183,7 +186,7 @@
                                 <state key="normal" backgroundImage="HistoryBlack"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dl1-Fd-iKb">
-                                <rect key="frame" x="148" y="654" width="78" height="78"/>
+                                <rect key="frame" x="148.66666666666666" y="654" width="78" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="78" id="6fz-z7-eGY"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="78" id="7gN-Hz-kht"/>
@@ -207,7 +210,7 @@
                                 <rect key="frame" x="10" y="117" width="355" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyTableViewCell" rowHeight="99" id="He1-W9-LNn" customClass="HistoryTableViewCell" customModule="Hoop" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyTableViewCell" rowHeight="99" id="He1-W9-LNn" customClass="HistoryTableViewCell" customModule="Hoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="355" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="He1-W9-LNn" id="c47-6i-u0D">
@@ -261,29 +264,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PB-GC-Rv4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PB-GC-Rv4">
                                 <rect key="frame" x="0.0" y="695" width="166" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="BSV-SE-bf1"/>
+                                    <constraint firstAttribute="height" constant="83" id="WxK-6G-gs5"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="ActivityWhite"/>
                                 <connections>
                                     <segue destination="8kP-ND-YtE" kind="show" id="nzY-dG-uat"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzq-rS-fzn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzq-rS-fzn">
                                 <rect key="frame" x="200" y="695" width="175" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="8m2-fm-Loi"/>
+                                    <constraint firstAttribute="height" constant="83" id="t7e-2S-uFn"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="HistoryWhite"/>
                                 <connections>
                                     <segue destination="7Iw-4v-RMG" kind="show" id="W8V-4s-UhS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MR-LS-UZj">
-                                <rect key="frame" x="148" y="658" width="78" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MR-LS-UZj">
+                                <rect key="frame" x="149" y="658" width="77" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="Lzk-ZR-2ti"/>
+                                    <constraint firstAttribute="width" constant="77" id="Upz-eR-Mg9"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="Love"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tgm-lo-njh" firstAttribute="bottom" secondItem="9MR-LS-UZj" secondAttribute="bottom" constant="46" id="4hq-Lb-kMz"/>
+                            <constraint firstItem="zzq-rS-fzn" firstAttribute="trailing" secondItem="tgm-lo-njh" secondAttribute="trailing" id="6SV-ud-rVl"/>
+                            <constraint firstItem="3PB-GC-Rv4" firstAttribute="leading" secondItem="tgm-lo-njh" secondAttribute="leading" id="F3f-0P-ljQ"/>
+                            <constraint firstItem="9MR-LS-UZj" firstAttribute="centerX" secondItem="tgm-lo-njh" secondAttribute="centerX" id="Pr2-qw-X75"/>
+                            <constraint firstItem="zzq-rS-fzn" firstAttribute="bottom" secondItem="tgm-lo-njh" secondAttribute="bottom" id="UDs-iu-2Fd"/>
+                            <constraint firstItem="3PB-GC-Rv4" firstAttribute="bottom" secondItem="tgm-lo-njh" secondAttribute="bottom" id="s77-7e-U8N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tgm-lo-njh"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="p8L-G4-7Y4"/>
@@ -320,7 +340,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZe-p4-DYa">
-                                <rect key="frame" x="148" y="654" width="78" height="78"/>
+                                <rect key="frame" x="148.66666666666666" y="654" width="78" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="DZe-p4-DYa" secondAttribute="height" multiplier="1:1" id="lAb-j4-fYv"/>
                                     <constraint firstAttribute="width" constant="78" id="nJ4-RA-r0L"/>
@@ -334,7 +354,7 @@
                                 <rect key="frame" x="10" y="120" width="355" height="526"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityTableViewCell" rowHeight="65" id="b7n-Fe-jcd" customClass="ActivityRecTableViewCell" customModule="Hoop" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityTableViewCell" rowHeight="65" id="b7n-Fe-jcd" customClass="ActivityRecTableViewCell" customModule="Hoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="355" height="65"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b7n-Fe-jcd" id="eef-w5-x54">
@@ -494,8 +514,8 @@
         <image name="subtitles-dharmawangsa-K26549-idzn0mg5nfh" width="1000" height="665"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jrw-A9-XSl"/>
-        <segue reference="QMK-W5-2QC"/>
-        <segue reference="w6A-rp-Fep"/>
+        <segue reference="nzY-dG-uat"/>
+        <segue reference="nRV-e8-8C9"/>
+        <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>
