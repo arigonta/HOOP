@@ -34,6 +34,8 @@
 		CA8902172122C55300260C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8902152122C55300260C20 /* LaunchScreen.storyboard */; };
 		CA89021F21240FFB00260C20 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA89021E21240FFB00260C20 /* StartViewController.swift */; };
 		CA8A8447212E991F000458EF /* DetailActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A8446212E991F000458EF /* DetailActivityViewController.swift */; };
+		CA8A8449212EB1E0000458EF /* Running.gif in Resources */ = {isa = PBXBuildFile; fileRef = CA8A8448212EB1E0000458EF /* Running.gif */; };
+		CA8A844D212EB507000458EF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A844C212EB507000458EF /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		CA8902182122C55300260C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA89021E21240FFB00260C20 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		CA8A8446212E991F000458EF /* DetailActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailActivityViewController.swift; sourceTree = "<group>"; };
+		CA8A8448212EB1E0000458EF /* Running.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Running.gif; sourceTree = "<group>"; };
+		CA8A844C212EB507000458EF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = /Users/brandon/Documents/HOOP/Hoop/Extension.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +212,7 @@
 				CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */,
 				469EA0E3212AB08E005C9DDE /* Hoop.entitlements */,
 				CA8902132122C55300260C20 /* Assets.xcassets */,
+				CA8A8448212EB1E0000458EF /* Running.gif */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
 				CA8902182122C55300260C20 /* Info.plist */,
 				CA8902102122C55200260C20 /* Hoop.xcdatamodeld */,
@@ -215,6 +220,7 @@
 				3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */,
 				3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */,
 				469EA0E6212C0A18005C9DDE /* HealthKitHandler.swift */,
+				CA8A844C212EB507000458EF /* Extension.swift */,
 			);
 			path = Hoop;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8A8449212EB1E0000458EF /* Running.gif in Resources */,
 				CA8902172122C55300260C20 /* LaunchScreen.storyboard in Resources */,
 				CA8902142122C55300260C20 /* Assets.xcassets in Resources */,
 				CA89020F2122C55200260C20 /* Main.storyboard in Resources */,
@@ -421,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8A844D212EB507000458EF /* Extension.swift in Sources */,
 				CA312462212ACB9800EE37AD /* ActivityRecViewController.swift in Sources */,
 				3FB694EC212313B3004218E3 /* DemoScreen.swift in Sources */,
 				3FB2FAFF212BFE5E00B8B526 /* ActivityRecTableViewCell.swift in Sources */,

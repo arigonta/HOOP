@@ -32,7 +32,7 @@ class DetailActivityViewController: UIViewController {
             titleLbl.text = activities
             descLbl.text = "Meditasi di gunung sampe bisa terbang"
         }else if activities == "Running"{
-            //showImg.image
+            showImg.loadGif(name: "Running")
             titleLbl.text = activities
             descLbl.text = "Lari dari kenyataan"
         }else if activities == "Yoga"{
