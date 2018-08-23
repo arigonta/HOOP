@@ -11,6 +11,12 @@ import HealthKit
 
 let healthKitStore:HKHealthStore = HKHealthStore()
 
+struct activity
+{
+    let text: String
+    //    let gambar: uiimage
+}
+
 public class Alert {
     class func ShowAlert(title: String, message: String, in vc: UIViewController) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)

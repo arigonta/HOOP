@@ -210,8 +210,8 @@
                                 <rect key="frame" x="10" y="117" width="355" height="523"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyTableViewCell" rowHeight="65" id="He1-W9-LNn" customClass="HistoryTableViewCell" customModule="Hoop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="355" height="65"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyTableViewCell" rowHeight="99" id="He1-W9-LNn" customClass="HistoryTableViewCell" customModule="Hoop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="He1-W9-LNn" id="c47-6i-u0D">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="65"/>
@@ -324,6 +324,27 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="Love"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ak-Qa-cL4">
+                                <rect key="frame" x="166" y="121" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7r-j4-Zka">
+                                <rect key="frame" x="166" y="322" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-oK-vvf">
+                                <rect key="frame" x="166" y="441" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -337,6 +358,11 @@
                         <viewLayoutGuide key="safeArea" id="tgm-lo-njh"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="p8L-G4-7Y4"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="2Ak-Qa-cL4" id="Moc-hF-YXD"/>
+                        <outlet property="bpmLabel" destination="t7r-j4-Zka" id="W0Z-7k-QCp"/>
+                        <outlet property="hrvLabel" destination="Cww-oK-vvf" id="Kw7-b4-gsV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hof-Gm-Roq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -484,26 +510,26 @@
             </objects>
             <point key="canvasLocation" x="2681" y="935"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Activity View Controller-->
         <scene sceneID="cHZ-B6-wV1">
             <objects>
-                <viewController id="yel-gd-vMT" sceneMemberID="viewController">
+                <viewController id="yel-gd-vMT" customClass="DetailActivityViewController" customModule="Hoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zyL-hO-bCQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jogging" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ3-Qi-uVr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ3-Qi-uVr">
                                 <rect key="frame" x="65" y="171" width="244" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="subtitles-dharmawangsa-K26549-idzn0mg5nfh" translatesAutoresizingMaskIntoConstraints="NO" id="BXG-8s-Chc">
+                            <imageView multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BXG-8s-Chc">
                                 <rect key="frame" x="35" y="261" width="305" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lets start jogging for 5 minutes, A little move for your body also can be a good health for your mind." textAlignment="center" lineBreakMode="characterWrap" numberOfLines="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72I-Jx-jAH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="5" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72I-Jx-jAH">
                                 <rect key="frame" x="36" y="432" width="302" height="203"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -523,6 +549,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jdM-2A-msU"/>
                     </view>
+                    <connections>
+                        <outlet property="descLbl" destination="72I-Jx-jAH" id="4pL-zj-244"/>
+                        <outlet property="showImg" destination="BXG-8s-Chc" id="y9H-R0-cl5"/>
+                        <outlet property="titleLbl" destination="bJ3-Qi-uVr" id="REg-bS-NTJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smx-Id-2pF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bNa-AD-GaP" userLabel="Exit" sceneMemberID="exit"/>
@@ -539,12 +570,10 @@
         <image name="Love" width="370" height="370"/>
         <image name="active" width="100" height="100"/>
         <image name="activityBtn" width="1625" height="240"/>
-        <image name="historyBtn" width="1625" height="240"/>
-        <image name="subtitles-dharmawangsa-K26549-idzn0mg5nfh" width="1000" height="665"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jrw-A9-XSl"/>
-        <segue reference="nRV-e8-8C9"/>
-        <segue reference="w6A-rp-Fep"/>
+        <segue reference="nzY-dG-uat"/>
+        <segue reference="x3e-ZJ-gNh"/>
+        <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>
