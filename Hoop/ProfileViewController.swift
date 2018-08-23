@@ -12,7 +12,7 @@ import HealthKit
 
 class ProfileViewController: UIViewController, UITextFieldDelegate {
 
-    var users:[User] = []
+    
     @IBOutlet weak var nameTxt: UITextField!
     @IBOutlet weak var dobTxt: UITextField!
     func showAlert(title: String, message: String, action: String) {
@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     //Variable
     var userData = UserDefaults.standard
     var dates:String = ""
+    var users:[User] = []
     
     //action
     @IBAction func saveBtnPressed(_ sender: Any) {
