@@ -28,7 +28,7 @@ class DetailActivityViewController: UIViewController {
             titleLbl.text = activities
             descLbl.text = "Jogging gas teros"
         }else if activities == "Meditate"{
-            //showImg.image
+            showImg.image = #imageLiteral(resourceName: "Hoop HD")
             titleLbl.text = activities
             descLbl.text = "Meditasi di gunung sampe bisa terbang"
         }else if activities == "Running"{
