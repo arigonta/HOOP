@@ -326,14 +326,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUx-bm-SNS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUx-bm-SNS">
                                 <rect key="frame" x="0.0" y="695" width="164" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="83" id="D52-bW-HQB"/>
+                                    <constraint firstAttribute="width" constant="164" id="vuK-gn-0S2"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="ActivityBlack"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlk-I2-pOv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlk-I2-pOv">
                                 <rect key="frame" x="200" y="695" width="175" height="83"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="175" id="0Rb-ty-Uy9"/>
+                                    <constraint firstAttribute="height" constant="83" id="392-LR-uom"/>
+                                </constraints>
                                 <state key="normal" backgroundImage="HistoryWhite"/>
                                 <connections>
                                     <segue destination="7Iw-4v-RMG" kind="show" id="w6A-rp-Fep"/>
@@ -418,15 +424,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="VhC-dk-sIW" firstAttribute="leading" secondItem="6Yi-n2-uf7" secondAttribute="leading" constant="65" id="B9T-iC-8hS"/>
+                            <constraint firstItem="CUx-bm-SNS" firstAttribute="leading" secondItem="6Yi-n2-uf7" secondAttribute="leading" id="Iey-d7-OLd"/>
                             <constraint firstItem="3Pe-hL-ERB" firstAttribute="top" secondItem="VhC-dk-sIW" secondAttribute="bottom" constant="32" id="LHh-xg-OTH"/>
                             <constraint firstItem="DZe-p4-DYa" firstAttribute="top" secondItem="3Pe-hL-ERB" secondAttribute="bottom" constant="8" id="MPs-Xr-h2I"/>
+                            <constraint firstItem="zlk-I2-pOv" firstAttribute="trailing" secondItem="6Yi-n2-uf7" secondAttribute="trailing" id="RQJ-gl-q6H"/>
                             <constraint firstItem="VhC-dk-sIW" firstAttribute="top" secondItem="6Yi-n2-uf7" secondAttribute="top" constant="24" id="TVd-1C-1fe"/>
                             <constraint firstItem="VhC-dk-sIW" firstAttribute="centerX" secondItem="emW-ZW-trp" secondAttribute="centerX" id="cZ0-Ig-lEu"/>
+                            <constraint firstItem="CUx-bm-SNS" firstAttribute="bottom" secondItem="6Yi-n2-uf7" secondAttribute="bottom" id="eeh-a8-suY"/>
                             <constraint firstItem="3Pe-hL-ERB" firstAttribute="leading" secondItem="6Yi-n2-uf7" secondAttribute="leading" constant="10" id="efM-6e-8rL"/>
                             <constraint firstItem="6Yi-n2-uf7" firstAttribute="bottom" secondItem="DZe-p4-DYa" secondAttribute="bottom" constant="46" id="gw7-hX-4Eg"/>
                             <constraint firstItem="DZe-p4-DYa" firstAttribute="centerX" secondItem="emW-ZW-trp" secondAttribute="centerX" id="n7X-0o-I3g"/>
                             <constraint firstItem="6Yi-n2-uf7" firstAttribute="trailing" secondItem="VhC-dk-sIW" secondAttribute="trailing" constant="66" id="oNB-9z-ToB"/>
                             <constraint firstAttribute="trailing" secondItem="3Pe-hL-ERB" secondAttribute="trailing" constant="10" id="qNc-cg-VaQ"/>
+                            <constraint firstItem="zlk-I2-pOv" firstAttribute="bottom" secondItem="6Yi-n2-uf7" secondAttribute="bottom" id="vhX-yj-KM0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Yi-n2-uf7"/>
                     </view>
@@ -514,8 +524,8 @@
         <image name="subtitles-dharmawangsa-K26549-idzn0mg5nfh" width="1000" height="665"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nzY-dG-uat"/>
-        <segue reference="nRV-e8-8C9"/>
-        <segue reference="W8V-4s-UhS"/>
+        <segue reference="jrw-A9-XSl"/>
+        <segue reference="QMK-W5-2QC"/>
+        <segue reference="w6A-rp-Fep"/>
     </inferredMetricsTieBreakers>
 </document>
