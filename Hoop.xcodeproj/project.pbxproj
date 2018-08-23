@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F410802212EBB8100AE2E0A /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F410801212EBB8100AE2E0A /* Extension.swift */; };
 		3F51DFAE212319B5002593C1 /* OnboardingViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */; };
 		3FB2FAFF212BFE5E00B8B526 /* ActivityRecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */; };
 		3FB2FB01212C78FA00B8B526 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */; };
@@ -35,7 +36,6 @@
 		CA89021F21240FFB00260C20 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA89021E21240FFB00260C20 /* StartViewController.swift */; };
 		CA8A8447212E991F000458EF /* DetailActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A8446212E991F000458EF /* DetailActivityViewController.swift */; };
 		CA8A8449212EB1E0000458EF /* Running.gif in Resources */ = {isa = PBXBuildFile; fileRef = CA8A8448212EB1E0000458EF /* Running.gif */; };
-		CA8A844D212EB507000458EF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A844C212EB507000458EF /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		1A0FFBFABF72D9F9FB6FD1DC /* Pods-Hoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.debug.xcconfig"; sourceTree = "<group>"; };
+		3F410801212EBB8100AE2E0A /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = ../../../Downloads/Extension.swift; sourceTree = "<group>"; };
 		3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewClass.swift; sourceTree = "<group>"; };
 		3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecTableViewCell.swift; sourceTree = "<group>"; };
 		3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,7 +119,6 @@
 		CA89021E21240FFB00260C20 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		CA8A8446212E991F000458EF /* DetailActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailActivityViewController.swift; sourceTree = "<group>"; };
 		CA8A8448212EB1E0000458EF /* Running.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Running.gif; sourceTree = "<group>"; };
-		CA8A844C212EB507000458EF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = /Users/brandon/Documents/HOOP/Hoop/Extension.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +209,9 @@
 				CA31245F212ACB6700EE37AD /* HomeViewController.swift */,
 				CA89021E21240FFB00260C20 /* StartViewController.swift */,
 				CA312463212ACBCD00EE37AD /* HistoryViewController.swift */,
+				3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */,
 				CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */,
+				3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */,
 				469EA0E3212AB08E005C9DDE /* Hoop.entitlements */,
 				CA8902132122C55300260C20 /* Assets.xcassets */,
 				CA8A8448212EB1E0000458EF /* Running.gif */,
@@ -217,10 +219,8 @@
 				CA8902182122C55300260C20 /* Info.plist */,
 				CA8902102122C55200260C20 /* Hoop.xcdatamodeld */,
 				3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */,
-				3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */,
-				3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */,
 				469EA0E6212C0A18005C9DDE /* HealthKitHandler.swift */,
-				CA8A844C212EB507000458EF /* Extension.swift */,
+				3F410801212EBB8100AE2E0A /* Extension.swift */,
 			);
 			path = Hoop;
 			sourceTree = "<group>";
@@ -428,7 +428,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8A844D212EB507000458EF /* Extension.swift in Sources */,
 				CA312462212ACB9800EE37AD /* ActivityRecViewController.swift in Sources */,
 				3FB694EC212313B3004218E3 /* DemoScreen.swift in Sources */,
 				3FB2FAFF212BFE5E00B8B526 /* ActivityRecTableViewCell.swift in Sources */,
@@ -438,6 +437,7 @@
 				3FB2FB01212C78FA00B8B526 /* HistoryTableViewCell.swift in Sources */,
 				CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */,
 				CA312464212ACBCD00EE37AD /* HistoryViewController.swift in Sources */,
+				3F410802212EBB8100AE2E0A /* Extension.swift in Sources */,
 				CA8A8447212E991F000458EF /* DetailActivityViewController.swift in Sources */,
 				469EA0E7212C0A18005C9DDE /* HealthKitHandler.swift in Sources */,
 				CA312460212ACB6700EE37AD /* HomeViewController.swift in Sources */,

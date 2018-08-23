@@ -8,13 +8,22 @@
 
 import UIKit
 
+var historyInit = [History]()
+//var managedObjectContext: NSManagedObjectContext!
+var selectedIndex: Int?
+
 class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return historyInit.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let hist = historyInit[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "historyTableViewCell", for: indexPath) as! HistoryTableViewCell
+        
+        // Configure the cell...
+        cell.setHistory(his: hist)
+        return cell
     }
     
 

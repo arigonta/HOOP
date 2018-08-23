@@ -214,20 +214,20 @@
                                         <rect key="frame" x="0.0" y="28" width="355" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="He1-W9-LNn" id="c47-6i-u0D">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLY-eS-1ud">
-                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="65"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="99"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="historyBtn" translatesAutoresizingMaskIntoConstraints="NO" id="YeK-JA-JE0">
-                                                            <rect key="frame" x="8" y="11" width="339" height="43"/>
+                                                            <rect key="frame" x="8" y="11" width="339" height="77"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="339" id="ZdU-xJ-knx"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-36-QcK">
-                                                            <rect key="frame" x="21" y="22" width="42" height="21"/>
+                                                            <rect key="frame" x="21" y="39" width="42" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -570,10 +570,11 @@
         <image name="Love" width="370" height="370"/>
         <image name="active" width="100" height="100"/>
         <image name="activityBtn" width="1625" height="240"/>
+        <image name="historyBtn" width="1625" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nzY-dG-uat"/>
-        <segue reference="x3e-ZJ-gNh"/>
-        <segue reference="W8V-4s-UhS"/>
+        <segue reference="jrw-A9-XSl"/>
+        <segue reference="QMK-W5-2QC"/>
+        <segue reference="w6A-rp-Fep"/>
     </inferredMetricsTieBreakers>
 </document>
