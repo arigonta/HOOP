@@ -7,15 +7,41 @@
 //
 
 import UIKit
+import HealthKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var bpmLabel: UILabel!
+    @IBOutlet weak var hrvLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    func readProfile() -> (age:Int?, sex:HKBiologicalSex?){
+        do {
+            
+            //1. This method throws an error if these data are not available.
+            let birthdayComponents =  try healthKitStore.dateOfBirthComponents()
+            let biologicalSex =       try healthKitStore.biologicalSex()
+            
+            //2. Use Calendar to calculate age.
+            let today = Date()
+            let calendar = Calendar.current
+            let todayDateComponents = calendar.dateComponents([.year], from: today)
+            let thisYear = todayDateComponents.year!
+            let age = thisYear - birthdayComponents.year!
+            
+            //3. Unwrap the wrappers to get the underlying enum values.
+            let unwrappedBiologicalSex = biologicalSex.biologicalSex
+        } catch {
+            
+        }
+        return (age, unwrappedBiologicalSex)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
