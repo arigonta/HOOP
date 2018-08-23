@@ -51,7 +51,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                     //memasukan data ke dalam model
                     let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
                     newUser.setValue(nameTxt.text, forKey: "name")
-                    newUser.setValue(dates, forKey: "dob")
                     try context.save()
                     performSegue(withIdentifier: "profileToStart", sender: self)
                     userData.set(true, forKey: "ProfileCompleted")

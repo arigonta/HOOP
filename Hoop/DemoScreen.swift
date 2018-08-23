@@ -31,7 +31,23 @@ class DemoScreen: UIViewController {
     @IBAction func doneBtnPressed(_ sender: Any) {
         userData.set(true, forKey: "demoCompleted")
         userData.synchronize()
-        authorizeHealthKit()
+        HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
+            
+            guard authorized else {
+                
+                let baseMessage = "HealthKit Authorization Failed"
+                
+                if let error = error {
+                    print("\(baseMessage). Reason: \(error.localizedDescription)")
+                } else {
+                    print(baseMessage)
+                }
+                
+                return
+            }
+            
+            print("HealthKit Successfully Authorized.")
+        }
         performSegue(withIdentifier: "tutorialToProfile", sender: self)
     }
     
