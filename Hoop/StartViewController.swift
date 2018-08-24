@@ -15,30 +15,20 @@ class StartViewController: UIViewController {
         performSegue(withIdentifier: "startToHome", sender: self)
     }
     override func viewDidLoad() {
-        let appDel = UIApplication.shared.delegate as! AppDelegate
-        let context = appDel.persistentContainer.viewContext
-        let today = Date()
-        let calendar = Calendar.current
-        let dateFormat = DateFormatter()
-        dateFormat.dateFormat = "dd/MM/yy HH:mm"
-        let todayDate = dateFormat.string(from: today)
-        let dateToday = dateFormat.date(from: todayDate)
-        print(todayDate)
-        print(dateToday!)
-
-        do {
-            let day = String(calendar.component(.day, from: today))
-//            let minutes = calendar.component(.minute, from: today)
-//            let seconds = calendar.component(.second, from: today)
-            
-            let newHis = NSEntityDescription.insertNewObject(forEntityName: "History", into: context)
+//        let appDel = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDel.persistentContainer.viewContext
+//        do {
+//            let today = Date()
+//            let newHis = NSEntityDescription.insertNewObject(forEntityName: "History", into: context)
+//            let dateFormat = DateFormatter()
+//            dateFormat.dateFormat = "dd/MM/yy HH:mm"
 //            newHis.setValue("Breathing", forKey: "activityName")
-//            newHis.setValue(day, forKey: "activityDate")
+//            newHis.setValue(dateFormat.string(from: today), forKey: "activityDate")
 //            newHis.setValue("Green", forKey: "heartCondition")
-            try context.save()
-        } catch {
-        }
-        
+//            try context.save()
+//        } catch {
+//        }
+//
         super.viewDidLoad()
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //
@@ -46,31 +36,31 @@ class StartViewController: UIViewController {
 //
 //        super.viewDidLoad()
 //        // baca core data
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
-
-        request.returnsObjectsAsFaults = false
-
-        do {
-            let  result = try context.fetch(request)
-            if result.count > 0
-            {
-                for result in result as! [NSManagedObject]
-                {
-                    if let name = result.value(forKey: "activityDate") as? String
-                    {
-                        print(name)
-                    }
-                    if let age = result.value(forKey: "activityName") as? String
-                    {
+//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
+//
+//        request.returnsObjectsAsFaults = false
+//
+//        do {
+//            let  result = try context.fetch(request)
+//            if result.count > 0
+//            {
+//                for result in result as! [NSManagedObject]
+//                {
+//                    if let name = result.value(forKey: "activityDate") as? String
+//                    {
+//                        print(name)
+//                    }
+//                    if let age = result.value(forKey: "activityName") as? String
+//                    {
 //                        print(age)
-                    }
-                    //                            context.delete(result)
-                }
-                //                        try context.save()
-            }
-        } catch  {
-            print("Gagal ngambil data!")
-        }
+//                    }
+//                                                context.delete(result)
+//                }
+//                                        try context.save()
+//            }
+//        } catch  {
+//            print("Gagal ngambil data!")
+//        }
         // baca core data
 
         // Do any additional setup after loading the view.
