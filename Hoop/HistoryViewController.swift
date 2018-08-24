@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 var historyInit = [History]()
 //var managedObjectContext: NSManagedObjectContext!
@@ -26,6 +27,17 @@ class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewD
         return cell
     }
     
+    func fetchData() {
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let context = appDel.persistentContainer.viewContext
+        
+        do {
+            let fetch: NSFetchRequest = History.fetchRequest()
+            historyInit = try context.fetch(fetch)
+        } catch let error as NSError {
+            print("Could not fetch. \(error) \(error.userInfo)")
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

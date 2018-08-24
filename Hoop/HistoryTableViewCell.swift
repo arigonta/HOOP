@@ -13,6 +13,9 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var HistoryLbl: UILabel!
     
     func setHistory(his: History) {
-        HistoryLbl.text = his.activityName
+        let dateFormater = DateFormatter()
+        dateFormater.dateStyle = .long
+        dateFormater.dateStyle = .none
+        HistoryLbl.text = dateFormater.string(from: his.activityDate!)
     }
 }
