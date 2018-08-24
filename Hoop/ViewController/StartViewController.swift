@@ -28,7 +28,6 @@ class StartViewController: UIViewController {
             try context.save()
         } catch {
         }
-
         super.viewDidLoad()
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //

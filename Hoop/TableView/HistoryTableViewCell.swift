@@ -12,8 +12,7 @@ class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var HistoryLbl: UILabel!
     
-//    func setHistory(his: History) {
-//        HistoryLbl.text = his.activityDate
-//        
-//    }
+    func setHistory(his: History) {
+        HistoryLbl.text = his.activityDate
+    }
 }
