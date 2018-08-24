@@ -20,13 +20,15 @@ class StartViewController: UIViewController {
         do {
             let today = Date()
             let newHis = NSEntityDescription.insertNewObject(forEntityName: "History", into: context)
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "dd/MM/yy HH:mm"
             newHis.setValue("Breathing", forKey: "activityName")
-            newHis.setValue(today, forKey: "activityDate")
+            newHis.setValue(dateFormat.string(from: today), forKey: "activityDate")
             newHis.setValue("Green", forKey: "heartCondition")
             try context.save()
         } catch {
         }
-        
+
         super.viewDidLoad()
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //
@@ -52,9 +54,9 @@ class StartViewController: UIViewController {
                     {
                         print(age)
                     }
-                    //                            context.delete(result)
+//                                                context.delete(result)
                 }
-                //                        try context.save()
+//                                        try context.save()
             }
         } catch  {
             print("Gagal ngambil data!")

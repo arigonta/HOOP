@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Demo Screen-->
         <scene sceneID="Q0V-Jm-yr1">
@@ -325,9 +330,9 @@
                                 <state key="normal" backgroundImage="Love"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ak-Qa-cL4">
-                                <rect key="frame" x="166" y="121" width="42" height="21"/>
+                                <rect key="frame" x="166" y="121" width="43" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -574,7 +579,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nzY-dG-uat"/>
-        <segue reference="QMK-W5-2QC"/>
-        <segue reference="w6A-rp-Fep"/>
+        <segue reference="nRV-e8-8C9"/>
+        <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>
