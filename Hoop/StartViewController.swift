@@ -17,12 +17,24 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         let appDel = UIApplication.shared.delegate as! AppDelegate
         let context = appDel.persistentContainer.viewContext
+        let today = Date()
+        let calendar = Calendar.current
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "dd/MM/yy HH:mm"
+        let todayDate = dateFormat.string(from: today)
+        let dateToday = dateFormat.date(from: todayDate)
+        print(todayDate)
+        print(dateToday!)
+
         do {
-            let today = Date()
+            let day = String(calendar.component(.day, from: today))
+//            let minutes = calendar.component(.minute, from: today)
+//            let seconds = calendar.component(.second, from: today)
+            
             let newHis = NSEntityDescription.insertNewObject(forEntityName: "History", into: context)
-            newHis.setValue("Breathing", forKey: "activityName")
-            newHis.setValue(today, forKey: "activityDate")
-            newHis.setValue("Green", forKey: "heartCondition")
+//            newHis.setValue("Breathing", forKey: "activityName")
+//            newHis.setValue(day, forKey: "activityDate")
+//            newHis.setValue("Green", forKey: "heartCondition")
             try context.save()
         } catch {
         }
@@ -50,7 +62,7 @@ class StartViewController: UIViewController {
                     }
                     if let age = result.value(forKey: "activityName") as? String
                     {
-                        print(age)
+//                        print(age)
                     }
                     //                            context.delete(result)
                 }
