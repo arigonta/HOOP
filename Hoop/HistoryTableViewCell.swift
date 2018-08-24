@@ -14,6 +14,5 @@ class HistoryTableViewCell: UITableViewCell {
     
     func setHistory(his: History) {
         HistoryLbl.text = his.activityDate
-        
     }
 }
