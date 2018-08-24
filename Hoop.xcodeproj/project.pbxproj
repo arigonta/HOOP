@@ -192,6 +192,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CA0514DF212FFA1300ABA7B8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CA89020B2122C55200260C20 /* ProfileViewController.swift */,
+				CA31245F212ACB6700EE37AD /* HomeViewController.swift */,
+				CA89021E21240FFB00260C20 /* StartViewController.swift */,
+				CA8A8446212E991F000458EF /* DetailActivityViewController.swift */,
+				CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */,
+				CA312463212ACBCD00EE37AD /* HistoryViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CA0514E0212FFA2600ABA7B8 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */,
+				3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		CA0514E1212FFA8900ABA7B8 /* gif */ = {
+			isa = PBXGroup;
+			children = (
+				CA8A8448212EB1E0000458EF /* Running.gif */,
+			);
+			path = gif;
+			sourceTree = "<group>";
+		};
+		CA0514E2212FFB0400ABA7B8 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */,
+				469EA0E6212C0A18005C9DDE /* HealthKitHandler.swift */,
+				469EA0E8212EC252005C9DDE /* Extension.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		CA8901FD2122C55100260C20 = {
 			isa = PBXGroup;
 			children = (
@@ -218,26 +258,18 @@
 		CA8902082122C55100260C20 /* Hoop */ = {
 			isa = PBXGroup;
 			children = (
-				CA8902092122C55200260C20 /* AppDelegate.swift */,
-				CA89020B2122C55200260C20 /* ProfileViewController.swift */,
-				3FB694EB212313B3004218E3 /* DemoScreen.swift */,
 				CA89020D2122C55200260C20 /* Main.storyboard */,
-				CA8A8446212E991F000458EF /* DetailActivityViewController.swift */,
-				CA31245F212ACB6700EE37AD /* HomeViewController.swift */,
-				CA89021E21240FFB00260C20 /* StartViewController.swift */,
-				CA312463212ACBCD00EE37AD /* HistoryViewController.swift */,
-				3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */,
-				CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */,
-				3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */,
-				469EA0E3212AB08E005C9DDE /* Hoop.entitlements */,
-				CA8902132122C55300260C20 /* Assets.xcassets */,
-				CA8A8448212EB1E0000458EF /* Running.gif */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
+				CA8902092122C55200260C20 /* AppDelegate.swift */,
+				3FB694EB212313B3004218E3 /* DemoScreen.swift */,
 				CA8902182122C55300260C20 /* Info.plist */,
+				469EA0E3212AB08E005C9DDE /* Hoop.entitlements */,
 				CA8902102122C55200260C20 /* Hoop.xcdatamodeld */,
-				3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */,
-				469EA0E6212C0A18005C9DDE /* HealthKitHandler.swift */,
-				469EA0E8212EC252005C9DDE /* Extension.swift */,
+				CA8902132122C55300260C20 /* Assets.xcassets */,
+				CA0514DF212FFA1300ABA7B8 /* ViewController */,
+				CA0514E0212FFA2600ABA7B8 /* TableView */,
+				CA0514E1212FFA8900ABA7B8 /* gif */,
+				CA0514E2212FFB0400ABA7B8 /* Support */,
 			);
 			path = Hoop;
 			sourceTree = "<group>";
