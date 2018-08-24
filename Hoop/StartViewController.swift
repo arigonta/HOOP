@@ -29,7 +29,12 @@ class StartViewController: UIViewController {
         } catch {
         }
         super.viewDidLoad()
-        // baca core data
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//
+//        let context = appDelegate.persistentContainer.viewContext
+//
+//        super.viewDidLoad()
+//        // baca core data
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
 
         request.returnsObjectsAsFaults = false
@@ -48,9 +53,9 @@ class StartViewController: UIViewController {
                     {
                         print(age)
                     }
-                                                context.delete(result)
+//                                                context.delete(result)
                 }
-                                        try context.save()
+//                                        try context.save()
             }
         } catch  {
             print("Gagal ngambil data!")

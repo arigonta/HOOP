@@ -24,6 +24,9 @@
 		469EA0E5212AB08E005C9DDE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469EA0E4212AB08E005C9DDE /* HealthKit.framework */; };
 		469EA0E7212C0A18005C9DDE /* HealthKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469EA0E6212C0A18005C9DDE /* HealthKitHandler.swift */; };
 		469EA0E9212EC252005C9DDE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469EA0E8212EC252005C9DDE /* Extension.swift */; };
+		469EA0EC212FF7A8005C9DDE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */; };
+		469EA0EE212FF7B9005C9DDE /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */; };
+		469EA0F0212FF7CF005C9DDE /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */; };
 		96736865FD831AE217095FC9 /* Pods_Hoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */; };
 		CA312460212ACB6700EE37AD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA31245F212ACB6700EE37AD /* HomeViewController.swift */; };
 		CA312462212ACB9800EE37AD /* ActivityRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */; };
@@ -104,6 +107,9 @@
 		469EA0E4212AB08E005C9DDE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		469EA0E6212C0A18005C9DDE /* HealthKitHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitHandler.swift; sourceTree = "<group>"; };
 		469EA0E8212EC252005C9DDE /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		50DC19A94622F8D498D98473 /* Pods-Hoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.release.xcconfig"; sourceTree = "<group>"; };
 		AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA31245F212ACB6700EE37AD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +172,16 @@
 			path = "HOOP-WatchKitApp Extension";
 			sourceTree = "<group>";
 		};
+		469EA0EA212FF764005C9DDE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */,
+				469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */,
+				469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		A19E90B81839ED7201AA4694 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +195,7 @@
 		CA8901FD2122C55100260C20 = {
 			isa = PBXGroup;
 			children = (
+				469EA0EA212FF764005C9DDE /* Fonts */,
 				CA8902082122C55100260C20 /* Hoop */,
 				469EA0BB212AABDD005C9DDE /* HOOP-WatchKitApp */,
 				469EA0CA212AABDF005C9DDE /* HOOP-WatchKitApp Extension */,
@@ -367,7 +384,10 @@
 			files = (
 				CA8A8449212EB1E0000458EF /* Running.gif in Resources */,
 				CA8902172122C55300260C20 /* LaunchScreen.storyboard in Resources */,
+				469EA0F0212FF7CF005C9DDE /* OpenSans-SemiBold.ttf in Resources */,
 				CA8902142122C55300260C20 /* Assets.xcassets in Resources */,
+				469EA0EC212FF7A8005C9DDE /* OpenSans-Bold.ttf in Resources */,
+				469EA0EE212FF7B9005C9DDE /* OpenSans-Regular.ttf in Resources */,
 				CA89020F2122C55200260C20 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

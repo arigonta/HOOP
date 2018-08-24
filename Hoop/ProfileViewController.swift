@@ -45,7 +45,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
                     showAlert(title: "Error", message: "Username has been taken", action: "Dismiss")
                     print("Username has been taken")
                 }
-                    
                     //apabila user belum terdaftar maka didaftarkan ke user baru
                 else {
                     //memasukan data ke dalam model

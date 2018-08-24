@@ -48,9 +48,6 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let destination = segue.destination as? DetailActivityViewController{
-//            let selectedActivityCell = sender as? ActivityRecTableViewCell
-//            let indexPath = activityTableView.indexPath(for: selectedActivityCell!)
-//            let selectedActivity = act[(indexPath?.row)!]
             destination.activities = act[selectedIndex!].text
         }
     }
