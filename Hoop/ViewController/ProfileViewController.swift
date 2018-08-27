@@ -92,6 +92,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         nameTxt.resignFirstResponder()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        nameTxt.borderStyle = UITextBorderStyle.roundedRect
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

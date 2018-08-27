@@ -65,7 +65,7 @@ class DemoScreen: UIViewController {
 extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
 {
     func onboardingItemsCount() -> Int {
-        return 3
+        return 4
     }
     
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
@@ -75,7 +75,7 @@ extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
         let textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         let titleFont = UIFont(name: "Helvetica-Bold", size: 20)!
-        let descFont = UIFont(name: "Helvetica", size: 15)!
+        let descFont = UIFont(name: "Open Sans", size: 17)!
         
         return [
             OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "1"),
@@ -96,11 +96,20 @@ extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
                                descriptionColor: textColor,
                                titleFont: titleFont,
                                descriptionFont: descFont),
-            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "subtitles-dharmawangsa-K26549-idzn0mg5nfh"),
+            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "appleWatch"),
                                title: "",
-                               description: "Subtitles is a good place",
+                               description: "Make sure your Apple Watch to pair with HOOP",
                                pageIcon: #imageLiteral(resourceName: "active"),
                                color: bgThree,
+                               titleColor: textColor,
+                               descriptionColor: textColor,
+                               titleFont: titleFont,
+                               descriptionFont: descFont),
+            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "activityDemo"),
+                               title: "",
+                               description: "Try our activity recommendation for the best result",
+                               pageIcon: #imageLiteral(resourceName: "active"),
+                               color: bgOne,
                                titleColor: textColor,
                                descriptionColor: textColor,
                                titleFont: titleFont,
@@ -108,13 +117,13 @@ extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
     }
     
     func onboardingDidTransitonToIndex(_ index: Int) {
-        if index == 2 {
+        if index == 3 {
             doneOutlet.isHidden = false
         }
     }
     
     @objc(onboardingWillTransitonToIndex:) func onboardingWillTransitonToIndex(_ index: Int) {
-        if index != 2 {
+        if index != 3 {
             if doneOutlet.isHidden == false {
                 doneOutlet.isHidden = true
             }
