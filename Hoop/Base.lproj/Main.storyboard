@@ -291,6 +291,7 @@
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="tSo-a9-SMB"/>
                     <connections>
                         <outlet property="historyTableViewq" destination="xtK-Hv-f0C" id="duX-pU-bTp"/>
+                        <segue destination="IHc-Op-mxM" kind="show" id="gxN-Jg-fcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvj-Ml-Wi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -506,10 +507,10 @@
             </objects>
             <point key="canvasLocation" x="3585" y="159"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail History View Controller-->
         <scene sceneID="Wy9-Hk-igm">
             <objects>
-                <viewController id="IHc-Op-mxM" sceneMemberID="viewController">
+                <viewController id="IHc-Op-mxM" customClass="detailHistoryViewController" customModule="Hoop" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wbr-8V-oKL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -584,8 +585,8 @@
         <image name="historyBtn" width="1625" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nzY-dG-uat"/>
-        <segue reference="nRV-e8-8C9"/>
-        <segue reference="W8V-4s-UhS"/>
+        <segue reference="jrw-A9-XSl"/>
+        <segue reference="QMK-W5-2QC"/>
+        <segue reference="w6A-rp-Fep"/>
     </inferredMetricsTieBreakers>
 </document>

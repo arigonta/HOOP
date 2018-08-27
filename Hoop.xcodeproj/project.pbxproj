@@ -209,6 +209,7 @@
 				CA05152B2133E11100ABA7B8 /* ActivityRecViewController.swift */,
 				CA05152C2133E11100ABA7B8 /* ProfileViewController.swift */,
 				CA05152D2133E11100ABA7B8 /* HistoryViewController.swift */,
+				CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -270,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				CA89020D2122C55200260C20 /* Main.storyboard */,
-				CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
 				CA8902092122C55200260C20 /* AppDelegate.swift */,
 				3FB694EB212313B3004218E3 /* DemoScreen.swift */,
