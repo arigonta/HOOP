@@ -377,7 +377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hof-Gm-Roq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784.8" y="158.86699507389164"/>
+            <point key="canvasLocation" x="2070" y="159"/>
         </scene>
         <!--Activity Rec View Controller-->
         <scene sceneID="FSO-ge-q2A">
@@ -584,8 +584,8 @@
         <image name="historyBtn" width="1625" height="240"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jrw-A9-XSl"/>
+        <segue reference="nzY-dG-uat"/>
         <segue reference="nRV-e8-8C9"/>
-        <segue reference="w6A-rp-Fep"/>
+        <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>
