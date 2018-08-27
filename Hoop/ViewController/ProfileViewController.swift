@@ -14,7 +14,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var nameTxt: UITextField!
-    @IBOutlet weak var dobTxt: UITextField!
     func showAlert(title: String, message: String, action: String) {
         let alertController = UIAlertController(title: title, message:
             message, preferredStyle: UIAlertControllerStyle.alert)
@@ -30,7 +29,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     //action
     @IBAction func saveBtnPressed(_ sender: Any) {
         
-        if nameTxt.text != "" && dobTxt.text != ""{
+        if nameTxt.text != ""{
             let appDel = UIApplication.shared.delegate as! AppDelegate
             let context = appDel.persistentContainer.viewContext
             
@@ -80,14 +79,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         let pick = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(dateDone))
         toolbar.setItems([pick], animated: false)
         
-        dobTxt.inputAccessoryView = toolbar
-        dobTxt.inputView = picker
     }
     @objc func dateDone(){
         let dateFormat = DateFormatter()
         dateFormat.dateStyle = .long
         dateFormat.timeStyle = .none
-        dobTxt.text = dateFormat.string(from: picker.date)
         dateFormat.timeStyle = .short
         dates = dateFormat.string(from: picker.date)
         self.view.endEditing(true)
@@ -95,7 +91,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         nameTxt.resignFirstResponder()
-        dobTxt.resignFirstResponder()
     }
     
     override func viewDidLoad() {
