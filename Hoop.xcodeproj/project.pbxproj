@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F51DFAE212319B5002593C1 /* OnboardingViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */; };
-		3FA6F4E9212FF2C4001F17B6 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6F4E8212FF2C4001F17B6 /* StartViewController.swift */; };
-		3FB2FAFF212BFE5E00B8B526 /* ActivityRecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */; };
-		3FB2FB01212C78FA00B8B526 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */; };
 		3FB694EC212313B3004218E3 /* DemoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB694EB212313B3004218E3 /* DemoScreen.swift */; };
 		469EA0BE212AABDD005C9DDE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0BC212AABDD005C9DDE /* Interface.storyboard */; };
 		469EA0C0212AABDF005C9DDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0BF212AABDF005C9DDE /* Assets.xcassets */; };
@@ -22,23 +18,27 @@
 		469EA0D7212AABDF005C9DDE /* HOOP-WatchKitApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 469EA0BA212AABDD005C9DDE /* HOOP-WatchKitApp.app */; };
 		469EA0E2212AAC4A005C9DDE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469EA0E1212AAC4A005C9DDE /* HealthKit.framework */; };
 		469EA0E5212AB08E005C9DDE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469EA0E4212AB08E005C9DDE /* HealthKit.framework */; };
-		469EA0E7212C0A18005C9DDE /* HealthKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469EA0E6212C0A18005C9DDE /* HealthKitHandler.swift */; };
-		469EA0E9212EC252005C9DDE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469EA0E8212EC252005C9DDE /* Extension.swift */; };
 		469EA0EC212FF7A8005C9DDE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */; };
 		469EA0EE212FF7B9005C9DDE /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */; };
 		469EA0F0212FF7CF005C9DDE /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */; };
 		96736865FD831AE217095FC9 /* Pods_Hoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */; };
-		CA312460212ACB6700EE37AD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA31245F212ACB6700EE37AD /* HomeViewController.swift */; };
-		CA312462212ACB9800EE37AD /* ActivityRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */; };
-		CA312464212ACBCD00EE37AD /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA312463212ACBCD00EE37AD /* HistoryViewController.swift */; };
+		CA0515372133E11100ABA7B8 /* DetailActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */; };
+		CA0515382133E11100ABA7B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515292133E11100ABA7B8 /* HomeViewController.swift */; };
+		CA0515392133E11100ABA7B8 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA05152A2133E11100ABA7B8 /* StartViewController.swift */; };
+		CA05153A2133E11100ABA7B8 /* ActivityRecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA05152B2133E11100ABA7B8 /* ActivityRecViewController.swift */; };
+		CA05153B2133E11100ABA7B8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA05152C2133E11100ABA7B8 /* ProfileViewController.swift */; };
+		CA05153C2133E11100ABA7B8 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA05152D2133E11100ABA7B8 /* HistoryViewController.swift */; };
+		CA05153D2133E11100ABA7B8 /* HealthKitHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA05152F2133E11100ABA7B8 /* HealthKitHandler.swift */; };
+		CA05153E2133E11100ABA7B8 /* OnboardingViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515302133E11100ABA7B8 /* OnboardingViewClass.swift */; };
+		CA05153F2133E11100ABA7B8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515312133E11100ABA7B8 /* Extension.swift */; };
+		CA0515402133E11100ABA7B8 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515332133E11100ABA7B8 /* HistoryTableViewCell.swift */; };
+		CA0515412133E11100ABA7B8 /* ActivityRecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */; };
+		CA0515422133E11100ABA7B8 /* Running.gif in Resources */ = {isa = PBXBuildFile; fileRef = CA0515362133E11100ABA7B8 /* Running.gif */; };
 		CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8902092122C55200260C20 /* AppDelegate.swift */; };
-		CA89020C2122C55200260C20 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA89020B2122C55200260C20 /* ProfileViewController.swift */; };
 		CA89020F2122C55200260C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA89020D2122C55200260C20 /* Main.storyboard */; };
 		CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA8902102122C55200260C20 /* Hoop.xcdatamodeld */; };
 		CA8902142122C55300260C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8902132122C55300260C20 /* Assets.xcassets */; };
 		CA8902172122C55300260C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8902152122C55300260C20 /* LaunchScreen.storyboard */; };
-		CA8A8447212E991F000458EF /* DetailActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8A8446212E991F000458EF /* DetailActivityViewController.swift */; };
-		CA8A8449212EB1E0000458EF /* Running.gif in Resources */ = {isa = PBXBuildFile; fileRef = CA8A8448212EB1E0000458EF /* Running.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,10 +85,6 @@
 
 /* Begin PBXFileReference section */
 		1A0FFBFABF72D9F9FB6FD1DC /* Pods-Hoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.debug.xcconfig"; sourceTree = "<group>"; };
-		3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewClass.swift; sourceTree = "<group>"; };
-		3FA6F4E8212FF2C4001F17B6 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = ../../../Downloads/StartViewController.swift; sourceTree = "<group>"; };
-		3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecTableViewCell.swift; sourceTree = "<group>"; };
-		3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		3FB694EB212313B3004218E3 /* DemoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoScreen.swift; sourceTree = "<group>"; };
 		469EA0BA212AABDD005C9DDE /* HOOP-WatchKitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HOOP-WatchKitApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		469EA0BD212AABDD005C9DDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -105,26 +101,30 @@
 		469EA0E1212AAC4A005C9DDE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		469EA0E3212AB08E005C9DDE /* Hoop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hoop.entitlements; sourceTree = "<group>"; };
 		469EA0E4212AB08E005C9DDE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
-		469EA0E6212C0A18005C9DDE /* HealthKitHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitHandler.swift; sourceTree = "<group>"; };
-		469EA0E8212EC252005C9DDE /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		50DC19A94622F8D498D98473 /* Pods-Hoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.release.xcconfig"; sourceTree = "<group>"; };
 		AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA31245F212ACB6700EE37AD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityRecViewController.swift; sourceTree = "<group>"; };
-		CA312463212ACBCD00EE37AD /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailActivityViewController.swift; sourceTree = "<group>"; };
+		CA0515292133E11100ABA7B8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CA05152A2133E11100ABA7B8 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		CA05152B2133E11100ABA7B8 /* ActivityRecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRecViewController.swift; sourceTree = "<group>"; };
+		CA05152C2133E11100ABA7B8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CA05152D2133E11100ABA7B8 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		CA05152F2133E11100ABA7B8 /* HealthKitHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitHandler.swift; sourceTree = "<group>"; };
+		CA0515302133E11100ABA7B8 /* OnboardingViewClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewClass.swift; sourceTree = "<group>"; };
+		CA0515312133E11100ABA7B8 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		CA0515332133E11100ABA7B8 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRecTableViewCell.swift; sourceTree = "<group>"; };
+		CA0515362133E11100ABA7B8 /* Running.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Running.gif; sourceTree = "<group>"; };
 		CA8902062122C55100260C20 /* Hoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8902092122C55200260C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA89020B2122C55200260C20 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		CA89020E2122C55200260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA8902112122C55200260C20 /* Hoop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hoop.xcdatamodel; sourceTree = "<group>"; };
 		CA8902132122C55300260C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8902162122C55300260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8902182122C55300260C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA8A8446212E991F000458EF /* DetailActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailActivityViewController.swift; sourceTree = "<group>"; };
-		CA8A8448212EB1E0000458EF /* Running.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Running.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,44 +192,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CA0514DF212FFA1300ABA7B8 /* ViewController */ = {
+		CA0515272133E11100ABA7B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CA89020B2122C55200260C20 /* ProfileViewController.swift */,
-				CA31245F212ACB6700EE37AD /* HomeViewController.swift */,
-				CA89021E21240FFB00260C20 /* StartViewController.swift */,
-				CA8A8446212E991F000458EF /* DetailActivityViewController.swift */,
-				CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */,
-				CA312463212ACBCD00EE37AD /* HistoryViewController.swift */,
+				CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */,
+				CA0515292133E11100ABA7B8 /* HomeViewController.swift */,
+				CA05152A2133E11100ABA7B8 /* StartViewController.swift */,
+				CA05152B2133E11100ABA7B8 /* ActivityRecViewController.swift */,
+				CA05152C2133E11100ABA7B8 /* ProfileViewController.swift */,
+				CA05152D2133E11100ABA7B8 /* HistoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		CA0514E0212FFA2600ABA7B8 /* TableView */ = {
+		CA05152E2133E11100ABA7B8 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */,
-				3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */,
+				CA05152F2133E11100ABA7B8 /* HealthKitHandler.swift */,
+				CA0515302133E11100ABA7B8 /* OnboardingViewClass.swift */,
+				CA0515312133E11100ABA7B8 /* Extension.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		CA0515322133E11100ABA7B8 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				CA0515332133E11100ABA7B8 /* HistoryTableViewCell.swift */,
+				CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		CA0514E1212FFA8900ABA7B8 /* gif */ = {
+		CA0515352133E11100ABA7B8 /* gif */ = {
 			isa = PBXGroup;
 			children = (
-				CA8A8448212EB1E0000458EF /* Running.gif */,
+				CA0515362133E11100ABA7B8 /* Running.gif */,
 			);
 			path = gif;
-			sourceTree = "<group>";
-		};
-		CA0514E2212FFB0400ABA7B8 /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				3F51DFAD212319B5002593C1 /* OnboardingViewClass.swift */,
-				469EA0E6212C0A18005C9DDE /* HealthKitHandler.swift */,
-				469EA0E8212EC252005C9DDE /* Extension.swift */,
-			);
-			path = Support;
 			sourceTree = "<group>";
 		};
 		CA8901FD2122C55100260C20 = {
@@ -258,17 +258,11 @@
 		CA8902082122C55100260C20 /* Hoop */ = {
 			isa = PBXGroup;
 			children = (
+				CA0515352133E11100ABA7B8 /* gif */,
+				CA05152E2133E11100ABA7B8 /* Support */,
+				CA0515322133E11100ABA7B8 /* TableView */,
+				CA0515272133E11100ABA7B8 /* ViewController */,
 				CA89020D2122C55200260C20 /* Main.storyboard */,
-				CA8A8446212E991F000458EF /* DetailActivityViewController.swift */,
-				CA31245F212ACB6700EE37AD /* HomeViewController.swift */,
-				3FA6F4E8212FF2C4001F17B6 /* StartViewController.swift */,
-				CA312463212ACBCD00EE37AD /* HistoryViewController.swift */,
-				3FB2FB00212C78FA00B8B526 /* HistoryTableViewCell.swift */,
-				CA312461212ACB9800EE37AD /* ActivityRecViewController.swift */,
-				3FB2FAFE212BFE5E00B8B526 /* ActivityRecTableViewCell.swift */,
-				469EA0E3212AB08E005C9DDE /* Hoop.entitlements */,
-				CA8902132122C55300260C20 /* Assets.xcassets */,
-				CA8A8448212EB1E0000458EF /* Running.gif */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
 				CA8902092122C55200260C20 /* AppDelegate.swift */,
 				3FB694EB212313B3004218E3 /* DemoScreen.swift */,
@@ -276,10 +270,6 @@
 				469EA0E3212AB08E005C9DDE /* Hoop.entitlements */,
 				CA8902102122C55200260C20 /* Hoop.xcdatamodeld */,
 				CA8902132122C55300260C20 /* Assets.xcassets */,
-				CA0514DF212FFA1300ABA7B8 /* ViewController */,
-				CA0514E0212FFA2600ABA7B8 /* TableView */,
-				CA0514E1212FFA8900ABA7B8 /* gif */,
-				CA0514E2212FFB0400ABA7B8 /* Support */,
 			);
 			path = Hoop;
 			sourceTree = "<group>";
@@ -424,7 +414,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8A8449212EB1E0000458EF /* Running.gif in Resources */,
+				CA0515422133E11100ABA7B8 /* Running.gif in Resources */,
 				CA8902172122C55300260C20 /* LaunchScreen.storyboard in Resources */,
 				469EA0F0212FF7CF005C9DDE /* OpenSans-SemiBold.ttf in Resources */,
 				CA8902142122C55300260C20 /* Assets.xcassets in Resources */,
@@ -490,20 +480,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA312462212ACB9800EE37AD /* ActivityRecViewController.swift in Sources */,
-				3FA6F4E9212FF2C4001F17B6 /* StartViewController.swift in Sources */,
+				CA0515382133E11100ABA7B8 /* HomeViewController.swift in Sources */,
+				CA0515372133E11100ABA7B8 /* DetailActivityViewController.swift in Sources */,
+				CA0515402133E11100ABA7B8 /* HistoryTableViewCell.swift in Sources */,
+				CA05153E2133E11100ABA7B8 /* OnboardingViewClass.swift in Sources */,
+				CA05153F2133E11100ABA7B8 /* Extension.swift in Sources */,
 				3FB694EC212313B3004218E3 /* DemoScreen.swift in Sources */,
-				3FB2FAFF212BFE5E00B8B526 /* ActivityRecTableViewCell.swift in Sources */,
-				3F51DFAE212319B5002593C1 /* OnboardingViewClass.swift in Sources */,
-				CA89020C2122C55200260C20 /* ProfileViewController.swift in Sources */,
 				CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */,
-				3FB2FB01212C78FA00B8B526 /* HistoryTableViewCell.swift in Sources */,
 				CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */,
-				CA312464212ACBCD00EE37AD /* HistoryViewController.swift in Sources */,
-				469EA0E9212EC252005C9DDE /* Extension.swift in Sources */,
-				CA8A8447212E991F000458EF /* DetailActivityViewController.swift in Sources */,
-				469EA0E7212C0A18005C9DDE /* HealthKitHandler.swift in Sources */,
-				CA312460212ACB6700EE37AD /* HomeViewController.swift in Sources */,
+				CA0515392133E11100ABA7B8 /* StartViewController.swift in Sources */,
+				CA05153C2133E11100ABA7B8 /* HistoryViewController.swift in Sources */,
+				CA05153D2133E11100ABA7B8 /* HealthKitHandler.swift in Sources */,
+				CA0515412133E11100ABA7B8 /* ActivityRecTableViewCell.swift in Sources */,
+				CA05153B2133E11100ABA7B8 /* ProfileViewController.swift in Sources */,
+				CA05153A2133E11100ABA7B8 /* ActivityRecViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
