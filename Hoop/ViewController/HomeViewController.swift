@@ -11,12 +11,12 @@ import HealthKit
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var bpmLabel: UILabel!
     @IBOutlet weak var hrvLabel: UILabel!
+    @IBOutlet weak var heartImg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        heartImg.loadGif(name: "HeartRate")
         do {
             let userAgeAndSex = try ProfileDataStore.getAgeAndSex()
             /*ageLabel.text = "\(userAgeAndSex.age)"*/

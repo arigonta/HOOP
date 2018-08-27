@@ -340,7 +340,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today, you seem very happy. Here some activity that can make you feel better than ever" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-oK-vvf">
-                                <rect key="frame" x="46" y="548" width="283" height="77"/>
+                                <rect key="frame" x="46" y="568" width="283" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77" id="qfi-Hn-KNR"/>
                                 </constraints>
@@ -357,11 +357,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heartImg" translatesAutoresizingMaskIntoConstraints="NO" id="oBX-Cj-9wa">
-                                <rect key="frame" x="56" y="275" width="263" height="223"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oBX-Cj-9wa">
+                                <rect key="frame" x="56" y="275" width="263" height="243"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="263" id="DNw-8W-GUP"/>
-                                    <constraint firstAttribute="height" constant="223" id="tbH-U1-Kio"/>
+                                    <constraint firstAttribute="height" constant="243" id="tbH-U1-Kio"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUo-Ei-lKR">
@@ -401,6 +401,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="p8L-G4-7Y4"/>
                     <connections>
+                        <outlet property="bpmLabel" destination="RUo-Ei-lKR" id="H96-pZ-dwP"/>
+                        <outlet property="heartImg" destination="oBX-Cj-9wa" id="4pr-E8-eKU"/>
                         <outlet property="hrvLabel" destination="Cww-oK-vvf" id="Kw7-b4-gsV"/>
                     </connections>
                 </viewController>
@@ -613,13 +615,12 @@
         <image name="active" width="100" height="100"/>
         <image name="activityBtn" width="1625" height="240"/>
         <image name="backgroundProfile" width="1625" height="240"/>
-        <image name="heartImg" width="1576" height="1416"/>
         <image name="historyBtn" width="1625" height="240"/>
         <image name="next" width="220" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jrw-A9-XSl"/>
+        <segue reference="nzY-dG-uat"/>
         <segue reference="QMK-W5-2QC"/>
-        <segue reference="w6A-rp-Fep"/>
+        <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>

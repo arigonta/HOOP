@@ -37,7 +37,8 @@
 		CA05153F2133E11100ABA7B8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515312133E11100ABA7B8 /* Extension.swift */; };
 		CA0515402133E11100ABA7B8 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515332133E11100ABA7B8 /* HistoryTableViewCell.swift */; };
 		CA0515412133E11100ABA7B8 /* ActivityRecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */; };
-		CA0515442133E3DD00ABA7B8 /* detailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */; };
+		CA0515562134067700ABA7B8 /* detailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515552134067600ABA7B8 /* detailHistoryViewController.swift */; };
+		CA0515582134077000ABA7B8 /* HeartRate.gif in Resources */ = {isa = PBXBuildFile; fileRef = CA0515572134077000ABA7B8 /* HeartRate.gif */; };
 		CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8902092122C55200260C20 /* AppDelegate.swift */; };
 		CA89020F2122C55200260C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA89020D2122C55200260C20 /* Main.storyboard */; };
 		CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA8902102122C55200260C20 /* Hoop.xcdatamodeld */; };
@@ -125,7 +126,8 @@
 		CA0515312133E11100ABA7B8 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CA0515332133E11100ABA7B8 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRecTableViewCell.swift; sourceTree = "<group>"; };
-		CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailHistoryViewController.swift; sourceTree = "<group>"; };
+		CA0515552134067600ABA7B8 /* detailHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailHistoryViewController.swift; sourceTree = "<group>"; };
+		CA0515572134077000ABA7B8 /* HeartRate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HeartRate.gif; sourceTree = "<group>"; };
 		CA8902062122C55100260C20 /* Hoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8902092122C55200260C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA89020E2122C55200260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -203,13 +205,13 @@
 		CA0515272133E11100ABA7B8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */,
+				CA05152C2133E11100ABA7B8 /* ProfileViewController.swift */,
 				CA0515292133E11100ABA7B8 /* HomeViewController.swift */,
 				CA05152A2133E11100ABA7B8 /* StartViewController.swift */,
 				CA05152B2133E11100ABA7B8 /* ActivityRecViewController.swift */,
-				CA05152C2133E11100ABA7B8 /* ProfileViewController.swift */,
+				CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */,
 				CA05152D2133E11100ABA7B8 /* HistoryViewController.swift */,
-				CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */,
+				CA0515552134067600ABA7B8 /* detailHistoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -236,6 +238,7 @@
 		CA0515352133E11100ABA7B8 /* gif */ = {
 			isa = PBXGroup;
 			children = (
+				CA0515572134077000ABA7B8 /* HeartRate.gif */,
 				3F550F552133F675005F8EB6 /* Healthy Food.gif */,
 				3F550F562133F675005F8EB6 /* Healthy Sleep.gif */,
 				3F550F572133F675005F8EB6 /* Jogging.gif */,
@@ -270,7 +273,6 @@
 		CA8902082122C55100260C20 /* Hoop */ = {
 			isa = PBXGroup;
 			children = (
-				CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */,
 				CA89020D2122C55200260C20 /* Main.storyboard */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
 				CA8902092122C55200260C20 /* AppDelegate.swift */,
@@ -436,6 +438,7 @@
 				3F550F5B2133F675005F8EB6 /* Jogging.gif in Resources */,
 				469EA0EE212FF7B9005C9DDE /* OpenSans-Regular.ttf in Resources */,
 				3F550F582133F675005F8EB6 /* Meditation.gif in Resources */,
+				CA0515582134077000ABA7B8 /* HeartRate.gif in Resources */,
 				CA89020F2122C55200260C20 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,7 +507,7 @@
 				3FB694EC212313B3004218E3 /* DemoScreen.swift in Sources */,
 				CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */,
 				CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */,
-				CA0515442133E3DD00ABA7B8 /* detailHistoryViewController.swift in Sources */,
+				CA0515562134067700ABA7B8 /* detailHistoryViewController.swift in Sources */,
 				CA0515392133E11100ABA7B8 /* StartViewController.swift in Sources */,
 				CA05153C2133E11100ABA7B8 /* HistoryViewController.swift in Sources */,
 				CA05153D2133E11100ABA7B8 /* HealthKitHandler.swift in Sources */,
