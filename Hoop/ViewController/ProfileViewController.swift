@@ -22,6 +22,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     //Variable
+    var age:Int = -1
+    var sex:String = "Other"
     var userData = UserDefaults.standard
     var dates:String = ""
     var users:[User] = []
@@ -30,36 +32,26 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveBtnPressed(_ sender: Any) {
         
         if nameTxt.text != ""{
+            loadAgeAndSex()
             let appDel = UIApplication.shared.delegate as! AppDelegate
             let context = appDel.persistentContainer.viewContext
             
             do {
                 //validasi apakah user sudah terdaftar atau belum
-                let fetch: NSFetchRequest = User.fetchRequest()
-                fetch.predicate = NSPredicate(format: "name == %@", (nameTxt.text!))
-                users = try context.fetch(fetch)
-                
-                //apabila user sudah terdaftar
-                if users.count > 0 {
-                    showAlert(title: "Error", message: "Username has been taken", action: "Dismiss")
-                    print("Username has been taken")
-                }
-                    //apabila user belum terdaftar maka didaftarkan ke user baru
-                else {
-                    //memasukan data ke dalam model
-                    let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
-                    newUser.setValue(nameTxt.text, forKey: "name")
-                    try context.save()
-                    performSegue(withIdentifier: "profileToStart", sender: self)
-                    userData.set(true, forKey: "ProfileCompleted")
-                    userData.synchronize()
-                }
+                let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
+                newUser.setValue(nameTxt.text, forKey: "name")
+                newUser.setValue(age, forKey: "age")
+                newUser.setValue(sex, forKey: "sex")
+                try context.save()
+                userData.set(true, forKey: "ProfileCompleted")
+                userData.synchronize()
             } catch let error as NSError {
                 print("Could not fetch. \(error) \(error.userInfo)")
             }
-            
+            performSegue(withIdentifier: "profileToStart", sender: self)
         }
     }
+    
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -94,6 +86,23 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         nameTxt.borderStyle = UITextBorderStyle.roundedRect
+    }
+    
+    func loadAgeAndSex() {
+        do {
+                        let userAgeAndSex = try ProfileDataStore.getAgeAndSex()
+                        age = userAgeAndSex.age
+                        switch userAgeAndSex.biologicalSex.rawValue {
+                        case 1:
+                            sex = "Female"
+                        case 2:
+                            sex = "Male"
+                        default:
+                            sex = "Other"
+                        }
+                    } catch {
+            
+                    }
     }
     
     override func viewDidLoad() {

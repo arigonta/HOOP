@@ -18,9 +18,9 @@ class StartViewController: UIViewController {
         performSegue(withIdentifier: "startToHome", sender: self)
     }
     override func viewDidLoad() {
-        //        saveMockHeartData()
-        //        let appDel = UIApplication.shared.delegate as! AppDelegate
-        //        let context = appDel.persistentContainer.viewContext
+//                saveMockHeartData()
+                let appDel = UIApplication.shared.delegate as! AppDelegate
+                let context = appDel.persistentContainer.viewContext
         //        do {
         //            let today = Date()
         //            let newHis = NSEntityDescription.insertNewObject(forEntityName: "History", into: context)
@@ -33,37 +33,39 @@ class StartViewController: UIViewController {
         //        } catch {
         //        }
         super.viewDidLoad()
-        //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        //
-        //        let context = appDelegate.persistentContainer.viewContext
+
         //
         //        super.viewDidLoad()
         //        // baca core data
-        //        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
-        //
-        //        request.returnsObjectsAsFaults = false
-        //
-        //        do {
-        //            let  result = try context.fetch(request)
-        //            if result.count > 0
-        //            {
-        //                for result in result as! [NSManagedObject]
-        //                {
-        //                    if let name = result.value(forKey: "activityDate") as? String
-        //                    {
-        //                        print(name)
-        //                    }
-        //                    if let age = result.value(forKey: "activityName") as? String
-        //                    {
-        //                        print(age)
-        //                    }
-        ////                                                context.delete(result)
-        //                }
-        ////                                        try context.save()
-        //            }
-        //        } catch  {
-        //            print("Gagal ngambil data!")
-        //        }
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+                request.returnsObjectsAsFaults = false
+        
+                do {
+                    let  result = try context.fetch(request)
+                    if result.count > 0
+                    {
+                        for result in result as! [NSManagedObject]
+                        {
+                            if let name = result.value(forKey: "name") as? String
+                            {
+                                print(name)
+                            }
+                            if let age = result.value(forKey: "age")
+                            {
+                                print(age)
+                            }
+                            if let age = result.value(forKey: "sex") as? String
+                            {
+                                print(age)
+                            }
+        //                                                context.delete(result)
+                        }
+        //                                        try context.save()
+                    }
+                } catch  {
+                    print("Gagal ngambil data!")
+                }
         // baca core data
         
         // Do any additional setup after loading the view.
