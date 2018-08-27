@@ -25,6 +25,7 @@
 		469EA0EC212FF7A8005C9DDE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */; };
 		469EA0EE212FF7B9005C9DDE /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */; };
 		469EA0F0212FF7CF005C9DDE /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */; };
+		469EA1092134070F005C9DDE /* detailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469EA1082134070F005C9DDE /* detailHistoryViewController.swift */; };
 		96736865FD831AE217095FC9 /* Pods_Hoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */; };
 		CA0515372133E11100ABA7B8 /* DetailActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */; };
 		CA0515382133E11100ABA7B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515292133E11100ABA7B8 /* HomeViewController.swift */; };
@@ -37,7 +38,6 @@
 		CA05153F2133E11100ABA7B8 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515312133E11100ABA7B8 /* Extension.swift */; };
 		CA0515402133E11100ABA7B8 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515332133E11100ABA7B8 /* HistoryTableViewCell.swift */; };
 		CA0515412133E11100ABA7B8 /* ActivityRecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */; };
-		CA0515442133E3DD00ABA7B8 /* detailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */; };
 		CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8902092122C55200260C20 /* AppDelegate.swift */; };
 		CA89020F2122C55200260C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA89020D2122C55200260C20 /* Main.storyboard */; };
 		CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA8902102122C55200260C20 /* Hoop.xcdatamodeld */; };
@@ -112,6 +112,7 @@
 		469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		469EA1082134070F005C9DDE /* detailHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = detailHistoryViewController.swift; path = ViewController/detailHistoryViewController.swift; sourceTree = "<group>"; };
 		50DC19A94622F8D498D98473 /* Pods-Hoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.release.xcconfig"; sourceTree = "<group>"; };
 		AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailActivityViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +126,6 @@
 		CA0515312133E11100ABA7B8 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		CA0515332133E11100ABA7B8 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRecTableViewCell.swift; sourceTree = "<group>"; };
-		CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailHistoryViewController.swift; sourceTree = "<group>"; };
 		CA8902062122C55100260C20 /* Hoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8902092122C55200260C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA89020E2122C55200260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -209,7 +209,6 @@
 				CA05152B2133E11100ABA7B8 /* ActivityRecViewController.swift */,
 				CA05152C2133E11100ABA7B8 /* ProfileViewController.swift */,
 				CA05152D2133E11100ABA7B8 /* HistoryViewController.swift */,
-				CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -270,7 +269,7 @@
 		CA8902082122C55100260C20 /* Hoop */ = {
 			isa = PBXGroup;
 			children = (
-				CA0515432133E3DD00ABA7B8 /* detailHistoryViewController.swift */,
+				469EA1082134070F005C9DDE /* detailHistoryViewController.swift */,
 				CA89020D2122C55200260C20 /* Main.storyboard */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
 				CA8902092122C55200260C20 /* AppDelegate.swift */,
@@ -504,7 +503,7 @@
 				3FB694EC212313B3004218E3 /* DemoScreen.swift in Sources */,
 				CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */,
 				CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */,
-				CA0515442133E3DD00ABA7B8 /* detailHistoryViewController.swift in Sources */,
+				469EA1092134070F005C9DDE /* detailHistoryViewController.swift in Sources */,
 				CA0515392133E11100ABA7B8 /* StartViewController.swift in Sources */,
 				CA05153C2133E11100ABA7B8 /* HistoryViewController.swift in Sources */,
 				CA05153D2133E11100ABA7B8 /* HealthKitHandler.swift in Sources */,
