@@ -65,42 +65,51 @@ class DemoScreen: UIViewController {
 extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
 {
     func onboardingItemsCount() -> Int {
-        return 3
+        return 4
     }
     
     func onboardingItem(at index: Int) -> OnboardingItemInfo {
-        let bgOne = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-        let bgTwo = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
-        let bgThree = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-        let textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        let bgOne = #colorLiteral(red: 0.6823529412, green: 0.9294117647, blue: 0.8705882353, alpha: 1)
+        let bgTwo = #colorLiteral(red: 1, green: 0.7491034865, blue: 0.2262120843, alpha: 1)
+        let bgThree = #colorLiteral(red: 1, green: 0.7491034865, blue: 0.2262120843, alpha: 1)
+        let textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         let titleFont = UIFont(name: "Helvetica-Bold", size: 20)!
-        let descFont = UIFont(name: "Helvetica", size: 15)!
+        let descFont = UIFont(name: "Open Sans", size: 17)!
         
         return [
-            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "post-1"),
-                               title: "Post",
-                               description: "Post is awesome",
+            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "1"),
+                               title: "",
+                               description: "HOOP is an app to help you to create good habits for your health.",
                                pageIcon: #imageLiteral(resourceName: "active"),
                                color: bgTwo,
                                titleColor: textColor,
                                descriptionColor: textColor,
                                titleFont: titleFont,
                                descriptionFont: descFont),
-            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "illustration"),
-                               title: "Beer",
-                               description: "Beer is awesome",
+            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "2"),
+                               title: "",
+                               description: "We are here to make you become even better than before",
                                pageIcon: #imageLiteral(resourceName: "active"),
                                color: bgOne,
                                titleColor: textColor,
                                descriptionColor: textColor,
                                titleFont: titleFont,
                                descriptionFont: descFont),
-            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "subtitles-dharmawangsa-K26549-idzn0mg5nfh"),
-                               title: "Subtitles",
-                               description: "Subtitles is a good place",
+            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "appleWatch"),
+                               title: "",
+                               description: "Make sure your Apple Watch to pair with HOOP",
                                pageIcon: #imageLiteral(resourceName: "active"),
                                color: bgThree,
+                               titleColor: textColor,
+                               descriptionColor: textColor,
+                               titleFont: titleFont,
+                               descriptionFont: descFont),
+            OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "activityDemo"),
+                               title: "",
+                               description: "Try our activity recommendation for the best result",
+                               pageIcon: #imageLiteral(resourceName: "active"),
+                               color: bgOne,
                                titleColor: textColor,
                                descriptionColor: textColor,
                                titleFont: titleFont,
@@ -108,13 +117,13 @@ extension DemoScreen : PaperOnboardingDataSource, PaperOnboardingDelegate
     }
     
     func onboardingDidTransitonToIndex(_ index: Int) {
-        if index == 2 {
+        if index == 3 {
             doneOutlet.isHidden = false
         }
     }
     
     @objc(onboardingWillTransitonToIndex:) func onboardingWillTransitonToIndex(_ index: Int) {
-        if index != 2 {
+        if index != 3 {
             if doneOutlet.isHidden == false {
                 doneOutlet.isHidden = true
             }

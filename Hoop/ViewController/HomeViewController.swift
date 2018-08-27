@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
 
         do {
             let userAgeAndSex = try ProfileDataStore.getAgeAndSex()
-            ageLabel.text = "\(userAgeAndSex.age)"
+            /*ageLabel.text = "\(userAgeAndSex.age)"*/
             let sex = userAgeAndSex.biologicalSex.rawValue
             var sexString:String = ""
             switch sex {
@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
             default:
                 sexString = "Other"
             }
-            bpmLabel.text = sexString
+//            bpmLabel.text = sexString
             
         } catch {
             
