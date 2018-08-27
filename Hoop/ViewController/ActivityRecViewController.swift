@@ -57,11 +57,8 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
         act.append(activity(text: "Breathing"))
         act.append(activity(text: "Jogging"))
         act.append(activity(text: "Meditate"))
-        act.append(activity(text: "Running"))
-        act.append(activity(text: "Yoga"))
-        act.append(activity(text: "Zumba"))
-        act.append(activity(text: "Swimming"))
-        
+        act.append(activity(text: "Healthy Food"))
+        act.append(activity(text: "Healthy Sleep"))
         activityTableView.estimatedRowHeight = 200
         activityTableView.rowHeight = UITableViewAutomaticDimension
     }

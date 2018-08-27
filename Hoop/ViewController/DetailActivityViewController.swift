@@ -24,32 +24,22 @@ class DetailActivityViewController: UIViewController {
             titleLbl.text = activities
             descLbl.text = "Breathe in! It's just a bad day, not a bad life"
         }else if activities == "Jogging"{
-            showImg.image = #imageLiteral(resourceName: "Love")
+            showImg.loadGif(name: "Jogging")
             titleLbl.text = activities
             descLbl.text = "Jogging is very beneficial. It's good for your legs and your feet. It's also very good for the ground. It makes it feel needed\n\n-Charles M Schulz-"
         }else if activities == "Meditate"{
-            showImg.image = #imageLiteral(resourceName: "Hoop HD")
+            showImg.loadGif(name: "Meditation")
             titleLbl.text = activities
             descLbl.text = "Quite the mind, and the soul will speak\n\n-Ma Jaya Sati Bhagavati-"
-        }else if activities == "Running"{
-            showImg.loadGif(name: "Running")
+        }else if activities == "Healthy Food"{
+            showImg.loadGif(name: "Healthy Food")
             titleLbl.text = activities
-            descLbl.text = "One run can change your day, many runs can change your life"
-        }else if activities == "Yoga"{
-            //showImg.image
+            descLbl.text = "4 sehat 5 sempurna"
+        }else if activities == "Healthy Sleep"{
+            showImg.loadGif(name: "Healthy Sleep")
             titleLbl.text = activities
-            descLbl.text = "Anget"
-        }else if activities == "Zumba"{
-            //showImg.image
-            titleLbl.text = activities
-            descLbl.text = "apa coba ini"
-        }else if activities == "Swimming"{
-            //showImg.image
-            titleLbl.text = activities
-            descLbl.text = "Swimming regularly can help to decrease anxiety, improve your stress management and boost your overall state of mind"
+            descLbl.text = "Nina Bobo"
         }
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
