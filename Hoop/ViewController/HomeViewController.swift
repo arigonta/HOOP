@@ -33,8 +33,6 @@ class HomeViewController: UIViewController {
                 return
             }
 
-            /// The completion in called on a background thread, but we
-            /// need to update the UI on the main.
             DispatchQueue.main.async {
 
                 /// Converting the heart rate to bpm
@@ -47,26 +45,6 @@ class HomeViewController: UIViewController {
                 self.bpmLabel.text = "\(Int(heartRate)) BPM"
             }
         })
-
-//        do {
-//            let userAgeAndSex = try ProfileDataStore.getAgeAndSex()
-//            /*ageLabel.text = "\(userAgeAndSex.age)"*/
-//            let sex = userAgeAndSex.biologicalSex.rawValue
-//            var sexString:String = ""
-//            switch sex {
-//            case 1:
-//                sexString = "Female"
-//            case 2:
-//                sexString = "Male"
-//            default:
-//                sexString = "Other"
-//            }
-//           bpmLabel.text = sexString
-//
-//        } catch {
-//
-//        }
-        // Do any additional setup after loading the view.
     }
     
     func fetchDataFromModel() {

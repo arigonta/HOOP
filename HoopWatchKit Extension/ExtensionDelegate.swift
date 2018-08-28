@@ -1,8 +1,8 @@
 //
 //  ExtensionDelegate.swift
-//  HOOP-WatchKitApp Extension
+//  HoopWatchKit Extension
 //
-//  Created by Mohammad Rahimyarza Bagagarsyah on 20/08/18.
+//  Created by Mohammad Rahimyarza Bagagarsyah on 28/08/18.
 //  Copyright © 2018 Brandon Cornelius. All rights reserved.
 //
 
