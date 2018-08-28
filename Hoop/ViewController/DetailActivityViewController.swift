@@ -20,9 +20,7 @@ class DetailActivityViewController: UIViewController {
         super.viewDidLoad()
         
         if activities == "Breathing"{
-            showImg.image = #imageLiteral(resourceName: "subtitles-dharmawangsa-K26549-idzn0mg5nfh")
-            titleLbl.text = activities
-            descLbl.text = "Breathe in! It's just a bad day, not a bad life"
+            performSegue(withIdentifier: "activityBreathing", sender: self)
         }else if activities == "Jogging"{
             showImg.loadGif(name: "Jogging")
             titleLbl.text = activities
