@@ -44,6 +44,7 @@
 		CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA8902102122C55200260C20 /* Hoop.xcdatamodeld */; };
 		CA8902142122C55300260C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8902132122C55300260C20 /* Assets.xcassets */; };
 		CA8902172122C55300260C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8902152122C55300260C20 /* LaunchScreen.storyboard */; };
+		CAD39A2621355870009B9FF9 /* breathingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD39A2521355870009B9FF9 /* breathingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,7 +114,6 @@
 		469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
-		469EA1082134070F005C9DDE /* detailHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = detailHistoryViewController.swift; path = ViewController/detailHistoryViewController.swift; sourceTree = "<group>"; };
 		50DC19A94622F8D498D98473 /* Pods-Hoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.release.xcconfig"; sourceTree = "<group>"; };
 		AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailActivityViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +136,7 @@
 		CA8902132122C55300260C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8902162122C55300260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8902182122C55300260C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAD39A2521355870009B9FF9 /* breathingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = breathingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +276,7 @@
 			isa = PBXGroup;
 			children = (
 				CA89020D2122C55200260C20 /* Main.storyboard */,
+				CAD39A2521355870009B9FF9 /* breathingViewController.swift */,
 				CA8902152122C55300260C20 /* LaunchScreen.storyboard */,
 				CA8902092122C55200260C20 /* AppDelegate.swift */,
 				3FB694EB212313B3004218E3 /* DemoScreen.swift */,
@@ -511,6 +513,7 @@
 				CA0515562134067700ABA7B8 /* detailHistoryViewController.swift in Sources */,
 				CA0515392133E11100ABA7B8 /* StartViewController.swift in Sources */,
 				CA05153C2133E11100ABA7B8 /* HistoryViewController.swift in Sources */,
+				CAD39A2621355870009B9FF9 /* breathingViewController.swift in Sources */,
 				CA05153D2133E11100ABA7B8 /* HealthKitHandler.swift in Sources */,
 				CA0515412133E11100ABA7B8 /* ActivityRecTableViewCell.swift in Sources */,
 				CA05153B2133E11100ABA7B8 /* ProfileViewController.swift in Sources */,
@@ -766,7 +769,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hoop/Hoop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U33KFVQWKM;
 				INFOPLIST_FILE = Hoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -786,7 +789,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hoop/Hoop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = U33KFVQWKM;
 				INFOPLIST_FILE = Hoop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

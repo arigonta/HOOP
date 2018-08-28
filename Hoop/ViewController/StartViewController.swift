@@ -18,7 +18,7 @@ class StartViewController: UIViewController {
         performSegue(withIdentifier: "startToHome", sender: self)
     }
     override func viewDidLoad() {
-//                saveMockHeartData()
+                saveMockHeartData()
                 let appDel = UIApplication.shared.delegate as! AppDelegate
                 let context = appDel.persistentContainer.viewContext
         //        do {
@@ -75,22 +75,22 @@ class StartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    func saveMockHeartData() {
-//        
-//        // 1. Create a heart rate BPM Sample
-//        let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-//        let heartRateQuantity = HKQuantity(unit: HKUnit(from: "count/min"),
-//                                           doubleValue: Double(arc4random_uniform(80) + 100))
-//        let nowDate = Date()
-//        let heartSample = HKQuantitySample(type: heartRateType, quantity: heartRateQuantity, start: nowDate, end: nowDate)
-//        
-//        // 2. Save the sample in the store
-//        healthKitStore.save(heartSample, withCompletion: { (success, error) -> Void in
-//            if let error = error {
-//                print("Error saving heart sample: \(error.localizedDescription)")
-//            }
-//        })
-//    }
+    func saveMockHeartData() {
+        
+        // 1. Create a heart rate BPM Sample
+        let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        let heartRateQuantity = HKQuantity(unit: HKUnit(from: "count/min"),
+                                           doubleValue: Double(arc4random_uniform(80) + 100))
+        let nowDate = Date()
+        let heartSample = HKQuantitySample(type: heartRateType, quantity: heartRateQuantity, start: nowDate, end: nowDate)
+        
+        // 2. Save the sample in the store
+        healthKitStore.save(heartSample, withCompletion: { (success, error) -> Void in
+            if let error = error {
+                print("Error saving heart sample: \(error.localizedDescription)")
+            }
+        })
+    }
     
     
     /*

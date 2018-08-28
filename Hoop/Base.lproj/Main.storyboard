@@ -531,11 +531,27 @@
                     <connections>
                         <outlet property="activityTableView" destination="3Pe-hL-ERB" id="0hy-bU-eeC"/>
                         <segue destination="yel-gd-vMT" kind="show" identifier="detailActivity" id="ojU-Ax-aYf"/>
+                        <segue destination="Rap-Le-R8H" kind="show" identifier="activityBreathing" id="LSF-zE-X8N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DDY-1F-AbT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3584.8000000000002" y="158.86699507389164"/>
+        </scene>
+        <!--Breathing View Controller-->
+        <scene sceneID="dFy-Zc-VXm">
+            <objects>
+                <viewController id="Rap-Le-R8H" customClass="breathingViewController" customModule="Hoop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6QU-zd-65G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tlM-gs-IvE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S9l-KI-KFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4506" y="159"/>
         </scene>
         <!--Detail History View Controller-->
         <scene sceneID="Wy9-Hk-igm">
@@ -564,8 +580,8 @@
                                 <rect key="frame" x="35" y="261" width="305" height="163"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72I-Jx-jAH">
-                                <rect key="frame" x="36" y="470" width="302" height="203"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="20" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72I-Jx-jAH">
+                                <rect key="frame" x="36" y="470" width="302" height="308"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -619,6 +635,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="nzY-dG-uat"/>
         <segue reference="QMK-W5-2QC"/>
-        <segue reference="W8V-4s-UhS"/>
+        <segue reference="w6A-rp-Fep"/>
     </inferredMetricsTieBreakers>
 </document>
