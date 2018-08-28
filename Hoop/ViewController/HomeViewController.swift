@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
         fetchDataFromModel()
         
         nameLabel.text = "Hi, \(userName)"
-        heartImg.loadGif(name: "HeartRate")
         self.fetchLatestHeartRateSample(completion: { sample in
             guard let sample = sample else {
                 return
@@ -43,6 +42,13 @@ class HomeViewController: UIViewController {
 
                 /// Updating the UI with the retrieved value
                 self.bpmLabel.text = "\(Int(heartRate)) BPM"
+                if Int(heartRate) >= 100 && Int(heartRate) < 150{
+                    self.heartImg.loadGif(name: "GreenHeart")
+                }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
+                    self.heartImg.loadGif(name: "YellowHeart")
+                }else if Int(heartRate) >= 6969 && Int(heartRate) < 14045{
+                    self.heartImg.loadGif(name: "RedHeart")
+                }
             }
         })
     }
