@@ -15,6 +15,9 @@ import HealthKit
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var bpmLabel: WKInterfaceLabel!
+    var heartRateQuery:HKQuery?
+    let heartRateType:HKQuantityType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+    let health: HKHealthStore = HKHealthStore()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -24,9 +27,7 @@ class InterfaceController: WKInterfaceController {
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        var heartRateQuery:HKQuery?
-        let heartRateType:HKQuantityType   = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-        let health: HKHealthStore = HKHealthStore()
+        
         
         self.fetchLatestHeartRateSample(completion: { sample in
             guard let sample = sample else {
@@ -42,49 +43,11 @@ class InterfaceController: WKInterfaceController {
                     .doubleValue(for: heartRateUnit)
                 
                 /// Updating the UI with the retrieved value
-                self.bpmLabel.text = "\(Int(heartRate)) BPM"
+                self.bpmLabel.setText("\(Int(heartRate)) BPM")
             }
         })
         
-        func fetchLatestHeartRateSample(
-            completion: @escaping (_ sample: HKQuantitySample?) -> Void) {
-            
-            /// Create sample type for the heart rate
-            guard let sampleType = HKObjectType
-                .quantityType(forIdentifier: .heartRate) else {
-                    completion(nil)
-                    return
-            }
-            
-            /// Predicate for specifiying start and end dates for the query
-            let predicate = HKQuery
-                .predicateForSamples(
-                    withStart: Date.distantPast,
-                    end: Date(),
-                    options: .strictEndDate)
-            
-            /// Set sorting by date.
-            let sortDescriptor = NSSortDescriptor(
-                key: HKSampleSortIdentifierStartDate,
-                ascending: false)
-            
-            /// Create the query
-            let query = HKSampleQuery(
-                sampleType: sampleType,
-                predicate: predicate,
-                limit: Int(HKObjectQueryNoLimit),
-                sortDescriptors: [sortDescriptor]) { (_, results, error) in
-                    
-                    guard error == nil else {
-                        print("Error: \(error!.localizedDescription)")
-                        return
-                    }
-                    
-                    completion(results?[0] as? HKQuantitySample)
-            }
-            
-            self.health.execute(query)
-        }
+       
         super.willActivate()
     }
     
@@ -93,7 +56,45 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-    
+    func fetchLatestHeartRateSample(
+        completion: @escaping (_ sample: HKQuantitySample?) -> Void) {
+        
+        /// Create sample type for the heart rate
+        guard let sampleType = HKObjectType
+            .quantityType(forIdentifier: .heartRate) else {
+                completion(nil)
+                return
+        }
+        
+        /// Predicate for specifiying start and end dates for the query
+        let predicate = HKQuery
+            .predicateForSamples(
+                withStart: Date.distantPast,
+                end: Date(),
+                options: .strictEndDate)
+        
+        /// Set sorting by date.
+        let sortDescriptor = NSSortDescriptor(
+            key: HKSampleSortIdentifierStartDate,
+            ascending: false)
+        
+        /// Create the query
+        let query = HKSampleQuery(
+            sampleType: sampleType,
+            predicate: predicate,
+            limit: Int(HKObjectQueryNoLimit),
+            sortDescriptors: [sortDescriptor]) { (_, results, error) in
+                
+                guard error == nil else {
+                    print("Error: \(error!.localizedDescription)")
+                    return
+                }
+                
+                completion(results?[0] as? HKQuantitySample)
+        }
+        
+        self.health.execute(query)
+    }
     
 }
 
