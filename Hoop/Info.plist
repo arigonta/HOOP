@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key></key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -20,6 +22,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Hoop would like to read your Health data to know your previous heart rate and your biological data</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Hoop would like to write your Health data to help you track your heart rate</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>OpenSans-SemiBold.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+		<string>OpenSans-Bold.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -41,17 +53,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key></key>
-	<string></string>
-	<key>UIAppFonts</key>
-	<array>
-		<string>OpenSans-SemiBold.ttf</string>
-		<string>OpenSans-Regular.ttf</string>
-		<string>OpenSans-Bold.ttf</string>
-	</array>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>Hoop would like to write your Health data to help you track your heart rate</string>
-	<key>NSHealthShareUsageDescription</key>
-	<string>Hoop would like to read your Health data to know your previous heart rate and your biological data</string>
 </dict>
 </plist>

@@ -22,11 +22,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     }
     
     //Variable
-    var age:Int = -1
+    var age:Int = 0
     var sex:String = "Other"
     var userData = UserDefaults.standard
     var dates:String = ""
-    var users:[User] = []
     
     //action
     @IBAction func saveBtnPressed(_ sender: Any) {
@@ -37,7 +36,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
             let context = appDel.persistentContainer.viewContext
             
             do {
-                //validasi apakah user sudah terdaftar atau belum
                 let newUser = NSEntityDescription.insertNewObject(forEntityName: "User", into: context)
                 newUser.setValue(nameTxt.text, forKey: "name")
                 newUser.setValue(age, forKey: "age")
