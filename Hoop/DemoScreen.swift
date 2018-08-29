@@ -47,8 +47,11 @@ class DemoScreen: UIViewController {
             }
             
             print("HealthKit Successfully Authorized.")
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "tutorialToProfile", sender: self)
+            }
         }
-        performSegue(withIdentifier: "tutorialToProfile", sender: self)
+        
     }
     
 

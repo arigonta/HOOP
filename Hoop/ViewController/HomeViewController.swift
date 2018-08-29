@@ -12,6 +12,7 @@ import CoreData
 
 class HomeViewController: UIViewController {
     
+    var heartImage:String = ""
     var userName:String = ""
     var heartRateQuery:HKQuery?
     let heartRateType:HKQuantityType   = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
@@ -42,13 +43,18 @@ class HomeViewController: UIViewController {
 
                 /// Updating the UI with the retrieved value
                 self.bpmLabel.text = "\(Int(heartRate)) BPM"
+                
                 if Int(heartRate) >= 100 && Int(heartRate) < 150{
                     self.heartImg.loadGif(name: "GreenHeart")
+                    self.heartImage = "green"
                 }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
                     self.heartImg.loadGif(name: "YellowHeart")
+                    self.heartImage = "yellow"
                 }else if Int(heartRate) >= 6969 && Int(heartRate) < 14045{
                     self.heartImg.loadGif(name: "RedHeart")
+                    self.heartImage = "red"
                 }
+                print(self.heartImage)
             }
         })
     }
@@ -131,5 +137,17 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func activityButton(_ sender: Any) {
+        performSegue(withIdentifier: "toActivityRecom", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toActivityRecom" {
+            let destVC = segue.destination as! ActivityRecViewController
+            destVC.heartImage = heartImage
+        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
 }

@@ -37,10 +37,10 @@
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhs-5m-WbI">
-                                <rect key="frame" x="150.66666666666666" y="608" width="75" height="70"/>
+                                <rect key="frame" x="150.66666666666666" y="603" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="IPn-tz-M6M"/>
-                                    <constraint firstAttribute="height" constant="70" id="yds-LV-5wv"/>
+                                    <constraint firstAttribute="height" constant="75" id="yds-LV-5wv"/>
                                 </constraints>
                                 <state key="normal" image="next"/>
                                 <connections>
@@ -325,7 +325,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="ActivityWhite"/>
                                 <connections>
-                                    <segue destination="8kP-ND-YtE" kind="show" id="nzY-dG-uat"/>
+                                    <action selector="activityButton:" destination="svJ-vT-dai" eventType="touchUpInside" id="JcG-s5-ecl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzq-rS-fzn">
@@ -402,6 +402,7 @@
                         <outlet property="heartImg" destination="oBX-Cj-9wa" id="4pr-E8-eKU"/>
                         <outlet property="hrvLabel" destination="Cww-oK-vvf" id="Kw7-b4-gsV"/>
                         <outlet property="nameLabel" destination="xgz-XR-M1h" id="Dje-4r-2sf"/>
+                        <segue destination="8kP-ND-YtE" kind="show" identifier="toActivityRecom" id="Rhv-K3-X73"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hof-Gm-Roq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -460,7 +461,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-s9-3TU">
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="65"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="activityBtn" translatesAutoresizingMaskIntoConstraints="NO" id="jya-hL-4pK">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jya-hL-4pK">
                                                             <rect key="frame" x="8" y="11" width="339" height="43"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fp8-eZ-1oO">
@@ -490,6 +491,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityImg" destination="jya-hL-4pK" id="3AY-Ue-36z"/>
                                             <outlet property="activityLbl" destination="fp8-eZ-1oO" id="Afj-Ve-naK"/>
                                         </connections>
                                     </tableViewCell>
@@ -639,13 +641,12 @@
         <image name="Love" width="370" height="370"/>
         <image name="Start" width="1070" height="380"/>
         <image name="active" width="100" height="100"/>
-        <image name="activityBtn" width="1625" height="240"/>
         <image name="backgroundProfile" width="1625" height="240"/>
         <image name="historyBtn" width="1625" height="240"/>
         <image name="next" width="220" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nzY-dG-uat"/>
+        <segue reference="jrw-A9-XSl"/>
         <segue reference="QMK-W5-2QC"/>
         <segue reference="w6A-rp-Fep"/>
     </inferredMetricsTieBreakers>
