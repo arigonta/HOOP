@@ -94,6 +94,7 @@ class InterfaceController: WKInterfaceController {
         }
         
         self.health.execute(query)
+        
     }
     
 }

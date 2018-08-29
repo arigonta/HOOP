@@ -105,9 +105,12 @@
                                     <constraint firstAttribute="height" constant="48" id="bHe-bH-Iig"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgJ-lf-xZh">
-                                <rect key="frame" x="164" y="380" width="46" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HgJ-lf-xZh">
+                                <rect key="frame" x="30" y="380" width="315" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="315" id="dG9-I9-Dis"/>
+                                    <constraint firstAttribute="height" constant="36" id="k1v-3P-BVa"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="21"/>
                                 <state key="normal" title="Save">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -123,6 +126,7 @@
                             <constraint firstItem="LPd-b8-Miq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="143" id="3kO-yG-Gpr"/>
                             <constraint firstItem="LPd-b8-Miq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="76Y-T0-nrg"/>
                             <constraint firstItem="Lgk-hZ-ONT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CTj-tQ-GMJ"/>
+                            <constraint firstItem="HgJ-lf-xZh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E18-cT-a7i"/>
                             <constraint firstItem="Lgk-hZ-ONT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="EQi-cg-QHG"/>
                             <constraint firstItem="zdz-PM-uMR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="PMM-FD-6VZ"/>
                             <constraint firstItem="zdz-PM-uMR" firstAttribute="top" secondItem="Lgk-hZ-ONT" secondAttribute="bottom" constant="40" id="T3Y-E7-aPA"/>
@@ -131,7 +135,10 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LPd-b8-Miq" secondAttribute="trailing" constant="143" id="Yt8-cg-M31"/>
                             <constraint firstItem="Lgk-hZ-ONT" firstAttribute="top" secondItem="LPd-b8-Miq" secondAttribute="bottom" constant="65" id="f9M-DM-oC2"/>
                             <constraint firstItem="Lgk-hZ-ONT" firstAttribute="top" secondItem="LPd-b8-Miq" secondAttribute="bottom" constant="65" id="gS8-5y-x9b"/>
+                            <constraint firstItem="HgJ-lf-xZh" firstAttribute="top" secondItem="Lgk-hZ-ONT" secondAttribute="bottom" constant="45.670000000000002" id="kkI-um-Zfb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HgJ-lf-xZh" secondAttribute="trailing" constant="30" id="m5k-Kh-wZc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lgk-hZ-ONT" secondAttribute="trailing" constant="25" id="myM-jS-Bh0"/>
+                            <constraint firstItem="HgJ-lf-xZh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="nSE-Lh-2Kx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -193,7 +200,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="ActivityWhite"/>
                                 <connections>
-                                    <segue destination="8kP-ND-YtE" kind="show" id="jrw-A9-XSl"/>
+                                    <segue destination="8kP-ND-YtE" kind="show" identifier="toActivityRec" id="fyc-63-6kw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIR-38-Aon">
@@ -339,7 +346,7 @@
                                     <segue destination="7Iw-4v-RMG" kind="show" id="W8V-4s-UhS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today, you seem very happy. Here some activity that can make you feel better than ever" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-oK-vvf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-oK-vvf">
                                 <rect key="frame" x="46" y="568" width="283" height="77"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="77" id="qfi-Hn-KNR"/>
@@ -433,7 +440,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="HistoryWhite"/>
                                 <connections>
-                                    <segue destination="7Iw-4v-RMG" kind="show" id="w6A-rp-Fep"/>
+                                    <segue destination="7Iw-4v-RMG" kind="show" id="RKq-OJ-rQD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZe-p4-DYa">
@@ -646,8 +653,8 @@
         <image name="next" width="220" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jrw-A9-XSl"/>
-        <segue reference="QMK-W5-2QC"/>
-        <segue reference="w6A-rp-Fep"/>
+        <segue reference="Rhv-K3-X73"/>
+        <segue reference="nRV-e8-8C9"/>
+        <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>

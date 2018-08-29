@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailActivityViewController: UIViewController {
 
@@ -14,6 +15,7 @@ class DetailActivityViewController: UIViewController {
     var seconds = 5
     var timer = Timer()
     var activities:String = ""
+    var heartCondition:String?
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var showImg: UIImageView!
@@ -29,7 +31,20 @@ class DetailActivityViewController: UIViewController {
     }
     
     @IBAction func doneBtn(_ sender: UIButton) {
-        
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let context = appDel.persistentContainer.viewContext
+        do {
+            let now = Date()
+            let newActive = NSEntityDescription.insertNewObject(forEntityName: "History", into: context)
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "dd/MM/yyyy HH:mm"
+            newActive.setValue(activities, forKey: "activityName")
+            newActive.setValue(dateFormat.string(from: now), forKey: "activityDate")
+            newActive.setValue(heartCondition, forKey: "heartCondition")
+            try context.save()
+        } catch  {
+            
+        }
     }
     
     func buttonHide(){

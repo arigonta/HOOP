@@ -47,12 +47,15 @@ class HomeViewController: UIViewController {
                 if Int(heartRate) >= 100 && Int(heartRate) < 150{
                     self.heartImg.loadGif(name: "GreenHeart")
                     self.heartImage = "green"
+                    self.hrvLabel.text = "Today, you seem very happy. Here some activity that can make you feel better than ever"
                 }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
                     self.heartImg.loadGif(name: "YellowHeart")
                     self.heartImage = "yellow"
+                    self.hrvLabel.text = "Youre Yellow! get some help!"
                 }else if Int(heartRate) >= 6969 && Int(heartRate) < 14045{
                     self.heartImg.loadGif(name: "RedHeart")
                     self.heartImage = "red"
+                    self.hrvLabel.text = "Youre Red! get some help!"
                 }
                 print(self.heartImage)
             }
@@ -146,6 +149,9 @@ class HomeViewController: UIViewController {
         if segue.identifier == "toActivityRecom" {
             let destVC = segue.destination as! ActivityRecViewController
             destVC.heartImage = heartImage
+        }
+        else if let destination = segue.destination as? HistoryViewController{
+            destination.heartImage = heartImage
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

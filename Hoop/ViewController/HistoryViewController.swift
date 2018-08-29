@@ -13,7 +13,11 @@ var historyInit = [History]()
 var managedObjectContext: NSManagedObjectContext!
 var selectedIndex: Int?
 
+
 class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    
+    var heartImage: String?
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return historyInit.count
     }
@@ -26,6 +30,11 @@ class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewD
         // Configure the cell...
         cell.setHistory(his: hist)
         return cell
+    }
+    
+    @IBAction func unwindToActivityRec(_ sender: UIStoryboardSegue) {
+        let sourceViewController = sender.source
+        // Use data from the view controller which initiated the unwind segue
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -57,6 +66,13 @@ class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewD
         // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let destination = segue.destination as? ActivityRecViewController{
+            destination.heartImage = heartImage
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
