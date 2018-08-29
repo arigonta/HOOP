@@ -12,6 +12,7 @@ import UIKit
 
 class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
+    var heartImage: String?
     var selectedIndex: Int?
     var act: [activity] = []
     
@@ -31,7 +32,15 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
-            cell.contentView.backgroundColor = #colorLiteral(red: 0.5933555961, green: 0.7535129189, blue: 0.7118578553, alpha: 1)
+            if heartImage! == "green" {
+                cell.contentView.backgroundColor = #colorLiteral(red: 0.5933555961, green: 0.7535129189, blue: 0.7118578553, alpha: 1)
+            }
+            else if heartImage! == "yellow" {
+                cell.contentView.backgroundColor = #colorLiteral(red: 0.9803921569, green: 0.9725490196, blue: 0.5843137255, alpha: 1)
+            }
+            else if heartImage! == "red" {
+                cell.contentView.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.5019607843, blue: 0.5058823529, alpha: 1)
+            }
             cell.contentView.layer.cornerRadius = 10
         }
         selectedIndex = indexPath.row
@@ -54,6 +63,7 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         act.append(activity(text: "Breathing"))
         act.append(activity(text: "Jogging"))
         act.append(activity(text: "Meditate"))

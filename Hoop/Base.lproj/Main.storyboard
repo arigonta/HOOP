@@ -325,7 +325,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="ActivityWhite"/>
                                 <connections>
-                                    <segue destination="8kP-ND-YtE" kind="show" id="nzY-dG-uat"/>
+                                    <action selector="activityButton:" destination="svJ-vT-dai" eventType="touchUpInside" id="JcG-s5-ecl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzq-rS-fzn">
@@ -402,6 +402,7 @@
                         <outlet property="heartImg" destination="oBX-Cj-9wa" id="4pr-E8-eKU"/>
                         <outlet property="hrvLabel" destination="Cww-oK-vvf" id="Kw7-b4-gsV"/>
                         <outlet property="nameLabel" destination="xgz-XR-M1h" id="Dje-4r-2sf"/>
+                        <segue destination="8kP-ND-YtE" kind="show" identifier="toActivityRecom" id="Rhv-K3-X73"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hof-Gm-Roq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -447,7 +448,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Pe-hL-ERB">
-                                <rect key="frame" x="10" y="117" width="355" height="529"/>
+                                <rect key="frame" x="10" y="121" width="355" height="525"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="activityTableViewCell" rowHeight="65" id="b7n-Fe-jcd" customClass="ActivityRecTableViewCell" customModule="Hoop" customModuleProvider="target">
@@ -500,7 +501,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ACTIVITY RECOMMENDATION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhC-dk-sIW">
-                                <rect key="frame" x="43.666666666666657" y="65" width="288.33333333333337" height="23.333333333333329"/>
+                                <rect key="frame" x="43.666666666666657" y="65" width="288.33333333333337" height="27.333333333333329"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -633,7 +634,7 @@
         <image name="next" width="220" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nzY-dG-uat"/>
+        <segue reference="Rhv-K3-X73"/>
         <segue reference="QMK-W5-2QC"/>
         <segue reference="w6A-rp-Fep"/>
     </inferredMetricsTieBreakers>
