@@ -175,8 +175,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerX" secondItem="dj3-bx-hXs" secondAttribute="centerX" id="M8M-BR-39A"/>
-                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerY" secondItem="dj3-bx-hXs" secondAttribute="centerY" id="cwR-rr-mGi"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerY" secondItem="dj3-bx-hXs" secondAttribute="centerY" id="1tQ-0F-t9v"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerX" secondItem="dj3-bx-hXs" secondAttribute="centerX" id="3P9-Pu-EKS"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerX" secondItem="dj3-bx-hXs" secondAttribute="centerX" id="VDZ-8R-G9H"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerY" secondItem="dj3-bx-hXs" secondAttribute="centerY" id="luI-ow-ZS0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ny3-Ep-Otc"/>
                     </view>
@@ -671,6 +673,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Active" width="1540" height="1540"/>
         <image name="ActivityBlack" width="338" height="150"/>
         <image name="ActivityWhite" width="338" height="150"/>
         <image name="BackBtn" width="790" height="380"/>
