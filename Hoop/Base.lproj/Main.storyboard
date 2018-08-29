@@ -160,8 +160,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvU-mE-buR">
-                                <rect key="frame" x="137.66666666666666" y="361" width="100" height="100"/>
-                                <state key="normal" title="Start" backgroundImage="active">
+                                <rect key="frame" x="92" y="311" width="191" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="IxW-8k-aee"/>
+                                    <constraint firstAttribute="width" constant="191" id="MMW-di-i1I"/>
+                                </constraints>
+                                <state key="normal" title="Start" backgroundImage="Active">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -171,8 +175,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerX" secondItem="ny3-Ep-Otc" secondAttribute="centerX" id="caf-hq-ZZR"/>
-                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerY" secondItem="ny3-Ep-Otc" secondAttribute="centerY" id="ovL-TQ-Xfr"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerY" secondItem="dj3-bx-hXs" secondAttribute="centerY" id="1tQ-0F-t9v"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerX" secondItem="dj3-bx-hXs" secondAttribute="centerX" id="3P9-Pu-EKS"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerX" secondItem="dj3-bx-hXs" secondAttribute="centerX" id="VDZ-8R-G9H"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerY" secondItem="dj3-bx-hXs" secondAttribute="centerY" id="luI-ow-ZS0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ny3-Ep-Otc"/>
                     </view>
@@ -648,6 +654,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Active" width="1540" height="1540"/>
         <image name="ActivityBlack" width="338" height="150"/>
         <image name="ActivityWhite" width="338" height="150"/>
         <image name="BackBtn" width="790" height="380"/>
@@ -657,14 +664,13 @@
         <image name="Love" width="370" height="370"/>
         <image name="Reset" width="1070" height="380"/>
         <image name="Start" width="1070" height="380"/>
-        <image name="active" width="100" height="100"/>
         <image name="backgroundProfile" width="1625" height="240"/>
         <image name="historyBtn" width="1625" height="240"/>
         <image name="next" width="220" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Rhv-K3-X73"/>
-        <segue reference="nRV-e8-8C9"/>
+        <segue reference="x3e-ZJ-gNh"/>
         <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>
