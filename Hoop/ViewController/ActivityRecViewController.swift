@@ -24,6 +24,15 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
         let cell = activityTableView.dequeueReusableCell(withIdentifier: "activityTableViewCell", for: indexPath) as! ActivityRecTableViewCell
         
         cell.activityLbl.text = act[indexPath.row].text
+        if heartImage! == "green" {
+            cell.activityImg.image = UIImage(named: "activityBtn")
+        }
+        else if heartImage! == "yellow" {
+            cell.activityImg.image = UIImage(named: "YellowBar")
+        }
+        else if heartImage! == "red" {
+            cell.activityImg.image = UIImage(named: "RedBar")
+        }
         return cell
     }
     
