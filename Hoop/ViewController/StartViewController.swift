@@ -18,7 +18,7 @@ class StartViewController: UIViewController {
         performSegue(withIdentifier: "startToHome", sender: self)
     }
     override func viewDidLoad() {
-                saveMockHeartData()
+//                saveMockHeartData()
                 let appDel = UIApplication.shared.delegate as! AppDelegate
                 let context = appDel.persistentContainer.viewContext
         //        do {
@@ -79,13 +79,22 @@ class StartViewController: UIViewController {
         
         // 1. Create a heart rate BPM Sample
         let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+        let heartRateVariabilityType = HKQuantityType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!
         let heartRateQuantity = HKQuantity(unit: HKUnit(from: "count/min"),
                                            doubleValue: Double(arc4random_uniform(80) + 100))
+        let heartRateVariabilityQuantity = HKQuantity(unit: HKUnit.secondUnit(with: .milli), doubleValue: Double(arc4random_uniform(40) + 30))
         let nowDate = Date()
         let heartSample = HKQuantitySample(type: heartRateType, quantity: heartRateQuantity, start: nowDate, end: nowDate)
+        let heartVariabilitySample = HKQuantitySample(type: heartRateVariabilityType, quantity: heartRateVariabilityQuantity, start: nowDate, end: nowDate)
         
         // 2. Save the sample in the store
         healthKitStore.save(heartSample, withCompletion: { (success, error) -> Void in
+            if let error = error {
+                print("Error saving heart sample: \(error.localizedDescription)")
+            }
+        })
+        
+        healthKitStore.save(heartVariabilitySample, withCompletion: { (success, error) -> Void in
             if let error = error {
                 print("Error saving heart sample: \(error.localizedDescription)")
             }

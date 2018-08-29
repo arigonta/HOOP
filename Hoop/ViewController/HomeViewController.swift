@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     var heartImage:String = ""
     var userName:String = ""
     var heartRateQuery:HKQuery?
+    var observerQuery:HKQuery?
     let heartRateType:HKQuantityType   = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
     let health: HKHealthStore = HKHealthStore()
     
@@ -26,37 +27,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchDataFromModel()
-        
+        observerHeartRateSamples()
         nameLabel.text = "Hi, \(userName)"
-        self.fetchLatestHeartRateSample(completion: { sample in
-            guard let sample = sample else {
-                return
-            }
-
-            DispatchQueue.main.async {
-
-                /// Converting the heart rate to bpm
-                let heartRateUnit = HKUnit(from: "count/min")
-                let heartRate = sample
-                    .quantity
-                    .doubleValue(for: heartRateUnit)
-
-                /// Updating the UI with the retrieved value
-                self.bpmLabel.text = "\(Int(heartRate)) BPM"
-                
-                if Int(heartRate) >= 100 && Int(heartRate) < 150{
-                    self.heartImg.loadGif(name: "GreenHeart")
-                    self.heartImage = "green"
-                }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
-                    self.heartImg.loadGif(name: "YellowHeart")
-                    self.heartImage = "yellow"
-                }else if Int(heartRate) >= 6969 && Int(heartRate) < 14045{
-                    self.heartImg.loadGif(name: "RedHeart")
-                    self.heartImage = "red"
-                }
-                print(self.heartImage)
-            }
-        })
     }
     
     func fetchDataFromModel() {
@@ -89,43 +61,88 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func observerHeartRateSamples() {
+        let heartRateSampleType = HKObjectType.quantityType(forIdentifier: .heartRate)
+        
+        if let observerQuery = observerQuery {
+            health.stop(observerQuery)
+        }
+        
+        self.observerQuery = HKObserverQuery(sampleType: heartRateSampleType!, predicate: nil) { (_, _, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            
+            self.fetchLatestHeartRateSample { (sample) in
+                guard let sample = sample else {
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    /// Converting the heart rate to bpm
+                    let heartRateUnit = HKUnit(from: "count/min")
+                    let heartRate = sample
+                        .quantity
+                        .doubleValue(for: heartRateUnit)
+                    
+                    /// Updating the UI with the retrieved value
+                    self.bpmLabel.text = "\(Int(heartRate)) BPM"
+                    
+                    if Int(heartRate) >= 100 && Int(heartRate) < 150{
+                        self.heartImg.loadGif(name: "GreenHeart")
+                        self.heartImage = "green"
+                    }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
+                        self.heartImg.loadGif(name: "YellowHeart")
+                        self.heartImage = "yellow"
+                    }else if Int(heartRate) >= 6969 && Int(heartRate) < 14045{
+                        self.heartImg.loadGif(name: "RedHeart")
+                        self.heartImage = "red"
+                    }
+                }
+            }
+        }
+        health.execute(observerQuery!)
+    }
+    
     func fetchLatestHeartRateSample(
         completion: @escaping (_ sample: HKQuantitySample?) -> Void) {
-
+        
         /// Create sample type for the heart rate
         guard let sampleType = HKObjectType
             .quantityType(forIdentifier: .heartRate) else {
                 completion(nil)
                 return
         }
-
+        
         /// Predicate for specifiying start and end dates for the query
         let predicate = HKQuery
             .predicateForSamples(
                 withStart: Date.distantPast,
                 end: Date(),
                 options: .strictEndDate)
-
+        
         /// Set sorting by date.
         let sortDescriptor = NSSortDescriptor(
             key: HKSampleSortIdentifierStartDate,
             ascending: false)
-
+        
         /// Create the query
         let query = HKSampleQuery(
             sampleType: sampleType,
             predicate: predicate,
             limit: Int(HKObjectQueryNoLimit),
             sortDescriptors: [sortDescriptor]) { (_, results, error) in
-
+                
                 guard error == nil else {
                     print("Error: \(error!.localizedDescription)")
                     return
                 }
-
+                
                 completion(results?[0] as? HKQuantitySample)
         }
-
+        
         self.health.execute(query)
     }
     /*

@@ -9,21 +9,33 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Profile-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HoopWatchKit" customModuleProvider="target">
+                <controller identifier="Profile" backgroundImage="AppleWatch" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HoopWatchKit" customModuleProvider="target">
                     <items>
-                        <label width="136" alignment="left" text="Label" id="Qlj-fS-fB7"/>
-                        <separator alignment="left" id="UDM-V7-kys"/>
-                        <imageView height="120" alignment="left" id="HYY-bH-Cbv"/>
+                        <label height="127" alignment="center" text="Let's do some activity to make you feel better" textAlignment="center" numberOfLines="0" id="Ifc-Jb-fKa"/>
                     </items>
                     <connections>
-                        <outlet property="bpmLabel" destination="Qlj-fS-fB7" id="HYS-1e-d5Q"/>
+                        <segue destination="QVL-lf-5Kk" kind="relationship" relationship="nextPage" id="Us0-B2-Fur"/>
                     </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--AppleWatchHeart-->
+        <scene sceneID="odc-P3-yF7">
+            <objects>
+                <controller backgroundImage="AppleWatchHeart" id="QVL-lf-5Kk" customClass="HeartInterfaceController" customModule="HoopWatchKit_Extension">
+                    <items>
+                        <label width="83" height="131" alignment="center" text="Label" textAlignment="center" id="MP0-Vl-NRA"/>
+                    </items>
+                    <connections>
+                        <outlet property="bpmLabel" destination="MP0-Vl-NRA" id="suE-n9-tbv"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="523" y="345"/>
         </scene>
     </scenes>
 </document>

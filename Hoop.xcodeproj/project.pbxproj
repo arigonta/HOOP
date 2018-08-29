@@ -23,6 +23,7 @@
 		46306A85213678BA00F4DC34 /* RedHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 46306A82213678B900F4DC34 /* RedHeart.gif */; };
 		46306A86213678BA00F4DC34 /* YellowHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 46306A83213678B900F4DC34 /* YellowHeart.gif */; };
 		46306A87213678BA00F4DC34 /* GreenHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = 46306A84213678BA00F4DC34 /* GreenHeart.gif */; };
+		46410F9A2136C2C20038C064 /* HeartInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46410F982136C2B40038C064 /* HeartInterfaceController.swift */; };
 		469EA0E5212AB08E005C9DDE /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469EA0E4212AB08E005C9DDE /* HealthKit.framework */; };
 		469EA0EC212FF7A8005C9DDE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */; };
 		469EA0EE212FF7B9005C9DDE /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */; };
@@ -111,6 +112,7 @@
 		46306A82213678B900F4DC34 /* RedHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = RedHeart.gif; sourceTree = "<group>"; };
 		46306A83213678B900F4DC34 /* YellowHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = YellowHeart.gif; sourceTree = "<group>"; };
 		46306A84213678BA00F4DC34 /* GreenHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = GreenHeart.gif; sourceTree = "<group>"; };
+		46410F982136C2B40038C064 /* HeartInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartInterfaceController.swift; sourceTree = "<group>"; };
 		469EA0E1212AAC4A005C9DDE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS4.3.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		469EA0E3212AB08E005C9DDE /* Hoop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hoop.entitlements; sourceTree = "<group>"; };
 		469EA0E4212AB08E005C9DDE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				46306A8021353A3900F4DC34 /* HoopWatchKit Extension.entitlements */,
+				46410F982136C2B40038C064 /* HeartInterfaceController.swift */,
 				46306A6C2135345F00F4DC34 /* InterfaceController.swift */,
 				46306A6E2135345F00F4DC34 /* ExtensionDelegate.swift */,
 				46306A722135345F00F4DC34 /* Assets.xcassets */,
@@ -499,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46410F9A2136C2C20038C064 /* HeartInterfaceController.swift in Sources */,
 				46306A6F2135345F00F4DC34 /* ExtensionDelegate.swift in Sources */,
 				46306A6D2135345F00F4DC34 /* InterfaceController.swift in Sources */,
 			);
