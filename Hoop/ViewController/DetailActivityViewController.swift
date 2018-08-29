@@ -23,10 +23,20 @@ class DetailActivityViewController: UIViewController {
     @IBOutlet weak var startBtnOutlet: UIButton!
     @IBOutlet weak var timerLbl: UILabel!
     @IBOutlet weak var doneBtnOutlet: UIButton!
+    @IBOutlet weak var resetBtnOutlet: UIButton!
+    
+    @IBAction func resetBtn(_ sender: UIButton) {
+        seconds = 5
+        timerLbl.text = "0\(minutes) : 0\(seconds)"
+        startBtnOutlet.isHidden = false
+        doneBtnOutlet.isHidden = true
+    }
     
     @IBAction func startBtn(_ sender: UIButton) {
         if(seconds != 0 ){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(action), userInfo: nil, repeats: true)
+            startBtnOutlet.isHidden = true
+            resetBtnOutlet.isHidden = true
         }
     }
     
@@ -50,12 +60,15 @@ class DetailActivityViewController: UIViewController {
     func buttonHide(){
         startBtnOutlet.isHidden = true
         doneBtnOutlet.isHidden = true
+        resetBtnOutlet.isHidden = true
         timerLbl.isHidden = true
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         timerLbl.text = "0\(minutes) : 0\(seconds)"
+        doneBtnOutlet.isHidden = true
+        resetBtnOutlet.isHidden = true
         if activities == "Breathing"{
             //showImg.loadGif(name: "")
             titleLbl.text = activities
@@ -89,6 +102,8 @@ class DetailActivityViewController: UIViewController {
         
         if seconds == 0{
             timer.invalidate()
+            doneBtnOutlet.isHidden = false
+            resetBtnOutlet.isHidden = false
         }
     }
 
