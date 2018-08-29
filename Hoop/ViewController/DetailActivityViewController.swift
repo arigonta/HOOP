@@ -55,6 +55,7 @@ class DetailActivityViewController: UIViewController {
         } catch  {
             
         }
+        performSegue(withIdentifier: "goToHomeView", sender: self)
     }
     
     func buttonHide(){

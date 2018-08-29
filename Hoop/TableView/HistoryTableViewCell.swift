@@ -11,9 +11,13 @@ import UIKit
 class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var HistoryLbl: UILabel!
+    @IBOutlet weak var HistoryImg: UIImageView!
+    @IBOutlet weak var HistoryLblDate: UILabel!
+    @IBOutlet weak var imgHeart: UIImageView!
     
     func setHistory(his: History) {
 //        HistoryLbl.text = his.activityDate
         HistoryLbl.text = his.activityName
+        HistoryLblDate.text = his.activityDate
     }
 }

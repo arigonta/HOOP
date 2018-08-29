@@ -18,7 +18,7 @@ class StartViewController: UIViewController {
         performSegue(withIdentifier: "startToHome", sender: self)
     }
     override func viewDidLoad() {
-                saveMockHeartData()
+//                saveMockHeartData()
                 let appDel = UIApplication.shared.delegate as! AppDelegate
                 let context = appDel.persistentContainer.viewContext
         //        do {
@@ -80,7 +80,7 @@ class StartViewController: UIViewController {
         // 1. Create a heart rate BPM Sample
         let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
         let heartRateQuantity = HKQuantity(unit: HKUnit(from: "count/min"),
-                                           doubleValue: Double(arc4random_uniform(80) + 100))
+                                           doubleValue: Double(arc4random_uniform(20) + 100))
         let nowDate = Date()
         let heartSample = HKQuantitySample(type: heartRateType, quantity: heartRateQuantity, start: nowDate, end: nowDate)
         

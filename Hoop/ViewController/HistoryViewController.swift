@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+var heartImage: String?
 var historyInit = [History]()
 var managedObjectContext: NSManagedObjectContext!
 var selectedIndex: Int?
@@ -26,7 +27,15 @@ class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let hist = historyInit[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyTableViewCell", for: indexPath) as! HistoryTableViewCell
-        
+        cell.HistoryImg.image = UIImage(named: "barHistory")
+        if heartImage == "green"
+        {
+            cell.imgHeart.loadGif(name: "GreenHeart")
+        }else if heartImage == "yellow"{
+            cell.imgHeart.loadGif(name: "YellowHearth")
+        }else if heartImage == "red"{
+            cell.imgHeart.loadGif(name: "RedHeart")
+        }
         // Configure the cell...
         cell.setHistory(his: hist)
         return cell
