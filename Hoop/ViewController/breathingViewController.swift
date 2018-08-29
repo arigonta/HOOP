@@ -10,9 +10,14 @@ import UIKit
 
 class breathingViewController: UIViewController {
 
+    @IBOutlet weak var titleLbl: UILabel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
 

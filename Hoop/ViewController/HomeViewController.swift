@@ -29,6 +29,38 @@ class HomeViewController: UIViewController {
         fetchDataFromModel()
         observerHeartRateSamples()
         nameLabel.text = "Hi, \(userName)"
+        self.fetchLatestHeartRateSample(completion: { sample in
+            guard let sample = sample else {
+                return
+            }
+
+            DispatchQueue.main.async {
+
+                /// Converting the heart rate to bpm
+                let heartRateUnit = HKUnit(from: "count/min")
+                let heartRate = sample
+                    .quantity
+                    .doubleValue(for: heartRateUnit)
+
+                /// Updating the UI with the retrieved value
+                self.bpmLabel.text = "\(Int(heartRate)) BPM"
+                
+                if Int(heartRate) >= 100 && Int(heartRate) < 150{
+                    self.heartImg.loadGif(name: "GreenHeart")
+                    self.heartImage = "green"
+                    self.hrvLabel.text = "Today, you seem very happy. Here some activity that can make you feel better than ever"
+                }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
+                    self.heartImg.loadGif(name: "YellowHeart")
+                    self.heartImage = "yellow"
+                    self.hrvLabel.text = "Youre Yellow! get some help!"
+                }else if Int(heartRate) >= 6969 && Int(heartRate) < 14045{
+                    self.heartImg.loadGif(name: "RedHeart")
+                    self.heartImage = "red"
+                    self.hrvLabel.text = "Youre Red! get some help!"
+                }
+                print(self.heartImage)
+            }
+        })
     }
     
     func fetchDataFromModel() {
@@ -163,6 +195,9 @@ class HomeViewController: UIViewController {
         if segue.identifier == "toActivityRecom" {
             let destVC = segue.destination as! ActivityRecViewController
             destVC.heartImage = heartImage
+        }
+        else if let destination = segue.destination as? HistoryViewController{
+            destination.heartImage = heartImage
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

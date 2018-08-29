@@ -32,6 +32,46 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
+    func fetchLatestHeartRateSample(
+        completion: @escaping (_ sample: HKQuantitySample?) -> Void) {
+        
+        /// Create sample type for the heart rate
+        guard let sampleType = HKObjectType
+            .quantityType(forIdentifier: .heartRate) else {
+                completion(nil)
+                return
+        }
+        
+        /// Predicate for specifiying start and end dates for the query
+        let predicate = HKQuery
+            .predicateForSamples(
+                withStart: Date.distantPast,
+                end: Date(),
+                options: .strictEndDate)
+        
+        /// Set sorting by date.
+        let sortDescriptor = NSSortDescriptor(
+            key: HKSampleSortIdentifierStartDate,
+            ascending: false)
+        
+        /// Create the query
+        let query = HKSampleQuery(
+            sampleType: sampleType,
+            predicate: predicate,
+            limit: Int(HKObjectQueryNoLimit),
+            sortDescriptors: [sortDescriptor]) { (_, results, error) in
+                
+                guard error == nil else {
+                    print("Error: \(error!.localizedDescription)")
+                    return
+                }
+                
+                completion(results?[0] as? HKQuantitySample)
+        }
+        
+        self.health.execute(query)
+        
+    }
     
 }
 
