@@ -160,8 +160,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvU-mE-buR">
-                                <rect key="frame" x="137.66666666666666" y="361" width="100" height="100"/>
-                                <state key="normal" title="Start" backgroundImage="active">
+                                <rect key="frame" x="109" y="326" width="157" height="161"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="161" id="6lq-t2-s1t"/>
+                                    <constraint firstAttribute="width" constant="157" id="Swr-hT-972"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="START Button">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -171,8 +175,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerX" secondItem="ny3-Ep-Otc" secondAttribute="centerX" id="caf-hq-ZZR"/>
-                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerY" secondItem="ny3-Ep-Otc" secondAttribute="centerY" id="ovL-TQ-Xfr"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerX" secondItem="dj3-bx-hXs" secondAttribute="centerX" id="M8M-BR-39A"/>
+                            <constraint firstItem="DvU-mE-buR" firstAttribute="centerY" secondItem="dj3-bx-hXs" secondAttribute="centerY" id="cwR-rr-mGi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ny3-Ep-Otc"/>
                     </view>
@@ -675,14 +679,14 @@
         <image name="HistoryWhite" width="338" height="152"/>
         <image name="Love" width="370" height="370"/>
         <image name="Reset" width="1070" height="380"/>
+        <image name="START Button" width="1540" height="1540"/>
         <image name="Start" width="1070" height="380"/>
-        <image name="active" width="100" height="100"/>
         <image name="backgroundProfile" width="1625" height="240"/>
         <image name="next" width="220" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fyc-63-6kw"/>
-        <segue reference="nRV-e8-8C9"/>
+        <segue reference="x3e-ZJ-gNh"/>
         <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>
