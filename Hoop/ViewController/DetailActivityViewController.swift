@@ -73,7 +73,7 @@ class DetailActivityViewController: UIViewController {
         doneBtnOutlet.isHidden = true
         resetBtnOutlet.isHidden = true
         if activities == "Breathing"{
-            //showImg.loadGif(name: "")
+            showImg.loadGif(name: "Breath")
             titleLbl.text = activities
             descLbl.text = "Take a time to breath"
             seconds = 30

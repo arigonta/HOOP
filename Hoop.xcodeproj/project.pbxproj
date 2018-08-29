@@ -46,7 +46,7 @@
 		CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA8902102122C55200260C20 /* Hoop.xcdatamodeld */; };
 		CA8902142122C55300260C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8902132122C55300260C20 /* Assets.xcassets */; };
 		CA8902172122C55300260C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8902152122C55300260C20 /* LaunchScreen.storyboard */; };
-		CAD39A2621355870009B9FF9 /* breathingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD39A2521355870009B9FF9 /* breathingViewController.swift */; };
+		CAD39A342136C130009B9FF9 /* Breath.gif in Resources */ = {isa = PBXBuildFile; fileRef = CAD39A332136C12F009B9FF9 /* Breath.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,7 +139,7 @@
 		CA8902132122C55300260C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8902162122C55300260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8902182122C55300260C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAD39A2521355870009B9FF9 /* breathingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = breathingViewController.swift; sourceTree = "<group>"; };
+		CAD39A332136C12F009B9FF9 /* Breath.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = Breath.gif; path = GIF/Breath.gif; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +241,7 @@
 		CA0515352133E11100ABA7B8 /* gif */ = {
 			isa = PBXGroup;
 			children = (
+				CAD39A332136C12F009B9FF9 /* Breath.gif */,
 				46306A84213678BA00F4DC34 /* GreenHeart.gif */,
 				46306A82213678B900F4DC34 /* RedHeart.gif */,
 				46306A83213678B900F4DC34 /* YellowHeart.gif */,
@@ -440,6 +441,7 @@
 				46306A86213678BA00F4DC34 /* YellowHeart.gif in Resources */,
 				3F550F5A2133F675005F8EB6 /* Healthy Sleep.gif in Resources */,
 				CA8902142122C55300260C20 /* Assets.xcassets in Resources */,
+				CAD39A342136C130009B9FF9 /* Breath.gif in Resources */,
 				46306A87213678BA00F4DC34 /* GreenHeart.gif in Resources */,
 				3F550F592133F675005F8EB6 /* Healthy Food.gif in Resources */,
 				469EA0EC212FF7A8005C9DDE /* OpenSans-Bold.ttf in Resources */,
