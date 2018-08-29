@@ -604,6 +604,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKH-dU-wVM">
+                                <rect key="frame" x="233" y="711" width="107" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Reset"/>
+                                <connections>
+                                    <action selector="resetBtn:" destination="yel-gd-vMT" eventType="touchUpInside" id="5Dx-sg-onX"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oht-Qj-QJk">
                                 <rect key="frame" x="233" y="711" width="107" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -619,6 +627,7 @@
                     <connections>
                         <outlet property="descLbl" destination="72I-Jx-jAH" id="4pL-zj-244"/>
                         <outlet property="doneBtnOutlet" destination="pIt-mQ-ihs" id="QRJ-b7-Cvn"/>
+                        <outlet property="resetBtnOutlet" destination="lKH-dU-wVM" id="oo2-O6-GTc"/>
                         <outlet property="showImg" destination="BXG-8s-Chc" id="y9H-R0-cl5"/>
                         <outlet property="startBtnOutlet" destination="Oht-Qj-QJk" id="cwA-mg-C5J"/>
                         <outlet property="timerLbl" destination="hoy-TR-ooZ" id="vAJ-9g-fDp"/>
@@ -639,6 +648,7 @@
         <image name="HistoryBlack" width="338" height="152"/>
         <image name="HistoryWhite" width="338" height="152"/>
         <image name="Love" width="370" height="370"/>
+        <image name="Reset" width="1070" height="380"/>
         <image name="Start" width="1070" height="380"/>
         <image name="active" width="100" height="100"/>
         <image name="backgroundProfile" width="1625" height="240"/>
