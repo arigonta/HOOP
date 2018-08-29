@@ -43,7 +43,6 @@
 		CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA8902102122C55200260C20 /* Hoop.xcdatamodeld */; };
 		CA8902142122C55300260C20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA8902132122C55300260C20 /* Assets.xcassets */; };
 		CA8902172122C55300260C20 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA8902152122C55300260C20 /* LaunchScreen.storyboard */; };
-		CAD39A2621355870009B9FF9 /* breathingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD39A2521355870009B9FF9 /* breathingViewController.swift */; };
 		CAD39A3021355CD2009B9FF9 /* GreenHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = CAD39A2D21355CD1009B9FF9 /* GreenHeart.gif */; };
 		CAD39A3121355CD2009B9FF9 /* YellowHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = CAD39A2E21355CD1009B9FF9 /* YellowHeart.gif */; };
 		CAD39A3221355CD2009B9FF9 /* RedHeart.gif in Resources */ = {isa = PBXBuildFile; fileRef = CAD39A2F21355CD1009B9FF9 /* RedHeart.gif */; };
@@ -136,7 +135,6 @@
 		CA8902132122C55300260C20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA8902162122C55300260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA8902182122C55300260C20 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CAD39A2521355870009B9FF9 /* breathingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = breathingViewController.swift; sourceTree = "<group>"; };
 		CAD39A2D21355CD1009B9FF9 /* GreenHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = GreenHeart.gif; path = GIF/GreenHeart.gif; sourceTree = SOURCE_ROOT; };
 		CAD39A2E21355CD1009B9FF9 /* YellowHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = YellowHeart.gif; path = GIF/YellowHeart.gif; sourceTree = SOURCE_ROOT; };
 		CAD39A2F21355CD1009B9FF9 /* RedHeart.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = RedHeart.gif; path = GIF/RedHeart.gif; sourceTree = SOURCE_ROOT; };
@@ -213,7 +211,6 @@
 				CA05152A2133E11100ABA7B8 /* StartViewController.swift */,
 				CA05152B2133E11100ABA7B8 /* ActivityRecViewController.swift */,
 				CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */,
-				CAD39A2521355870009B9FF9 /* breathingViewController.swift */,
 				CA05152D2133E11100ABA7B8 /* HistoryViewController.swift */,
 				CA0515552134067600ABA7B8 /* detailHistoryViewController.swift */,
 			);
@@ -519,7 +516,6 @@
 				CA0515562134067700ABA7B8 /* detailHistoryViewController.swift in Sources */,
 				CA0515392133E11100ABA7B8 /* StartViewController.swift in Sources */,
 				CA05153C2133E11100ABA7B8 /* HistoryViewController.swift in Sources */,
-				CAD39A2621355870009B9FF9 /* breathingViewController.swift in Sources */,
 				CA05153D2133E11100ABA7B8 /* HealthKitHandler.swift in Sources */,
 				CA0515412133E11100ABA7B8 /* ActivityRecTableViewCell.swift in Sources */,
 				CA05153B2133E11100ABA7B8 /* ProfileViewController.swift in Sources */,

@@ -10,33 +10,70 @@ import UIKit
 
 class DetailActivityViewController: UIViewController {
 
+    var minutes = 0
+    var seconds = 5
+    var timer = Timer()
     var activities:String = ""
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var showImg: UIImageView!
     @IBOutlet weak var descLbl: UILabel!
+    @IBOutlet weak var startBtnOutlet: UIButton!
+    @IBOutlet weak var timerLbl: UILabel!
+    @IBOutlet weak var doneBtnOutlet: UIButton!
     
+    @IBAction func startBtn(_ sender: UIButton) {
+        if(seconds != 0 ){
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(action), userInfo: nil, repeats: true)
+        }
+    }
+    
+    @IBAction func doneBtn(_ sender: UIButton) {
+        
+    }
+    
+    func buttonHide(){
+        startBtnOutlet.isHidden = true
+        doneBtnOutlet.isHidden = true
+        timerLbl.isHidden = true
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        timerLbl.text = "0\(minutes) : 0\(seconds)"
         if activities == "Breathing"{
-            performSegue(withIdentifier: "activityBreathing", sender: self)
+            //showImg.loadGif(name: "")
+            titleLbl.text = activities
+            descLbl.text = "Take a time to breath"
         }else if activities == "Jogging"{
             showImg.loadGif(name: "Jogging")
             titleLbl.text = activities
-            descLbl.text = "Jogging is very beneficial. It's good for your legs and your feet. It's also very good for the ground. It makes it feel needed\n\n-Charles M Schulz-"
+            descLbl.text = "Lets start jogging for 10 - 15 minutes, A little move for your body can be a good health for your mind"
+            buttonHide()
         }else if activities == "Meditate"{
             showImg.loadGif(name: "Meditation")
             titleLbl.text = activities
-            descLbl.text = "Quite the mind, and the soul will speak\n\n-Ma Jaya Sati Bhagavati-"
+            descLbl.text = "Take a time for 5 - 10 minutes to calm your mind"
+            buttonHide()
         }else if activities == "Healthy Food"{
             showImg.loadGif(name: "Healthy Food")
             titleLbl.text = activities
-            descLbl.text = "4 sehat 5 sempurna"
+            descLbl.text = "Eat some healthy food"
+            buttonHide()
         }else if activities == "Healthy Sleep"{
             showImg.loadGif(name: "Healthy Sleep")
             titleLbl.text = activities
-            descLbl.text = "Nina Bobo"
+            descLbl.text = "Take a little rest. It will help you to be more fresh"
+            buttonHide()
+        }
+    }
+    
+    @objc func action(){
+        seconds -= 1
+        timerLbl.text = "0\(minutes) : 0\(seconds)"
+        
+        if seconds == 0{
+            timer.invalidate()
         }
     }
 
