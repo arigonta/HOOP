@@ -160,12 +160,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvU-mE-buR">
-                                <rect key="frame" x="92" y="311" width="191" height="190"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="190" id="IxW-8k-aee"/>
-                                    <constraint firstAttribute="width" constant="191" id="MMW-di-i1I"/>
-                                </constraints>
-                                <state key="normal" title="Start" backgroundImage="Active">
+                                <rect key="frame" x="137.66666666666666" y="361" width="100" height="100"/>
+                                <state key="normal" title="Start" backgroundImage="active">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -243,25 +239,40 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLY-eS-1ud">
                                                     <rect key="frame" x="0.0" y="0.0" width="355" height="65"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="historyBtn" translatesAutoresizingMaskIntoConstraints="NO" id="YeK-JA-JE0">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YeK-JA-JE0">
                                                             <rect key="frame" x="8" y="11" width="339" height="43"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0f-36-QcK">
                                                             <rect key="frame" x="18" y="15" width="281" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc2-F0-2oC">
+                                                            <rect key="frame" x="128" y="11.000000000000057" width="204" height="43"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hlf-cG-AMT">
+                                                            <rect key="frame" x="292" y="15" width="50" height="35"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="35" id="S43-0H-ys5"/>
+                                                                <constraint firstAttribute="width" constant="50" id="zH7-XA-GLN"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="Hlf-cG-AMT" secondAttribute="trailing" constant="13" id="42X-Hr-vrB"/>
                                                         <constraint firstAttribute="width" constant="355" id="6Fz-5f-x8g"/>
                                                         <constraint firstAttribute="height" constant="65" id="G3C-N6-5Np"/>
                                                         <constraint firstAttribute="bottom" secondItem="J0f-36-QcK" secondAttribute="bottom" constant="15" id="Gnx-Rl-Moo"/>
                                                         <constraint firstAttribute="trailing" secondItem="YeK-JA-JE0" secondAttribute="trailing" constant="8" id="HoX-fu-C4U"/>
+                                                        <constraint firstItem="Hlf-cG-AMT" firstAttribute="top" secondItem="pLY-eS-1ud" secondAttribute="top" constant="15" id="T7b-pI-DLm"/>
                                                         <constraint firstItem="YeK-JA-JE0" firstAttribute="leading" secondItem="pLY-eS-1ud" secondAttribute="leading" constant="8" id="TGq-6j-hgw"/>
                                                         <constraint firstAttribute="trailing" secondItem="J0f-36-QcK" secondAttribute="trailing" constant="56" id="VhK-1G-VHR"/>
                                                         <constraint firstItem="J0f-36-QcK" firstAttribute="top" secondItem="pLY-eS-1ud" secondAttribute="top" constant="15" id="WvB-V9-GPL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Hlf-cG-AMT" secondAttribute="bottom" constant="15" id="azC-k0-T2o"/>
                                                         <constraint firstItem="YeK-JA-JE0" firstAttribute="top" secondItem="pLY-eS-1ud" secondAttribute="top" constant="11" id="bfl-tc-KaA"/>
                                                         <constraint firstAttribute="bottom" secondItem="YeK-JA-JE0" secondAttribute="bottom" constant="11" id="nPt-Fu-jEy"/>
                                                         <constraint firstItem="J0f-36-QcK" firstAttribute="leading" secondItem="pLY-eS-1ud" secondAttribute="leading" constant="18" id="ylc-dz-PcA"/>
@@ -276,7 +287,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="HistoryImg" destination="YeK-JA-JE0" id="cfM-Q6-vgM"/>
                                             <outlet property="HistoryLbl" destination="J0f-36-QcK" id="X4D-lt-pM5"/>
+                                            <outlet property="HistoryLblDate" destination="sc2-F0-2oC" id="6r7-tc-Vvc"/>
+                                            <outlet property="imgHeart" destination="Hlf-cG-AMT" id="Jc9-qL-EBB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -645,6 +659,7 @@
                         <outlet property="startBtnOutlet" destination="Oht-Qj-QJk" id="cwA-mg-C5J"/>
                         <outlet property="timerLbl" destination="hoy-TR-ooZ" id="vAJ-9g-fDp"/>
                         <outlet property="titleLbl" destination="bJ3-Qi-uVr" id="REg-bS-NTJ"/>
+                        <segue destination="svJ-vT-dai" kind="show" identifier="goToHomeView" id="QfO-I8-pWb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smx-Id-2pF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -665,12 +680,11 @@
         <image name="Reset" width="1070" height="380"/>
         <image name="Start" width="1070" height="380"/>
         <image name="backgroundProfile" width="1625" height="240"/>
-        <image name="historyBtn" width="1625" height="240"/>
         <image name="next" width="220" height="230"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Rhv-K3-X73"/>
-        <segue reference="x3e-ZJ-gNh"/>
+        <segue reference="fyc-63-6kw"/>
+        <segue reference="nRV-e8-8C9"/>
         <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>

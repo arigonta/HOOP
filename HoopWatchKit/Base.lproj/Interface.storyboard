@@ -17,6 +17,7 @@
                         <label height="127" alignment="center" text="Let's do some activity to make you feel better" textAlignment="center" numberOfLines="0" id="Ifc-Jb-fKa"/>
                     </items>
                     <connections>
+                        <outlet property="startLabel" destination="Ifc-Jb-fKa" id="wu6-T4-Xrb"/>
                         <segue destination="QVL-lf-5Kk" kind="relationship" relationship="nextPage" id="Us0-B2-Fur"/>
                     </connections>
                 </controller>

@@ -17,11 +17,21 @@
 		<key>Hoop.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>HoopWatchKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>46306A5A2135345D00F4DC34</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>469EA0B9212AABDD005C9DDE</key>
 		<dict>
 			<key>primary</key>
