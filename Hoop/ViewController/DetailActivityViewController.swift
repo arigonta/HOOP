@@ -12,7 +12,7 @@ import CoreData
 class DetailActivityViewController: UIViewController {
 
     var minutes = 0
-    var seconds = 5
+    var seconds = 0
     var timer = Timer()
     var activities:String = ""
     var heartCondition:String?
@@ -26,18 +26,21 @@ class DetailActivityViewController: UIViewController {
     @IBOutlet weak var resetBtnOutlet: UIButton!
     
     @IBAction func resetBtn(_ sender: UIButton) {
-        seconds = 5
-        timerLbl.text = "0\(minutes) : 0\(seconds)"
+        if activities == "Breathing"{
+            seconds = 30
+        }else if activities == "Jogging"{
+            minutes = 15
+        }else if activities == "Meditation"{
+            minutes = 10
+        }
         startBtnOutlet.isHidden = false
         doneBtnOutlet.isHidden = true
     }
     
     @IBAction func startBtn(_ sender: UIButton) {
-        if(seconds != 0 ){
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(action), userInfo: nil, repeats: true)
             startBtnOutlet.isHidden = true
             resetBtnOutlet.isHidden = true
-        }
     }
     
     @IBAction func doneBtn(_ sender: UIButton) {
@@ -67,23 +70,24 @@ class DetailActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        timerLbl.text = "0\(minutes) : 0\(seconds)"
+        
         doneBtnOutlet.isHidden = true
         resetBtnOutlet.isHidden = true
         if activities == "Breathing"{
-            //showImg.loadGif(name: "")
+            showImg.loadGif(name: "Breath")
             titleLbl.text = activities
             descLbl.text = "Take a time to breath"
+            seconds = 30
         }else if activities == "Jogging"{
             showImg.loadGif(name: "Jogging")
             titleLbl.text = activities
             descLbl.text = "Lets start jogging for 10 - 15 minutes, A little move for your body can be a good health for your mind"
-            buttonHide()
+            minutes = 15
         }else if activities == "Meditate"{
             showImg.loadGif(name: "Meditation")
             titleLbl.text = activities
             descLbl.text = "Take a time for 5 - 10 minutes to calm your mind"
-            buttonHide()
+            minutes = 10
         }else if activities == "Healthy Food"{
             showImg.loadGif(name: "Healthy Food")
             titleLbl.text = activities
@@ -98,14 +102,23 @@ class DetailActivityViewController: UIViewController {
     }
     
     @objc func action(){
-        seconds -= 1
-        timerLbl.text = "0\(minutes) : 0\(seconds)"
         
-        if seconds == 0{
-            timer.invalidate()
+        if seconds == 1 && minutes == 0{
             doneBtnOutlet.isHidden = false
             resetBtnOutlet.isHidden = false
+            seconds -= 1
+            timerLbl.text = "\(String(format: "%02d", minutes)) : \(String(format: "%02d", seconds))"
+            timer.invalidate()
+        }else if (seconds == 1){
+            seconds = 59
+            minutes -= 1
+        }else if (seconds == 0 && minutes > 0){
+            seconds = 59
+            minutes -= 1
+        }else{
+            seconds -= 1
         }
+        timerLbl.text = "\(String(format: "%02d", minutes)) : \(String(format: "%02d", seconds))"
     }
 
     override func didReceiveMemoryWarning() {
