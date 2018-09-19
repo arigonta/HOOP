@@ -27,7 +27,7 @@ class DetailActivityViewController: UIViewController {
     
     @IBAction func resetBtn(_ sender: UIButton) {
         if activities == "Breathing"{
-            seconds = 30
+            seconds = 5
         }else if activities == "Jogging"{
             minutes = 15
         }else if activities == "Meditation"{
@@ -77,7 +77,7 @@ class DetailActivityViewController: UIViewController {
             showImg.loadGif(name: "Breath")
             titleLbl.text = activities
             descLbl.text = "Take a time to breath"
-            seconds = 30
+            seconds = 5
         }else if activities == "Jogging"{
             showImg.loadGif(name: "Jogging")
             titleLbl.text = activities

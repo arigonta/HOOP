@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
                 /// Updating the UI with the retrieved value
                 self.bpmLabel.text = "\(Int(heartRate)) BPM"
                 
-                if Int(heartRate) >= 100 && Int(heartRate) < 150{
+                if Int(heartRate) >= 20 && Int(heartRate) < 150{
                     self.heartImg.loadGif(name: "GreenHeart")
                     self.heartImage = "green"
                     self.hrvLabel.text = "Today, you seem very happy. Here some activity that can make you feel better than ever"
@@ -53,12 +53,11 @@ class HomeViewController: UIViewController {
                     self.heartImg.loadGif(name: "YellowHeart")
                     self.heartImage = "yellow"
                     self.hrvLabel.text = "Youre Yellow! get some help!"
-                }else if Int(heartRate) >= 6969 && Int(heartRate) < 14045{
+                }else if Int(heartRate) >= 180{
                     self.heartImg.loadGif(name: "RedHeart")
                     self.heartImage = "red"
                     self.hrvLabel.text = "Youre Red! get some help!"
                 }
-                print(self.heartImage)
             }
         })
     }
