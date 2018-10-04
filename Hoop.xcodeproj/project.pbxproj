@@ -43,6 +43,10 @@
 		CA0515412133E11100ABA7B8 /* ActivityRecTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */; };
 		CA0515562134067700ABA7B8 /* detailHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515552134067600ABA7B8 /* detailHistoryViewController.swift */; };
 		CA0515582134077000ABA7B8 /* HeartRate.gif in Resources */ = {isa = PBXBuildFile; fileRef = CA0515572134077000ABA7B8 /* HeartRate.gif */; };
+		CA58698B2164C35500CB72F8 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA58698A2164C35500CB72F8 /* SwipeViewController.swift */; };
+		CA58698D2164C49B00CB72F8 /* demo1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA58698C2164C49B00CB72F8 /* demo1ViewController.swift */; };
+		CA58698F2164C4C100CB72F8 /* demo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA58698E2164C4C100CB72F8 /* demo2ViewController.swift */; };
+		CA5869912164C4CB00CB72F8 /* demo3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5869902164C4CB00CB72F8 /* demo3ViewController.swift */; };
 		CA89020A2122C55200260C20 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8902092122C55200260C20 /* AppDelegate.swift */; };
 		CA89020F2122C55200260C20 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA89020D2122C55200260C20 /* Main.storyboard */; };
 		CA8902122122C55200260C20 /* Hoop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CA8902102122C55200260C20 /* Hoop.xcdatamodeld */; };
@@ -135,6 +139,10 @@
 		CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityRecTableViewCell.swift; sourceTree = "<group>"; };
 		CA0515552134067600ABA7B8 /* detailHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailHistoryViewController.swift; sourceTree = "<group>"; };
 		CA0515572134077000ABA7B8 /* HeartRate.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = HeartRate.gif; sourceTree = "<group>"; };
+		CA58698A2164C35500CB72F8 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		CA58698C2164C49B00CB72F8 /* demo1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo1ViewController.swift; sourceTree = "<group>"; };
+		CA58698E2164C4C100CB72F8 /* demo2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo2ViewController.swift; sourceTree = "<group>"; };
+		CA5869902164C4CB00CB72F8 /* demo3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = demo3ViewController.swift; sourceTree = "<group>"; };
 		CA8902062122C55100260C20 /* Hoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8902092122C55200260C20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA89020E2122C55200260C20 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,6 +220,10 @@
 			isa = PBXGroup;
 			children = (
 				CA05152C2133E11100ABA7B8 /* ProfileViewController.swift */,
+				CA58698A2164C35500CB72F8 /* SwipeViewController.swift */,
+				CA58698C2164C49B00CB72F8 /* demo1ViewController.swift */,
+				CA58698E2164C4C100CB72F8 /* demo2ViewController.swift */,
+				CA5869902164C4CB00CB72F8 /* demo3ViewController.swift */,
 				CA0515292133E11100ABA7B8 /* HomeViewController.swift */,
 				CA05152A2133E11100ABA7B8 /* StartViewController.swift */,
 				CA05152B2133E11100ABA7B8 /* ActivityRecViewController.swift */,
@@ -513,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA58698F2164C4C100CB72F8 /* demo2ViewController.swift in Sources */,
 				CA0515382133E11100ABA7B8 /* HomeViewController.swift in Sources */,
 				CA0515372133E11100ABA7B8 /* DetailActivityViewController.swift in Sources */,
 				CA0515402133E11100ABA7B8 /* HistoryTableViewCell.swift in Sources */,
@@ -524,7 +537,10 @@
 				CA0515562134067700ABA7B8 /* detailHistoryViewController.swift in Sources */,
 				CA0515392133E11100ABA7B8 /* StartViewController.swift in Sources */,
 				CA05153C2133E11100ABA7B8 /* HistoryViewController.swift in Sources */,
+				CA58698B2164C35500CB72F8 /* SwipeViewController.swift in Sources */,
 				CA05153D2133E11100ABA7B8 /* HealthKitHandler.swift in Sources */,
+				CA58698D2164C49B00CB72F8 /* demo1ViewController.swift in Sources */,
+				CA5869912164C4CB00CB72F8 /* demo3ViewController.swift in Sources */,
 				CA0515412133E11100ABA7B8 /* ActivityRecTableViewCell.swift in Sources */,
 				CA05153B2133E11100ABA7B8 /* ProfileViewController.swift in Sources */,
 				CA05153A2133E11100ABA7B8 /* ActivityRecViewController.swift in Sources */,
@@ -580,7 +596,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HoopWatchKit Extension/HoopWatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2C7FM2872;
+				DEVELOPMENT_TEAM = U33KFVQWKM;
 				INFOPLIST_FILE = "HoopWatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -603,7 +619,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_ENTITLEMENTS = "HoopWatchKit Extension/HoopWatchKit Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2C7FM2872;
+				DEVELOPMENT_TEAM = U33KFVQWKM;
 				INFOPLIST_FILE = "HoopWatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -779,8 +795,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hoop/Hoop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2C7FM2872;
+				DEVELOPMENT_TEAM = U33KFVQWKM;
 				INFOPLIST_FILE = Hoop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -799,8 +816,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Hoop/Hoop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N2C7FM2872;
+				DEVELOPMENT_TEAM = U33KFVQWKM;
 				INFOPLIST_FILE = Hoop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
