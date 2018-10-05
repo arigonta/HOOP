@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     
     //action
     @IBAction func saveBtnPressed(_ sender: Any) {
-        
+
         if nameTxt.text != ""{
             loadAgeAndSex()
             let appDel = UIApplication.shared.delegate as! AppDelegate

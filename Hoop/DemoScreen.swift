@@ -29,8 +29,8 @@ class DemoScreen: UIViewController {
     
     //Action
     @IBAction func doneBtnPressed(_ sender: Any) {
-        userData.set(true, forKey: "demoCompleted")
-        userData.synchronize()
+//        userData.set(true, forKey: "demoCompleted")
+//        userData.synchronize()
         HealthKitSetupAssistant.authorizeHealthKit { (authorized, error) in
             
             guard authorized else {

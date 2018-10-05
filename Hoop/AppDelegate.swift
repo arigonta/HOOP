@@ -23,17 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var firstVC = storyboard.instantiateViewController(withIdentifier: "DemoBoard")
+        var firstVC = storyboard.instantiateViewController(withIdentifier: "swipeController")
         
 
-        if userData.bool(forKey: "demoCompleted") {
+        if userData.bool(forKey: "ProfileCompleted") {
             if userData.bool(forKey: "ProfileCompleted") {
                 firstVC = storyboard.instantiateViewController(withIdentifier: "StartView")
             }
             else {
                 firstVC = storyboard.instantiateViewController(withIdentifier: "ProfileBoard")
             }
-
         }
         
         window?.rootViewController = firstVC
