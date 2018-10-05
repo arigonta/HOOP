@@ -32,43 +32,9 @@ class HomeViewController: UIViewController {
         wcSession?.delegate = self
         wcSession?.activate()
         fetchDataFromModel()
-        checkBpm()
-//        observerHeartRateSamples()
+//        checkBpm()
+        observerHeartRateSamples()
         nameLabel.text = "Hi, \(userName)"
-//        DispatchQueue.global().async {
-//            self.fetchLatestHeartRateSample(completion: { sample in
-//                guard let sample = sample else {
-//                    return
-//                }
-//
-//                DispatchQueue.main.async {
-//
-//                    /// Converting the heart rate to bpm
-//                    let heartRateUnit = HKUnit(from: "count/min")
-//                    let heartRate = sample
-//                        .quantity
-//                        .doubleValue(for: heartRateUnit)
-//
-//                    /// Updating the UI with the retrieved value
-//                    self.bpmLabel.text = "\(Int(heartRate)) BPM"
-//
-//                    if Int(heartRate) >= 20 && Int(heartRate) < 150{
-//                        self.heartImg.loadGif(name: "GreenHeart")
-//                        self.heartImage = "green"
-//                        self.hrvLabel.text = "Today, you seem very happy. Here some activity that can make you feel better than ever"
-//                    }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
-//                        self.heartImg.loadGif(name: "YellowHeart")
-//                        self.heartImage = "yellow"
-//                        self.hrvLabel.text = "Youre Yellow! get some help!"
-//                    }else if Int(heartRate) >= 180{
-//                        self.heartImg.loadGif(name: "RedHeart")
-//                        self.heartImage = "red"
-//                        self.hrvLabel.text = "Youre Red! get some help!"
-//                    }
-//                }
-//            })
-//        }
-
     }
     
     func fetchDataFromModel() {
@@ -185,15 +151,7 @@ class HomeViewController: UIViewController {
         
         self.health.execute(query)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     @IBAction func activityButton(_ sender: Any) {
         performSegue(withIdentifier: "toActivityRecom", sender: self)
     }
@@ -216,7 +174,6 @@ class HomeViewController: UIViewController {
             self.bpmLabel.text = String(self.bpmText) + " BPM"
             if self.bpmText == 0 {
                 self.bpmLabel.text = "Reading..."
-                self.hrvLabel.text = "Please Wait"
             }
             if self.bpmText >= 50 && self.bpmText < 150{
                 self.heartImg.loadGif(name: "GreenHeart")
