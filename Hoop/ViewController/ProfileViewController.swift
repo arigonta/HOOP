@@ -16,8 +16,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTxt: UITextField!
     func showAlert(title: String, message: String, action: String) {
         let alertController = UIAlertController(title: title, message:
-            message, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: action, style: UIAlertActionStyle.default,handler: nil))
+            message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: action, style: UIAlertAction.Style.default,handler: nil))
         self.present(alertController, animated: true, completion: nil)
     }
     
@@ -83,17 +83,17 @@ class ProfileViewController: UIViewController, UITextFieldDelegate {
         nameTxt.resignFirstResponder()
     }
     override func viewWillAppear(_ animated: Bool) {
-        nameTxt.borderStyle = UITextBorderStyle.roundedRect
+        nameTxt.borderStyle = UITextField.BorderStyle.roundedRect
     }
     
     func loadAgeAndSex() {
         do {
                         let userAgeAndSex = try ProfileDataStore.getAgeAndSex()
                         age = userAgeAndSex.age
-                        switch userAgeAndSex.biologicalSex.rawValue {
-                        case 1:
+                        switch userAgeAndSex.biologicalSex {
+                        case .female:
                             sex = "Female"
-                        case 2:
+                        case .male:
                             sex = "Male"
                         default:
                             sex = "Other"

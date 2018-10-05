@@ -9,16 +9,18 @@
 import UIKit
 import HealthKit
 import CoreData
+import WatchConnectivity
 
 class HomeViewController: UIViewController {
     
+    var bpmText: Int = 0
     var heartImage:String = ""
     var userName:String = ""
     var heartRateQuery:HKQuery?
     var observerQuery:HKQuery?
     let heartRateType:HKQuantityType   = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
     let health: HKHealthStore = HKHealthStore()
-    
+    var wcSession: WCSession?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bpmLabel: UILabel!
@@ -26,40 +28,47 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var heartImg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        wcSession = WCSession.default
+        wcSession?.delegate = self
+        wcSession?.activate()
         fetchDataFromModel()
-        observerHeartRateSamples()
+        checkBpm()
+//        observerHeartRateSamples()
         nameLabel.text = "Hi, \(userName)"
-        self.fetchLatestHeartRateSample(completion: { sample in
-            guard let sample = sample else {
-                return
-            }
+//        DispatchQueue.global().async {
+//            self.fetchLatestHeartRateSample(completion: { sample in
+//                guard let sample = sample else {
+//                    return
+//                }
+//
+//                DispatchQueue.main.async {
+//
+//                    /// Converting the heart rate to bpm
+//                    let heartRateUnit = HKUnit(from: "count/min")
+//                    let heartRate = sample
+//                        .quantity
+//                        .doubleValue(for: heartRateUnit)
+//
+//                    /// Updating the UI with the retrieved value
+//                    self.bpmLabel.text = "\(Int(heartRate)) BPM"
+//
+//                    if Int(heartRate) >= 20 && Int(heartRate) < 150{
+//                        self.heartImg.loadGif(name: "GreenHeart")
+//                        self.heartImage = "green"
+//                        self.hrvLabel.text = "Today, you seem very happy. Here some activity that can make you feel better than ever"
+//                    }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
+//                        self.heartImg.loadGif(name: "YellowHeart")
+//                        self.heartImage = "yellow"
+//                        self.hrvLabel.text = "Youre Yellow! get some help!"
+//                    }else if Int(heartRate) >= 180{
+//                        self.heartImg.loadGif(name: "RedHeart")
+//                        self.heartImage = "red"
+//                        self.hrvLabel.text = "Youre Red! get some help!"
+//                    }
+//                }
+//            })
+//        }
 
-            DispatchQueue.main.async {
-
-                /// Converting the heart rate to bpm
-                let heartRateUnit = HKUnit(from: "count/min")
-                let heartRate = sample
-                    .quantity
-                    .doubleValue(for: heartRateUnit)
-
-                /// Updating the UI with the retrieved value
-                self.bpmLabel.text = "\(Int(heartRate)) BPM"
-                
-                if Int(heartRate) >= 20 && Int(heartRate) < 150{
-                    self.heartImg.loadGif(name: "GreenHeart")
-                    self.heartImage = "green"
-                    self.hrvLabel.text = "Today, you seem very happy. Here some activity that can make you feel better than ever"
-                }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
-                    self.heartImg.loadGif(name: "YellowHeart")
-                    self.heartImage = "yellow"
-                    self.hrvLabel.text = "Youre Yellow! get some help!"
-                }else if Int(heartRate) >= 180{
-                    self.heartImg.loadGif(name: "RedHeart")
-                    self.heartImage = "red"
-                    self.hrvLabel.text = "Youre Red! get some help!"
-                }
-            }
-        })
     }
     
     func fetchDataFromModel() {
@@ -83,7 +92,7 @@ class HomeViewController: UIViewController {
                 }
             }
         } catch  {
-            print("Gagal ngambil data!")
+            print("Gagal mengambil data!")
         }
     }
     
@@ -127,7 +136,7 @@ class HomeViewController: UIViewController {
                     }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
                         self.heartImg.loadGif(name: "YellowHeart")
                         self.heartImage = "yellow"
-                    }else if Int(heartRate) >= 6969 && Int(heartRate) < 14045{
+                    }else if Int(heartRate) >= 180{
                         self.heartImg.loadGif(name: "RedHeart")
                         self.heartImage = "red"
                     }
@@ -200,5 +209,51 @@ class HomeViewController: UIViewController {
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+    }
+    
+    func checkBpm() {
+        DispatchQueue.main.async {
+            self.bpmLabel.text = String(self.bpmText) + " BPM"
+            if self.bpmText == 0 {
+                self.bpmLabel.text = "Reading..."
+                self.hrvLabel.text = "Please Wait"
+            }
+            if self.bpmText >= 50 && self.bpmText < 150{
+                self.heartImg.loadGif(name: "GreenHeart")
+                self.heartImage = "green"
+                self.hrvLabel.text = "Today, you seem very happy. Here some activity that can make you feel better than ever"
+            }else if self.bpmText >= 150 && self.bpmText < 180{
+                self.heartImg.loadGif(name: "YellowHeart")
+                self.heartImage = "yellow"
+                self.hrvLabel.text = "Youre Yellow! get some help!"
+            }else if self.bpmText >= 180{
+                self.heartImg.loadGif(name: "RedHeart")
+                self.heartImage = "red"
+                self.hrvLabel.text = "Youre Red! get some help!"
+            }
+        }
+        
+        
+    }
+}
+
+extension HomeViewController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("\(#function) \(session)")
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("\(#function) \(session)")
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("\(#function) \(session)")
+    }
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        if let context = applicationContext["bpm"] as? Int {
+            self.bpmText = context
+            checkBpm()
+        }
+        
     }
 }

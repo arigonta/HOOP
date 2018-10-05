@@ -83,7 +83,7 @@ class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableV
         act.append(activity(text: "Healthy Food"))
         act.append(activity(text: "Healthy Sleep"))
         activityTableView.estimatedRowHeight = 200
-        activityTableView.rowHeight = UITableViewAutomaticDimension
+        activityTableView.rowHeight = UITableView.automaticDimension
     }
 
     override func didReceiveMemoryWarning() {

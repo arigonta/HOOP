@@ -8,97 +8,154 @@
 
 import WatchKit
 import HealthKit
+import WatchConnectivity
 
-class HeartInterfaceController: WKInterfaceController {
-
+class HeartInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
+    
+    var wcSession: WCSession?
+    @IBOutlet var startLabel: WKInterfaceLabel!
     @IBOutlet var bpmLabel: WKInterfaceLabel!
-    var observerQuery:HKQuery?
-    let health: HKHealthStore = HKHealthStore()
+    var currentQuery:HKQuery?
+    let health = HKHealthStore()
+    var workoutActive = false
+    var session: HKWorkoutSession?
+    var heartRateUnit = HKUnit(from: "count/min")
+    
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        wcSession = WCSession.default
+        wcSession?.delegate = self
+        wcSession?.activate()
+        
         // Configure interface objects here.
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        observerHeartRateSamples()
+//        observerHeartRateSamples()
+        startStreaming()
         super.willActivate()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
+        bpmLabel.setText("Reading...")
         super.didDeactivate()
     }
     
+    func workoutSession(_ workoutSession: HKWorkoutSession, didChangeTo toState: HKWorkoutSessionState, from fromState: HKWorkoutSessionState, date: Date) {
+        switch toState {
+        case .running:
+            workoutDidStart(date)
+        case .ended:
+            workoutDidEnd(date)
+        default:
+            print("Unexpected state \(toState)")
+        }
+    }
     
+    func workoutDidStart(_ date : Date) {
+        print("b")
+        if let query = createHeartRateStreamingQuery(date) {
+            self.currentQuery = query
+            health.execute(query)
+            print("c")
+        } else {
+            bpmLabel.setText("cannot start")
+        }
+    }
     
+    func workoutDidEnd(_ date : Date) {
+        print("d")
+            health.stop(currentQuery!)
+            session = nil
+    }
     
-    func observerHeartRateSamples() {
-        let heartRateSampleType = HKObjectType.quantityType(forIdentifier: .heartRate)
+   
+    
+    func createHeartRateStreamingQuery(_ workoutStartDate: Date) -> HKQuery? {
+        print("a")
+        guard let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else { return nil }
+        let datePredicate = HKQuery.predicateForSamples(withStart: workoutStartDate, end: nil, options: .strictEndDate )
+        let predicate = NSCompoundPredicate(andPredicateWithSubpredicates:[datePredicate])
         
-        if let observerQuery = observerQuery {
-            health.stop(observerQuery)
+        
+        let heartRateQuery = HKAnchoredObjectQuery(type: quantityType, predicate: predicate, anchor: nil, limit: Int(HKObjectQueryNoLimit)) { (query, sampleObjects, deletedObjects, newAnchor, error) -> Void in
+            self.updateHeartRate(sampleObjects)
         }
         
-        self.observerQuery = HKObserverQuery(sampleType: heartRateSampleType!, predicate: nil) { (_, _, error) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
+        heartRateQuery.updateHandler = {(query, samples, deleteObjects, newAnchor, error) -> Void in
+            self.updateHeartRate(samples)
+        }
+        return heartRateQuery
+    }
+    
+    func startWorkout() {
+        
+        if (session != nil) {
+            return
+        }
+        let workoutConfiguration = HKWorkoutConfiguration()
+        workoutConfiguration.activityType = .crossTraining
+        workoutConfiguration.locationType = .indoor
+        
+        do {
+            session = try HKWorkoutSession(configuration: workoutConfiguration)
+            session?.delegate = self
             
-            self.fetchLatestHeartRateSample { (sample) in
-                guard let sample = sample else {
-                    return
-                }
-                
-                DispatchQueue.main.async {
-                    let heartRate = sample.quantity.doubleValue(for: HKUnit(from: "count/min"))
-                    
-                                        self.bpmLabel.setText("\(Int(heartRate)) BPM")
-                }
-            }
+            health.start(session!)
+        } catch {
+            fatalError("Unable to create the workout session!")
         }
-        health.execute(observerQuery!)
     }
     
-    func fetchLatestHeartRateSample(
-        completion: @escaping (_ sample: HKQuantitySample?) -> Void) {
-        
-        /// Create sample type for the heart rate
-        guard let sampleType = HKObjectType
-            .quantityType(forIdentifier: .heartRate) else {
-                completion(nil)
-                return
+    func updateHeartRate(_ samples: [HKSample]?) {
+        guard let heartRateSamples = samples as? [HKQuantitySample] else {
+            return
         }
         
-        /// Predicate for specifiying start and end dates for the query
-        let predicate = HKQuery
-            .predicateForSamples(
-                withStart: Date.distantPast,
-                end: Date(),
-                options: .strictEndDate)
-        
-        /// Set sorting by date.
-        let sortDescriptor = NSSortDescriptor(
-            key: HKSampleSortIdentifierStartDate,
-            ascending: false)
-        
-        /// Create the query
-        let query = HKSampleQuery(
-            sampleType: sampleType,
-            predicate: predicate,
-            limit: Int(HKObjectQueryNoLimit),
-            sortDescriptors: [sortDescriptor]) { (_, results, error) in
-                
-                guard error == nil else {
-                    print("Error: \(error!.localizedDescription)")
-                    return
-                }
-                
-                completion(results?[0] as? HKQuantitySample)
+        DispatchQueue.main.async {
+            guard let sample = heartRateSamples.first else{return}
+            let value = sample.quantity.doubleValue(for: self.heartRateUnit)
+            let bpmText = String(UInt16(value)) + " BPM"
+            let message = ["bpm":value]
+            
+            do {
+                try self.wcSession?.updateApplicationContext(message)
+            } catch {
+                print("Fail to send message")
+            }
+            self.bpmLabel.setText(bpmText)
         }
-        
-        self.health.execute(query)
     }
+    
+    func stopStreaming() {
+        self.workoutActive = false
+        if let workout = self.session {
+            health.end(workout)
+        }
+    }
+    
+    func startStreaming() {
+        if (self.workoutActive) {
+            stopStreaming()
+        } else {
+            self.workoutActive = true
+            startWorkout()
+        }
+        
+        
+    }
+    
+    func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
+        print(error)
+    }
+}
+
+extension HeartInterfaceController:WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("\(#function)\(session)")
+    }
+    
 }

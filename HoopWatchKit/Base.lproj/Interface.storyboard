@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14113" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch38" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14033"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
     </dependencies>
     <scenes>
         <!--Profile-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="Profile" backgroundImage="AppleWatch" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HoopWatchKit" customModuleProvider="target">
+                <controller identifier="Profile" backgroundImage="AppleWatch" id="AgC-eL-Hgc" customClass="HeartInterfaceController" customModule="HoopWatchKit_Extension">
                     <items>
                         <label height="127" alignment="center" text="Let's do some activity to make you feel better" textAlignment="center" numberOfLines="0" id="Ifc-Jb-fKa"/>
+                        <label width="124" height="131" alignment="center" text="Reading..." textAlignment="center" id="MP0-Vl-NRA"/>
                     </items>
                     <connections>
-                        <outlet property="startLabel" destination="Ifc-Jb-fKa" id="wu6-T4-Xrb"/>
-                        <segue destination="QVL-lf-5Kk" kind="relationship" relationship="nextPage" id="Us0-B2-Fur"/>
+                        <outlet property="startLabel" destination="Ifc-Jb-fKa" id="sq8-JH-DlJ"/>
                     </connections>
                 </controller>
             </objects>
@@ -28,15 +28,12 @@
         <scene sceneID="odc-P3-yF7">
             <objects>
                 <controller backgroundImage="AppleWatchHeart" id="QVL-lf-5Kk" customClass="HeartInterfaceController" customModule="HoopWatchKit_Extension">
-                    <items>
-                        <label width="83" height="131" alignment="center" text="Label" textAlignment="center" id="MP0-Vl-NRA"/>
-                    </items>
                     <connections>
                         <outlet property="bpmLabel" destination="MP0-Vl-NRA" id="suE-n9-tbv"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="523" y="345"/>
+            <point key="canvasLocation" x="508" y="345"/>
         </scene>
     </scenes>
 </document>
