@@ -40,7 +40,6 @@ class HeartInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate 
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
-        bpmLabel.setText("Reading...")
         super.didDeactivate()
     }
     
@@ -56,18 +55,16 @@ class HeartInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate 
     }
     
     func workoutDidStart(_ date : Date) {
-        print("b")
         if let query = createHeartRateStreamingQuery(date) {
             self.currentQuery = query
             health.execute(query)
-            print("c")
         } else {
             bpmLabel.setText("cannot start")
         }
     }
     
     func workoutDidEnd(_ date : Date) {
-        print("d")
+        print("Stopping...")
             health.stop(currentQuery!)
             session = nil
     }
@@ -75,7 +72,7 @@ class HeartInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate 
    
     
     func createHeartRateStreamingQuery(_ workoutStartDate: Date) -> HKQuery? {
-        print("a")
+        bpmLabel.setText("Reading...")
         guard let quantityType = HKObjectType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate) else { return nil }
         let datePredicate = HKQuery.predicateForSamples(withStart: workoutStartDate, end: nil, options: .strictEndDate )
         let predicate = NSCompoundPredicate(andPredicateWithSubpredicates:[datePredicate])
@@ -92,7 +89,7 @@ class HeartInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate 
     }
     
     func startWorkout() {
-        
+        bpmLabel.setText("Starting...")
         if (session != nil) {
             return
         }
