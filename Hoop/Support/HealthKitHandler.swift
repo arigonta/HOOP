@@ -15,7 +15,7 @@ class HealthKitSetupAssistant {
         case notAvailableOnDevice
         case dataTypeNotAvailable
     }
-    
+
     class func authorizeHealthKit(completion: @escaping (Bool, Error?) -> Swift.Void) {
         guard HKHealthStore.isHealthDataAvailable() else {
             completion(false, HealthkitSetupError.notAvailableOnDevice)
@@ -27,11 +27,8 @@ class HealthKitSetupAssistant {
             HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
             HKSampleType.quantityType(forIdentifier: .heartRate)!
             ])
-        let infoToWrite = Set([
-            HKSampleType.quantityType(forIdentifier: .heartRateVariabilitySDNN)!,
-            HKSampleType.quantityType(forIdentifier: .heartRate)!
-            ])
-        HKHealthStore().requestAuthorization(toShare: infoToWrite,
+    
+        HKHealthStore().requestAuthorization(toShare: nil,
                                              read: infoToRead) { (success, error) in
                                                 completion(success, error)
         }
