@@ -11,7 +11,7 @@ import UIKit
 
 
 class ActivityRecViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
-
+//yang bener
     var heartImage: String?
     var selectedIndex: Int?
     var act: [activity] = []
