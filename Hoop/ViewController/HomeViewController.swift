@@ -10,6 +10,7 @@ import UIKit
 import HealthKit
 import CoreData
 import WatchConnectivity
+import UserNotifications
 
 class HomeViewController: UIViewController {
     
@@ -26,6 +27,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var bpmLabel: UILabel!
     @IBOutlet weak var hrvLabel: UILabel!
     @IBOutlet weak var heartImg: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         wcSession = WCSession.default
@@ -41,9 +43,9 @@ class HomeViewController: UIViewController {
         let appDel = UIApplication.shared.delegate as! AppDelegate
         let context = appDel.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        
+        let req = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
         request.returnsObjectsAsFaults = false
-        
+        req.returnsObjectsAsFaults = false
         do {
             let  result = try context.fetch(request)
             if result.count > 0
@@ -92,19 +94,41 @@ class HomeViewController: UIViewController {
                     let heartRate = sample
                         .quantity
                         .doubleValue(for: heartRateUnit)
-                    
                     /// Updating the UI with the retrieved value
                     self.bpmLabel.text = "\(Int(heartRate)) BPM"
+                    UserDefaults.standard.set(Int(heartRate), forKey: "notif")
                     
-                    if Int(heartRate) >= 100 && Int(heartRate) < 150{
+                    if Int(heartRate) >= 50 && Int(heartRate) < 150{
                         self.heartImg.loadGif(name: "GreenHeart")
                         self.heartImage = "green"
                     }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
                         self.heartImg.loadGif(name: "YellowHeart")
                         self.heartImage = "yellow"
+                        let content = UNMutableNotificationContent()
+                        
+                        content.title = "HOOP"
+                        content.body = "You need to take a break"
+                        content.sound = UNNotificationSound.default
+                        
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+                        
+                        let request = UNNotificationRequest(identifier: "Notification Example", content: content, trigger: trigger)
+                        
+                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     }else if Int(heartRate) >= 180{
                         self.heartImg.loadGif(name: "RedHeart")
                         self.heartImage = "red"
+                        let content = UNMutableNotificationContent()
+                        
+                        content.title = "HOOP"
+                        content.body = "You will die"
+                        content.sound = UNNotificationSound.default
+                        
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+                        
+                        let request = UNNotificationRequest(identifier: "Notification Example", content: content, trigger: trigger)
+                        
+                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     }
                 }
             }
@@ -162,8 +186,9 @@ class HomeViewController: UIViewController {
             let destVC = segue.destination as! ActivityRecViewController
             destVC.heartImage = heartImage
         }
-        else if let destination = segue.destination as? HistoryViewController{
-            destination.heartImage = heartImage
+        else if segue.identifier == "toHistory"{
+            let destVC = segue.destination as! HistoryViewController
+            destVC.heartImage = heartImage
         }
         else if let destination = segue.destination as?
             detailHistoryViewController
@@ -187,11 +212,11 @@ class HomeViewController: UIViewController {
             }else if self.bpmText >= 150 && self.bpmText < 180{
                 self.heartImg.loadGif(name: "YellowHeart")
                 self.heartImage = "yellow"
-                self.hrvLabel.text = "Youre Yellow! get some help!"
+                self.hrvLabel.text = "You are Yellow! get some help!"
             }else if self.bpmText >= 180{
                 self.heartImg.loadGif(name: "RedHeart")
                 self.heartImage = "red"
-                self.hrvLabel.text = "Youre Red! get some help!"
+                self.hrvLabel.text = "You are Red! get some help!"
             }
         }
     }
