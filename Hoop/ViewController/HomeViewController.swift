@@ -104,31 +104,9 @@ class HomeViewController: UIViewController {
                     }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
                         self.heartImg.loadGif(name: "YellowHeart")
                         self.heartImage = "yellow"
-                        let content = UNMutableNotificationContent()
-                        
-                        content.title = "HOOP"
-                        content.body = "You need to take a break"
-                        content.sound = UNNotificationSound.default
-                        
-                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
-                        
-                        let request = UNNotificationRequest(identifier: "Notification Example", content: content, trigger: trigger)
-                        
-                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     }else if Int(heartRate) >= 180{
                         self.heartImg.loadGif(name: "RedHeart")
                         self.heartImage = "red"
-                        let content = UNMutableNotificationContent()
-                        
-                        content.title = "HOOP"
-                        content.body = "You will die"
-                        content.sound = UNNotificationSound.default
-                        
-                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
-                        
-                        let request = UNNotificationRequest(identifier: "Notification Example", content: content, trigger: trigger)
-                        
-                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     }
                 }
             }
