@@ -10,6 +10,7 @@ import UIKit
 import HealthKit
 import CoreData
 import WatchConnectivity
+import UserNotifications
 
 class HomeViewController: UIViewController {
     
@@ -26,6 +27,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var bpmLabel: UILabel!
     @IBOutlet weak var hrvLabel: UILabel!
     @IBOutlet weak var heartImg: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         wcSession = WCSession.default
@@ -92,9 +94,9 @@ class HomeViewController: UIViewController {
                     let heartRate = sample
                         .quantity
                         .doubleValue(for: heartRateUnit)
-                    
                     /// Updating the UI with the retrieved value
                     self.bpmLabel.text = "\(Int(heartRate)) BPM"
+                    UserDefaults.standard.set(Int(heartRate), forKey: "notif")
                     
                     if Int(heartRate) >= 50 && Int(heartRate) < 150{
                         self.heartImg.loadGif(name: "GreenHeart")
@@ -102,9 +104,31 @@ class HomeViewController: UIViewController {
                     }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
                         self.heartImg.loadGif(name: "YellowHeart")
                         self.heartImage = "yellow"
+                        let content = UNMutableNotificationContent()
+                        
+                        content.title = "HOOP"
+                        content.body = "You need to take a break"
+                        content.sound = UNNotificationSound.default
+                        
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+                        
+                        let request = UNNotificationRequest(identifier: "Notification Example", content: content, trigger: trigger)
+                        
+                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     }else if Int(heartRate) >= 180{
                         self.heartImg.loadGif(name: "RedHeart")
                         self.heartImage = "red"
+                        let content = UNMutableNotificationContent()
+                        
+                        content.title = "HOOP"
+                        content.body = "You will die"
+                        content.sound = UNNotificationSound.default
+                        
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+                        
+                        let request = UNNotificationRequest(identifier: "Notification Example", content: content, trigger: trigger)
+                        
+                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     }
                 }
             }
@@ -183,11 +207,11 @@ class HomeViewController: UIViewController {
             }else if self.bpmText >= 150 && self.bpmText < 180{
                 self.heartImg.loadGif(name: "YellowHeart")
                 self.heartImage = "yellow"
-                self.hrvLabel.text = "Youre Yellow! get some help!"
+                self.hrvLabel.text = "You are Yellow! get some help!"
             }else if self.bpmText >= 180{
                 self.heartImg.loadGif(name: "RedHeart")
                 self.heartImage = "red"
-                self.hrvLabel.text = "Youre Red! get some help!"
+                self.hrvLabel.text = "You are Red! get some help!"
             }
         }
         
