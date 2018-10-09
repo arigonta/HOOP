@@ -165,6 +165,11 @@ class HomeViewController: UIViewController {
         else if let destination = segue.destination as? HistoryViewController{
             destination.heartImage = heartImage
         }
+        else if let destination = segue.destination as?
+            detailHistoryViewController
+        {
+            destination.heartImage = heartImage
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
@@ -189,8 +194,6 @@ class HomeViewController: UIViewController {
                 self.hrvLabel.text = "Youre Red! get some help!"
             }
         }
-        
-        
     }
 }
 
