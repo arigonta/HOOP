@@ -41,9 +41,9 @@ class HomeViewController: UIViewController {
         let appDel = UIApplication.shared.delegate as! AppDelegate
         let context = appDel.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        
+        let req = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
         request.returnsObjectsAsFaults = false
-        
+        req.returnsObjectsAsFaults = false
         do {
             let  result = try context.fetch(request)
             if result.count > 0
@@ -96,7 +96,7 @@ class HomeViewController: UIViewController {
                     /// Updating the UI with the retrieved value
                     self.bpmLabel.text = "\(Int(heartRate)) BPM"
                     
-                    if Int(heartRate) >= 100 && Int(heartRate) < 150{
+                    if Int(heartRate) >= 50 && Int(heartRate) < 150{
                         self.heartImg.loadGif(name: "GreenHeart")
                         self.heartImage = "green"
                     }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
@@ -162,8 +162,9 @@ class HomeViewController: UIViewController {
             let destVC = segue.destination as! ActivityRecViewController
             destVC.heartImage = heartImage
         }
-        else if let destination = segue.destination as? HistoryViewController{
-            destination.heartImage = heartImage
+        else if segue.identifier == "toHistory"{
+            let destVC = segue.destination as! HistoryViewController
+            destVC.heartImage = heartImage
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

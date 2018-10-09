@@ -244,7 +244,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="historyTableViewCell" rowHeight="65" id="He1-W9-LNn" customClass="HistoryTableViewCell" customModule="Hoop" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="355" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="He1-W9-LNn" id="c47-6i-u0D">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="He1-W9-LNn" id="c47-6i-u0D">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -375,7 +375,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="HistoryWhite"/>
                                 <connections>
-                                    <segue destination="7Iw-4v-RMG" kind="show" id="W8V-4s-UhS"/>
+                                    <segue destination="7Iw-4v-RMG" kind="show" identifier="toHistory" id="W8V-4s-UhS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-oK-vvf">
@@ -498,10 +498,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-s9-3TU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="792" height="65"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="65"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jya-hL-4pK">
-                                                            <rect key="frame" x="8" y="11" width="776" height="43"/>
+                                                            <rect key="frame" x="8" y="11" width="339" height="43"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fp8-eZ-1oO">
                                                             <rect key="frame" x="20.999999999999996" y="22" width="41.666666666666657" height="21"/>
@@ -757,7 +757,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Rhv-K3-X73"/>
-        <segue reference="x3e-ZJ-gNh"/>
+        <segue reference="QMK-W5-2QC"/>
         <segue reference="W8V-4s-UhS"/>
     </inferredMetricsTieBreakers>
 </document>

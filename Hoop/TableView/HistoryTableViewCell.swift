@@ -19,5 +19,12 @@ class HistoryTableViewCell: UITableViewCell {
 //        HistoryLbl.text = his.activityDate
         HistoryLbl.text = his.activityName
         HistoryLblDate.text = his.activityDate
+        if his.heartCondition == "green"{
+            imgHeart.loadGif(name: "GreenHeart")
+        }else if his.heartCondition == "yellow"{
+            imgHeart.loadGif(name: "YellowHeart")
+        }else if his.heartCondition == "red"{
+            imgHeart.loadGif(name: "RedHeart")
+        }
     }
 }

@@ -33,7 +33,6 @@ class HeartInterfaceController: WKInterfaceController, HKWorkoutSessionDelegate 
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-//        observerHeartRateSamples()
         startStreaming()
         super.willActivate()
     }

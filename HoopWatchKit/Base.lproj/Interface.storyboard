@@ -15,7 +15,7 @@
                 <controller identifier="Profile" backgroundImage="AppleWatch" id="AgC-eL-Hgc" customClass="HeartInterfaceController" customModule="HoopWatchKit_Extension">
                     <items>
                         <label height="127" alignment="center" text="Let's do some activity to make you feel better" textAlignment="center" numberOfLines="0" id="Ifc-Jb-fKa"/>
-                        <label width="124" height="131" alignment="center" text="Reading..." textAlignment="center" id="MP0-Vl-NRA"/>
+                        <label width="124" height="131" alignment="center" text="label" textAlignment="center" id="MP0-Vl-NRA"/>
                     </items>
                     <connections>
                         <outlet property="startLabel" destination="Ifc-Jb-fKa" id="sq8-JH-DlJ"/>
