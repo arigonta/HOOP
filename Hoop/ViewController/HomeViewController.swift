@@ -103,34 +103,9 @@ class HomeViewController: UIViewController {
                     }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
                         self.heartImg.loadGif(name: "YellowHeart")
                         self.heartImage = "yellow"
-                        let content = UNMutableNotificationContent()
-                        self.hrvLabel.text = "You are Yellow! get some help!"
-
-                        content.title = "HOOP"
-                        content.body = "You need to take a break"
-                        content.sound = UNNotificationSound.default
-                        
-                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
-                        
-                        let request = UNNotificationRequest(identifier: "Notification Example", content: content, trigger: trigger)
-                        
-                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     }else if Int(heartRate) >= 180{
                         self.heartImg.loadGif(name: "RedHeart")
                         self.heartImage = "red"
-                        self.hrvLabel.text = "You are Red! get some help!"
-
-                        let content = UNMutableNotificationContent()
-                        
-                        content.title = "HOOP"
-                        content.body = "You will die"
-                        content.sound = UNNotificationSound.default
-                        
-                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
-                        
-                        let request = UNNotificationRequest(identifier: "Notification Example", content: content, trigger: trigger)
-                        
-                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     }
                 }
             }
@@ -192,6 +167,11 @@ class HomeViewController: UIViewController {
             let destVC = segue.destination as! HistoryViewController
             destVC.heartImage = heartImage
         }
+        else if let destination = segue.destination as?
+            detailHistoryViewController
+        {
+            destination.heartImage = heartImage
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
@@ -216,8 +196,6 @@ class HomeViewController: UIViewController {
                 self.hrvLabel.text = "You are Red! get some help!"
             }
         }
-        
-        
     }
 }
 

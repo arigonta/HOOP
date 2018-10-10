@@ -9,7 +9,8 @@
 import UIKit
 
 class detailHistoryViewController: UIViewController {
-
+var heartImage: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

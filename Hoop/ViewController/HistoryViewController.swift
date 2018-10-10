@@ -33,18 +33,18 @@ class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewD
         return cell
     }
     
-    @IBAction func unwindToActivityRec(_ sender: UIStoryboardSegue) {
-        let sourceViewController = sender.source
-        // Use data from the view controller which initiated the unwind segue
-    }
+//    @IBAction func unwindToActivityRec(_ sender: UIStoryboardSegue) {
+//        let sourceViewController = sender.source
+//        // Use data from the view controller which initiated the unwind segue
+//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath){
             cell.contentView.backgroundColor = #colorLiteral(red: 0.9843137255, green: 0.9215686275, blue: 0.6862745098, alpha: 1)
             cell.contentView.layer.cornerRadius = 10
         }
-//        selectedIndex = indexPath.row
-//        performSegue(withIdentifier: "detailActivity", sender: self)
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "detailHistory", sender: self)
     }
     
     func loadData() {
@@ -68,8 +68,10 @@ class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if let destination = segue.destination as? ActivityRecViewController{
+       if let destination = segue.destination as? ActivityRecViewController{
+            destination.heartImage = heartImage
+        }
+       else if let destination = segue.destination as? detailHistoryViewController{
             destination.heartImage = heartImage
         }
     }
