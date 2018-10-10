@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
         wcSession?.delegate = self
         wcSession?.activate()
         fetchDataFromModel()
-//        checkBpm()
+        checkBpm()
         observerHeartRateSamples()
         nameLabel.text = "Hi, \(userName)"
     }
@@ -43,9 +43,7 @@ class HomeViewController: UIViewController {
         let appDel = UIApplication.shared.delegate as! AppDelegate
         let context = appDel.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-        let req = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
         request.returnsObjectsAsFaults = false
-        req.returnsObjectsAsFaults = false
         do {
             let  result = try context.fetch(request)
             if result.count > 0
@@ -101,11 +99,13 @@ class HomeViewController: UIViewController {
                     if Int(heartRate) >= 50 && Int(heartRate) < 150{
                         self.heartImg.loadGif(name: "GreenHeart")
                         self.heartImage = "green"
+                        self.hrvLabel.text = "Today, you seem very happy. Here some activity that can make you feel better than ever"
                     }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
                         self.heartImg.loadGif(name: "YellowHeart")
                         self.heartImage = "yellow"
                         let content = UNMutableNotificationContent()
-                        
+                        self.hrvLabel.text = "You are Yellow! get some help!"
+
                         content.title = "HOOP"
                         content.body = "You need to take a break"
                         content.sound = UNNotificationSound.default
@@ -118,6 +118,8 @@ class HomeViewController: UIViewController {
                     }else if Int(heartRate) >= 180{
                         self.heartImg.loadGif(name: "RedHeart")
                         self.heartImage = "red"
+                        self.hrvLabel.text = "You are Red! get some help!"
+
                         let content = UNMutableNotificationContent()
                         
                         content.title = "HOOP"
