@@ -24,16 +24,19 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--AppleWatchHeart-->
+        <!--Interface Controller-->
         <scene sceneID="odc-P3-yF7">
             <objects>
-                <controller backgroundImage="AppleWatchHeart" id="QVL-lf-5Kk" customClass="HeartInterfaceController" customModule="HoopWatchKit_Extension">
+                <controller id="QVL-lf-5Kk" customClass="InterfaceController" customModule="HoopWatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Press Start after setup is complete" textAlignment="center" numberOfLines="0" id="gl9-Gx-Ib9"/>
+                    </items>
                     <connections>
                         <outlet property="bpmLabel" destination="MP0-Vl-NRA" id="suE-n9-tbv"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="508" y="345"/>
+            <point key="canvasLocation" x="-120" y="344"/>
         </scene>
     </scenes>
 </document>

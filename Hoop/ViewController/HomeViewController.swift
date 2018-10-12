@@ -80,7 +80,7 @@ class HomeViewController: UIViewController {
                 return
             }
             
-            self.fetchLatestHeartRateSample { (sample) in
+            fetchLatestHeartRateSample { (sample) in
                 guard let sample = sample else {
                     return
                 }
@@ -113,45 +113,7 @@ class HomeViewController: UIViewController {
         health.execute(observerQuery!)
     }
     
-    func fetchLatestHeartRateSample(
-        completion: @escaping (_ sample: HKQuantitySample?) -> Void) {
-        
-        /// Create sample type for the heart rate
-        guard let sampleType = HKObjectType
-            .quantityType(forIdentifier: .heartRate) else {
-                completion(nil)
-                return
-        }
-        
-        /// Predicate for specifiying start and end dates for the query
-        let predicate = HKQuery
-            .predicateForSamples(
-                withStart: Date.distantPast,
-                end: Date(),
-                options: .strictEndDate)
-        
-        /// Set sorting by date.
-        let sortDescriptor = NSSortDescriptor(
-            key: HKSampleSortIdentifierStartDate,
-            ascending: false)
-        
-        /// Create the query
-        let query = HKSampleQuery(
-            sampleType: sampleType,
-            predicate: predicate,
-            limit: Int(HKObjectQueryNoLimit),
-            sortDescriptors: [sortDescriptor]) { (_, results, error) in
-                
-                guard error == nil else {
-                    print("Error: \(error!.localizedDescription)")
-                    return
-                }
-                
-                completion(results?[0] as? HKQuantitySample)
-        }
-        
-        self.health.execute(query)
-    }
+    
     
     @IBAction func activityButton(_ sender: Any) {
         performSegue(withIdentifier: "toActivityRecom", sender: self)
@@ -166,11 +128,6 @@ class HomeViewController: UIViewController {
         else if segue.identifier == "toHistory"{
             let destVC = segue.destination as! HistoryViewController
             destVC.heartImage = heartImage
-        }
-        else if let destination = segue.destination as?
-            detailHistoryViewController
-        {
-            destination.heartImage = heartImage
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

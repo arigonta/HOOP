@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import HealthKit
 
 class DetailActivityViewController: UIViewController {
 
@@ -16,6 +17,13 @@ class DetailActivityViewController: UIViewController {
     var timer = Timer()
     var activities:String = ""
     var heartCondition:String?
+    var afterHeartCondition:String?
+    var detectedBpm: Int?
+    var heartRateQuery:HKQuery?
+    var observerQuery:HKQuery?
+    var startTime = ""
+    
+
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var showImg: UIImageView!
@@ -41,6 +49,10 @@ class DetailActivityViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(action), userInfo: nil, repeats: true)
             startBtnOutlet.isHidden = true
             resetBtnOutlet.isHidden = true
+        let now = Date()
+        let timeFormat = DateFormatter()
+        timeFormat.dateFormat = "HH:mm"
+        startTime = timeFormat.string(from: now)
     }
     
     @IBAction func doneBtn(_ sender: UIButton) {
@@ -50,10 +62,15 @@ class DetailActivityViewController: UIViewController {
             let now = Date()
             let newActive = NSEntityDescription.insertNewObject(forEntityName: "History", into: context)
             let dateFormat = DateFormatter()
-            dateFormat.dateFormat = "dd/MM/yyyy HH:mm"
+            let timeFormat = DateFormatter()
+            dateFormat.dateFormat = "dd MMM yyyy"
+            timeFormat.dateFormat = "HH:mm"
             newActive.setValue(activities, forKey: "activityName")
             newActive.setValue(dateFormat.string(from: now), forKey: "activityDate")
-            newActive.setValue(heartCondition, forKey: "heartCondition")
+            newActive.setValue(afterHeartCondition, forKey: "afterHeartCondition")
+            newActive.setValue(timeFormat.string(from: now), forKey: "endTime")
+            newActive.setValue(heartCondition, forKey: "beforeHeartCondition")
+            newActive.setValue(startTime, forKey: "startTime")
             try context.save()
         } catch  {
             
@@ -70,7 +87,7 @@ class DetailActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        observerHeartRateSamples()
         doneBtnOutlet.isHidden = true
         resetBtnOutlet.isHidden = true
         if activities == "Breathing"{
@@ -136,5 +153,38 @@ class DetailActivityViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func observerHeartRateSamples() {
+        let heartRateSampleType = HKObjectType.quantityType(forIdentifier: .heartRate)
+        
+        if let observerQuery = observerQuery {
+            health.stop(observerQuery)
+        }
+        
+        self.observerQuery = HKObserverQuery(sampleType: heartRateSampleType!, predicate: nil) { (_, _, error) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                return
+            }
+            
+            fetchLatestHeartRateSample { (sample) in
+                guard let sample = sample else {
+                    return
+                }
+                let heartRateUnit = HKUnit(from: "count/min")
+                let heartRate = sample
+                    .quantity
+                    .doubleValue(for: heartRateUnit)
+                if Int(heartRate) >= 40 && Int(heartRate) < 150{
+                    self.afterHeartCondition = "green"
+                }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
+                    self.afterHeartCondition = "yellow"
+                }else if Int(heartRate) >= 180{
+                    self.afterHeartCondition = "red"
+                }
+                
+            }
+        }
+        health.execute(observerQuery!)
+    }
 }

@@ -9,21 +9,17 @@
 import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
-
+ 
     @IBOutlet weak var HistoryLbl: UILabel!
     @IBOutlet weak var HistoryImg: UIImageView!
-    @IBOutlet weak var HistoryLblDate: UILabel!
     @IBOutlet weak var imgHeart: UIImageView!
     
     func setHistory(his: History) {
-//        HistoryLbl.text = his.activityDate
-        HistoryLbl.text = his.activityName
-        HistoryLblDate.text = his.activityDate
-        if his.heartCondition == "green"{
+        if his.afterHeartCondition == "green"{
             imgHeart.loadGif(name: "GreenHeart")
-        }else if his.heartCondition == "yellow"{
+        }else if his.afterHeartCondition == "yellow"{
             imgHeart.loadGif(name: "YellowHeart")
-        }else if his.heartCondition == "red"{
+        }else if his.afterHeartCondition == "red"{
             imgHeart.loadGif(name: "RedHeart")
         }
     }

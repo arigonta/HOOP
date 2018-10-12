@@ -267,12 +267,6 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sc2-F0-2oC">
-                                                            <rect key="frame" x="128" y="11.000000000000057" width="204" height="43"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hlf-cG-AMT">
                                                             <rect key="frame" x="292" y="15" width="50" height="35"/>
                                                             <constraints>
@@ -309,8 +303,8 @@
                                         <connections>
                                             <outlet property="HistoryImg" destination="YeK-JA-JE0" id="cfM-Q6-vgM"/>
                                             <outlet property="HistoryLbl" destination="J0f-36-QcK" id="X4D-lt-pM5"/>
-                                            <outlet property="HistoryLblDate" destination="sc2-F0-2oC" id="6r7-tc-Vvc"/>
                                             <outlet property="imgHeart" destination="Hlf-cG-AMT" id="Jc9-qL-EBB"/>
+                                            <segue destination="IHc-Op-mxM" kind="show" identifier="detailHistory" id="Wuy-GY-VeV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -351,7 +345,6 @@
                     <tabBarItem key="tabBarItem" systemItem="contacts" id="tSo-a9-SMB"/>
                     <connections>
                         <outlet property="historyTableViewq" destination="xtK-Hv-f0C" id="duX-pU-bTp"/>
-                        <segue destination="IHc-Op-mxM" kind="show" identifier="detailHistory" id="Lfh-y3-nSz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hvj-Ml-Wi8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -393,7 +386,7 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="HistoryWhite"/>
                                 <connections>
-                                    <segue destination="7Iw-4v-RMG" kind="show" id="W8V-4s-UhS"/>
+                                    <segue destination="7Iw-4v-RMG" kind="show" identifier="toHistory" id="W8V-4s-UhS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cww-oK-vvf">
@@ -428,7 +421,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WELCOME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDf-eg-4HY">
-                                <rect key="frame" x="131.66666666666666" y="54.333333333333343" width="112" height="28"/>
+                                <rect key="frame" x="131.66666666666666" y="54.333333333333336" width="112" height="27.333333333333336"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="112" id="yxa-RH-N8T"/>
                                 </constraints>
@@ -655,6 +648,53 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3gh-Rt-ENN">
+                                <rect key="frame" x="16" y="180" width="343" height="598"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailHistoryTableViewCell" id="TrO-E1-TNp" customClass="DetailHistoryTableViewCell" customModule="Hoop" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TrO-E1-TNp" id="uML-Uw-CEa">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5a0-Ll-Pt8">
+                                                    <rect key="frame" x="15" y="12" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="010-J2-Pne">
+                                                    <rect key="frame" x="286" y="12" width="57" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jp6-EI-DEG">
+                                                    <rect key="frame" x="65" y="12" width="213" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityLabel" destination="Jp6-EI-DEG" id="fd8-qb-QMh"/>
+                                            <outlet property="bpmLabel" destination="5a0-Ll-Pt8" id="2v6-uB-vbS"/>
+                                            <outlet property="timeLabel" destination="010-J2-Pne" id="nbV-Yw-2AC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="IHc-Op-mxM" id="avu-dr-f7x"/>
+                                    <outlet property="delegate" destination="IHc-Op-mxM" id="cph-qu-v9X"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -670,7 +710,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q0b-rC-rIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2681" y="859"/>
+            <point key="canvasLocation" x="2232.8000000000002" y="1135.7142857142858"/>
         </scene>
         <!--Detail Activity View Controller-->
         <scene sceneID="cHZ-B6-wV1">
@@ -854,7 +894,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fyc-63-6kw"/>
-        <segue reference="QfO-I8-pWb"/>
+        <segue reference="nRV-e8-8C9"/>
         <segue reference="SGA-Uu-Cdf"/>
     </inferredMetricsTieBreakers>
 </document>

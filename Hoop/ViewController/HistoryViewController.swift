@@ -13,26 +13,49 @@ var heartImage: String?
 var historyInit = [History]()
 var managedObjectContext: NSManagedObjectContext!
 var selectedIndex: Int?
+var date: [String] = []
+var histories: [History] = []
 
 
 class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     var heartImage: String?
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return historyInit.count
-    }
+    
     @IBOutlet weak var historyTableViewq: UITableView!
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let hist = historyInit[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "historyTableViewCell", for: indexPath) as! HistoryTableViewCell
         cell.HistoryImg.image = UIImage(named: "barHistory")
-        // Configure the cell...
+        cell.HistoryLbl.text = date[indexPath.row]
         cell.setHistory(his: hist)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let context = appDel.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
+        
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                if let dateStored = data.value(forKey: "activityDate") as? String {
+                    if !date.contains(dateStored) {
+                        date.append(dateStored)
+                    }
+                }
+            }
+        } catch  {
+            print("Error retrieving data!")
+        }
+        
+        
+        return date.count
+    }
 //    @IBAction func unwindToActivityRec(_ sender: UIStoryboardSegue) {
 //        let sourceViewController = sender.source
 //        // Use data from the view controller which initiated the unwind segue
@@ -58,6 +81,8 @@ class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -68,11 +93,35 @@ class HistoryViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
        if let destination = segue.destination as? ActivityRecViewController{
             destination.heartImage = heartImage
         }
        else if let destination = segue.destination as? detailHistoryViewController{
             destination.heartImage = heartImage
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let context = appDel.persistentContainer.viewContext
+        
+        guard let detailHistoryViewController = segue.destination as? detailHistoryViewController else { fatalError("Unexpected Destination") }
+        
+        guard let selectedDateCell = historyTableViewq.indexPathForSelectedRow else {
+            fatalError("Unexpected Error")
+        }
+        
+        
+        do {
+            let fetch: NSFetchRequest = History.fetchRequest()
+            let datePredicate = NSPredicate(format: "activityDate == %@", date[selectedDateCell.row])
+            fetch.predicate = datePredicate
+            histories = try context.fetch(fetch)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        let selectedHistory = histories
+        detailHistoryViewController.history = selectedHistory
+        
+        
         }
     }
     

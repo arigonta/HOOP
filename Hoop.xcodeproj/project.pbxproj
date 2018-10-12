@@ -29,6 +29,7 @@
 		469EA0EC212FF7A8005C9DDE /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */; };
 		469EA0EE212FF7B9005C9DDE /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */; };
 		469EA0F0212FF7CF005C9DDE /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */; };
+		46D75319216F42F70059A2EC /* DetailHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D75318216F42F70059A2EC /* DetailHistoryTableViewCell.swift */; };
 		96736865FD831AE217095FC9 /* Pods_Hoop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */; };
 		CA0515372133E11100ABA7B8 /* DetailActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */; };
 		CA0515382133E11100ABA7B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0515292133E11100ABA7B8 /* HomeViewController.swift */; };
@@ -124,6 +125,7 @@
 		469EA0EB212FF7A8005C9DDE /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		469EA0ED212FF7B9005C9DDE /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		469EA0EF212FF7CF005C9DDE /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		46D75318216F42F70059A2EC /* DetailHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		50DC19A94622F8D498D98473 /* Pods-Hoop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.release.xcconfig"; sourceTree = "<group>"; };
 		AB62B7974EA58E2830ACA0C3 /* Pods_Hoop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hoop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0515282133E11100ABA7B8 /* DetailActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailActivityViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		CA0515322133E11100ABA7B8 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				46D75318216F42F70059A2EC /* DetailHistoryTableViewCell.swift */,
 				CA0515332133E11100ABA7B8 /* HistoryTableViewCell.swift */,
 				CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */,
 			);
@@ -532,6 +535,7 @@
 			files = (
 				CA58698F2164C4C100CB72F8 /* demo2ViewController.swift in Sources */,
 				CA0515382133E11100ABA7B8 /* HomeViewController.swift in Sources */,
+				46D75319216F42F70059A2EC /* DetailHistoryTableViewCell.swift in Sources */,
 				CA0515372133E11100ABA7B8 /* DetailActivityViewController.swift in Sources */,
 				CA0515402133E11100ABA7B8 /* HistoryTableViewCell.swift in Sources */,
 				CA05153E2133E11100ABA7B8 /* OnboardingViewClass.swift in Sources */,
