@@ -7,10 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class detailHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var beforeBpmLabel: UILabel!
+    @IBOutlet weak var afterBpmLabel: UILabel!
     var history: [History]?
+    var beforeBpm: Int = 0
+    var afterBpm: Int = 0
     var sectionTitle = ["Before", "After"]
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (history?.count)!
@@ -20,19 +25,49 @@ class detailHistoryViewController: UIViewController, UITableViewDelegate, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailHistoryTableViewCell", for: indexPath) as! DetailHistoryTableViewCell
         if indexPath.section == 0 {
             cell.activityLabel.text = history![indexPath.row].activityName
-            cell.bpmLabel.text = history![indexPath.row].beforeHeartCondition
+            cell.bpmLabel.text = "\(history![indexPath.row].beforeHeartCondition)"
             cell.timeLabel.text = history![indexPath.row].startTime
         } else if indexPath.section == 1 {
             cell.activityLabel.text = history![indexPath.row].activityName
-            cell.bpmLabel.text = history![indexPath.row].afterHeartCondition
+            cell.bpmLabel.text = "\(history![indexPath.row].afterHeartCondition)"
             cell.timeLabel.text = history![indexPath.row].endTime
         }
-        
-        
         return cell
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTitle[section]
+    }
+    
+    func averageBpm() {
+        let appDel = UIApplication.shared.delegate as! AppDelegate
+        let context = appDel.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "History")
+        var totalCount = 0
+        request.returnsObjectsAsFaults = false
+        
+        do {
+            let result = try context.fetch(request)
+            if result.count > 0 {
+                totalCount = result.count
+                for res in result as! [NSManagedObject] {
+                    if let before = res.value(forKey: "beforeHeartCondition") as? Int {
+                        beforeBpm = beforeBpm + before
+                        print(before)
+                        print(beforeBpm)
+                    }
+                    if let after = res.value(forKey: "afterHeartCondition") as? Int {
+                        afterBpm = afterBpm + after
+                        print(after)
+                        print(afterBpm)
+                    }
+                }
+            }
+        } catch  {
+            print("Error retrieving data!")
+        }
+        beforeBpmLabel.text = "Avg before = \(beforeBpm/totalCount)"
+        afterBpmLabel.text = "Avg after = \(afterBpm/totalCount)"
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -43,7 +78,7 @@ var heartImage: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        averageBpm()
         // Do any additional setup after loading the view.
     }
 

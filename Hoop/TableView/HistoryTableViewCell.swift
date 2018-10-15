@@ -15,12 +15,12 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var imgHeart: UIImageView!
     
     func setHistory(his: History) {
-        if his.afterHeartCondition == "green"{
-            imgHeart.loadGif(name: "GreenHeart")
-        }else if his.afterHeartCondition == "yellow"{
-            imgHeart.loadGif(name: "YellowHeart")
-        }else if his.afterHeartCondition == "red"{
-            imgHeart.loadGif(name: "RedHeart")
-        }
+//        if his.afterHeartCondition == "green"{
+//            imgHeart.loadGif(name: "GreenHeart")
+//        }else if his.afterHeartCondition == "yellow"{
+//            imgHeart.loadGif(name: "YellowHeart")
+//        }else if his.afterHeartCondition == "red"{
+//            imgHeart.loadGif(name: "RedHeart")
+//        }
     }
 }

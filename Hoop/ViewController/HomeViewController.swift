@@ -17,7 +17,6 @@ class HomeViewController: UIViewController {
     var bpmText: Int = 0
     var heartImage:String = ""
     var userName:String = ""
-    var heartRateQuery:HKQuery?
     var observerQuery:HKQuery?
     let heartRateType:HKQuantityType   = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
     let health: HKHealthStore = HKHealthStore()
@@ -34,8 +33,8 @@ class HomeViewController: UIViewController {
         wcSession?.delegate = self
         wcSession?.activate()
         fetchDataFromModel()
-        checkBpm()
         observerHeartRateSamples()
+        checkBpm()
         nameLabel.text = "Hi, \(userName)"
     }
     
@@ -132,7 +131,7 @@ class HomeViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    
+
     func checkBpm() {
         DispatchQueue.main.async {
             self.bpmLabel.text = String(self.bpmText) + " BPM"
@@ -172,6 +171,7 @@ extension HomeViewController: WCSessionDelegate {
         if let context = applicationContext["bpm"] as? Int {
             self.bpmText = context
             checkBpm()
+            print(context)
         }
         
     }

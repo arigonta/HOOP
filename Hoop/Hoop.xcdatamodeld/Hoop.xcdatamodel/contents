@@ -3,8 +3,8 @@
     <entity name="History" representedClassName="History" syncable="YES" codeGenerationType="class">
         <attribute name="activityDate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="activityName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="afterHeartCondition" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="beforeHeartCondition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="afterHeartCondition" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="beforeHeartCondition" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="endTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -14,7 +14,7 @@
         <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="History" positionX="-461.78515625" positionY="-5.5859375" width="128" height="133"/>
+        <element name="History" positionX="-461.78515625" positionY="-5.5859375" width="128" height="135"/>
         <element name="User" positionX="-254.421875" positionY="48.16796875" width="128" height="90"/>
     </elements>
 </model>

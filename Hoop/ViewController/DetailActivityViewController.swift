@@ -9,20 +9,21 @@
 import UIKit
 import CoreData
 import HealthKit
+import WatchConnectivity
 
 class DetailActivityViewController: UIViewController {
 
+    var flag = 0
     var minutes = 0
     var seconds = 0
     var timer = Timer()
     var activities:String = ""
     var heartCondition:String?
-    var afterHeartCondition:String?
     var detectedBpm: Int?
-    var heartRateQuery:HKQuery?
-    var observerQuery:HKQuery?
+    var beforeBpm: Int?
+    var afterBpm: Int?
     var startTime = ""
-    
+    var wcSession: WCSession?
 
     
     @IBOutlet weak var titleLbl: UILabel!
@@ -37,9 +38,9 @@ class DetailActivityViewController: UIViewController {
         if activities == "Breathing"{
             seconds = 5
         }else if activities == "Jogging"{
-            minutes = 15
+            seconds = 15
         }else if activities == "Meditation"{
-            minutes = 10
+            seconds = 10
         }
         startBtnOutlet.isHidden = false
         doneBtnOutlet.isHidden = true
@@ -52,6 +53,7 @@ class DetailActivityViewController: UIViewController {
         let now = Date()
         let timeFormat = DateFormatter()
         timeFormat.dateFormat = "HH:mm"
+        beforeBpm = detectedBpm!
         startTime = timeFormat.string(from: now)
     }
     
@@ -65,11 +67,12 @@ class DetailActivityViewController: UIViewController {
             let timeFormat = DateFormatter()
             dateFormat.dateFormat = "dd MMM yyyy"
             timeFormat.dateFormat = "HH:mm"
+            afterBpm = detectedBpm
             newActive.setValue(activities, forKey: "activityName")
             newActive.setValue(dateFormat.string(from: now), forKey: "activityDate")
-            newActive.setValue(afterHeartCondition, forKey: "afterHeartCondition")
+            newActive.setValue(afterBpm, forKey: "afterHeartCondition")
             newActive.setValue(timeFormat.string(from: now), forKey: "endTime")
-            newActive.setValue(heartCondition, forKey: "beforeHeartCondition")
+            newActive.setValue(beforeBpm, forKey: "beforeHeartCondition")
             newActive.setValue(startTime, forKey: "startTime")
             try context.save()
         } catch  {
@@ -87,7 +90,10 @@ class DetailActivityViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        observerHeartRateSamples()
+        wcSession = WCSession.default
+        wcSession?.delegate = self
+        wcSession?.activate()
+        startBtnOutlet.isHidden = true
         doneBtnOutlet.isHidden = true
         resetBtnOutlet.isHidden = true
         if activities == "Breathing"{
@@ -154,37 +160,32 @@ class DetailActivityViewController: UIViewController {
     }
     */
     
-    func observerHeartRateSamples() {
-        let heartRateSampleType = HKObjectType.quantityType(forIdentifier: .heartRate)
-        
-        if let observerQuery = observerQuery {
-            health.stop(observerQuery)
-        }
-        
-        self.observerQuery = HKObserverQuery(sampleType: heartRateSampleType!, predicate: nil) { (_, _, error) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                return
-            }
-            
-            fetchLatestHeartRateSample { (sample) in
-                guard let sample = sample else {
-                    return
-                }
-                let heartRateUnit = HKUnit(from: "count/min")
-                let heartRate = sample
-                    .quantity
-                    .doubleValue(for: heartRateUnit)
-                if Int(heartRate) >= 40 && Int(heartRate) < 150{
-                    self.afterHeartCondition = "green"
-                }else if Int(heartRate) >= 150 && Int(heartRate) < 180{
-                    self.afterHeartCondition = "yellow"
-                }else if Int(heartRate) >= 180{
-                    self.afterHeartCondition = "red"
+    
+}
+
+extension DetailActivityViewController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("\(#function) \(session)")
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        print("\(#function) \(session)")
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        print("\(#function) \(session)")
+    }
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        if let context = applicationContext["bpm"] as? Int {
+            self.detectedBpm = context
+            DispatchQueue.main.async {
+                if self.flag == 0 {
+                    self.startBtnOutlet.isHidden = false
+                    self.flag = 1
                 }
                 
             }
         }
-        health.execute(observerQuery!)
+        
     }
 }
