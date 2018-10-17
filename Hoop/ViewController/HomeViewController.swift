@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
         fetchDataFromModel()
         observerHeartRateSamples()
         checkBpm()
-        nameLabel.text = "Hi, \(userName)"
+        nameLabel.text = "Hi, \(userName)."
     }
     
     func fetchDataFromModel() {
@@ -92,7 +92,7 @@ class HomeViewController: UIViewController {
                         .quantity
                         .doubleValue(for: heartRateUnit)
                     /// Updating the UI with the retrieved value
-                    self.bpmLabel.text = "\(Int(heartRate)) BPM"
+                    self.bpmLabel.text = "\(Int(heartRate))"
                     UserDefaults.standard.set(Int(heartRate), forKey: "notif")
                     
                     if Int(heartRate) >= 50 && Int(heartRate) < 150{

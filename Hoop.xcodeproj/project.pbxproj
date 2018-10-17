@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0CC4AC21749E840008AF46 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0CC4AB21749E840008AF46 /* SectionTableViewCell.swift */; };
 		3F550F582133F675005F8EB6 /* Meditation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F550F542133F675005F8EB6 /* Meditation.gif */; };
 		3F550F592133F675005F8EB6 /* Healthy Food.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F550F552133F675005F8EB6 /* Healthy Food.gif */; };
 		3F550F5A2133F675005F8EB6 /* Healthy Sleep.gif in Resources */ = {isa = PBXBuildFile; fileRef = 3F550F562133F675005F8EB6 /* Healthy Sleep.gif */; };
@@ -99,6 +100,7 @@
 
 /* Begin PBXFileReference section */
 		1A0FFBFABF72D9F9FB6FD1DC /* Pods-Hoop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hoop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hoop/Pods-Hoop.debug.xcconfig"; sourceTree = "<group>"; };
+		3F0CC4AB21749E840008AF46 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
 		3F550F542133F675005F8EB6 /* Meditation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Meditation.gif; sourceTree = "<group>"; };
 		3F550F552133F675005F8EB6 /* Healthy Food.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Healthy Food.gif"; sourceTree = "<group>"; };
 		3F550F562133F675005F8EB6 /* Healthy Sleep.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Healthy Sleep.gif"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				46D75318216F42F70059A2EC /* DetailHistoryTableViewCell.swift */,
 				CA0515332133E11100ABA7B8 /* HistoryTableViewCell.swift */,
 				CA0515342133E11100ABA7B8 /* ActivityRecTableViewCell.swift */,
+				3F0CC4AB21749E840008AF46 /* SectionTableViewCell.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				CA05153C2133E11100ABA7B8 /* HistoryViewController.swift in Sources */,
 				CA58698B2164C35500CB72F8 /* SwipeViewController.swift in Sources */,
 				CA05153D2133E11100ABA7B8 /* HealthKitHandler.swift in Sources */,
+				3F0CC4AC21749E840008AF46 /* SectionTableViewCell.swift in Sources */,
 				CA58698D2164C49B00CB72F8 /* demo1ViewController.swift in Sources */,
 				CA5869912164C4CB00CB72F8 /* demo3ViewController.swift in Sources */,
 				CA0515412133E11100ABA7B8 /* ActivityRecTableViewCell.swift in Sources */,

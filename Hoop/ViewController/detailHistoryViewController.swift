@@ -11,15 +11,15 @@ import CoreData
 
 class detailHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
+    @IBOutlet weak var tableViewDetailHistory: UITableView!
     @IBOutlet weak var beforeBpmLabel: UILabel!
     @IBOutlet weak var afterBpmLabel: UILabel!
     var history: [History]?
     var beforeBpm: Int = 0
     var afterBpm: Int = 0
     var sectionTitle = ["Before", "After"]
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (history?.count)!
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailHistoryTableViewCell", for: indexPath) as! DetailHistoryTableViewCell
@@ -35,9 +35,32 @@ class detailHistoryViewController: UIViewController, UITableViewDelegate, UITabl
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitle[section]
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let label = UILabel()
+        
+        if section == 0
+        {
+            label.text = "Before"
+            label.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+        }
+        else
+        {
+            label.text = "After"
+            label.backgroundColor = #colorLiteral(red: 0.9411764741, green: 0.4980392158, blue: 0.3529411852, alpha: 1)
+        }
+        
+        return label
     }
+  
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return history?.count ?? 0
+    }
+    
     
     func averageBpm() {
         let appDel = UIApplication.shared.delegate as! AppDelegate
@@ -70,9 +93,8 @@ class detailHistoryViewController: UIViewController, UITableViewDelegate, UITabl
         afterBpmLabel.text = "Avg after = \(afterBpm/totalCount)"
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionTitle.count
-    }
+    
+ 
     
 var heartImage: String?
     
