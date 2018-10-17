@@ -134,7 +134,7 @@ class HomeViewController: UIViewController {
 
     func checkBpm() {
         DispatchQueue.main.async {
-            self.bpmLabel.text = String(self.bpmText) + " BPM"
+            self.bpmLabel.text = String(self.bpmText) + ""
             if self.bpmText == 0 {
                 self.bpmLabel.text = "Reading..."
             }
